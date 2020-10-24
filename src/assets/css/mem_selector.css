@@ -1,0 +1,284 @@
+.context-selector .easy-access-items {
+	position: relative;
+	left: 1055px;
+}
+
+.context-selector .easy-access-items > div { 
+	position: absolute;
+}
+
+.context-selector .easy-access-items > div > a {
+	margin-top: 5px;
+	color: #595959;
+}
+
+.context-selector .easy-access-items > div > .autorefresh {
+	display: inline;
+	margin-right: 15px;
+	vertical-align: middle;
+}
+
+.context-selector .easy-access-items > div > .autorefresh > label {
+	font-weight: bold;
+	margin-right: 5px;
+	text-transform: uppercase;
+}
+
+.context-selector .caret:after {
+	content:"\edc6";
+}
+
+.context-selector ul.ui-autocomplete > li {
+	max-width: 350px;
+}
+
+.context-selector ul.ui-autocomplete > li > div {
+	padding: 5px;
+}
+
+.context-selector .selection-fancy-tree span {
+	font-weight: normal;
+}
+
+.context-selector .selection-fancy-tree span.fancytree-custom-icon::before {
+	font-size: 16px;
+}
+
+.context-selector h5.modal-title {
+	margin-right: 35px;
+	margin-bottom: 10px;
+}
+
+.context-selector span.select2-container--id-desc {
+	width: 170px!important;
+	position: relative;
+	top: -4px;
+}
+
+.context-selector .select2-selection__rendered, 
+	.member-selector .select2-selection__rendered  {
+    line-height: 15px;
+    position: relative;
+    top: -5px;
+    font-weight: normal;
+    
+}
+
+.member-selector .select2-selection__rendered {
+	padding-top: 3px;	
+}
+
+.context-selector .select2-container .select2-selection--single, 
+	.member-selector .select2-container .select2-selection--single {
+    height: 25px !important;
+}
+.context-selector .select2-selection__arrow {
+    height: 34px !important;
+}
+
+.context-selector .selector-input > span.invalid {
+	color: red;
+}
+
+.context-selector .search-box {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+	left: 20px;
+}
+
+.member-selector .search-box {
+	display: inline-block;
+	position: relative;
+	top: 1px;
+	left: 20px;
+}
+
+
+.context-selector .search-box > input, 
+	.member-selector .modal-header input {
+	border: #ddd solid 1px;
+	padding: 3px 20px 3px 5px;
+}
+
+.context-selector .search-box > input, 
+	.member-selector .search-box > input {
+	width: 250px;
+}
+
+.member-selector .dlvl-input {
+	width: 50px;
+	margin-left: -15px;
+	vertical-align: bottom;
+}
+
+.context-selector .search-box > button, .member-selector .search-box > button {
+	border: none;
+	background-color: rgba(0,0,0,0);
+}
+
+.context-selector .search-box > button > i, .member-selector .search-box > button > i {
+	font-size: 12px;
+	color: #7a7a7a;
+}
+
+.context-selector .search-box > button.search-close, .membert-selector .search-box > button.search-close {
+	position: relative;
+	left: -44px;
+	font-size: 16px;
+}
+
+.context-selector button.close, .member-selector button.close {
+	top: unset;
+}
+
+.context-selector div.modal-body {
+	padding-top: 5px;
+}
+
+.context-selector .selector-input > datalist > option {
+	font-weight: normal;
+}
+
+.context-selector .selector-input > datalist > option.level1, .selector-input > datalist > option.level2 {
+	font-weight: bold;
+}
+
+.context-selector .selector-input > input::-webkit-calendar-picker-indicator {
+ 	 display: none;
+}
+
+.p-selector-select2 > span.select2-results > ul > li[role="treeitem"] {
+	font-weight: bold!important;
+}
+
+.context-selector .selector > i.dropdown-selectable {
+	margin-left: 5px;
+}
+
+.context-selector .selection-fancy-tree, .member-selector .selection-fancy-tree {
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: solid 1px #eee;
+	padding: 0px 5px 5px 5px;
+}
+
+.context-selector .selection-fancy-tree > ul, .member-selector .selection-fancy-tree > ul {
+	overflow: hidden;
+}
+
+.p-selector-select2 ul.select2-results__options > li > strong {
+	text-transform: unset;
+} 
+
+.context-selector {
+	min-width: 1215px;
+	margin-bottom: 14px;
+	margin-top: 5px;
+}
+
+.context-selector > .panel {
+	padding-right: 150px;
+}
+
+.context-selector > .panel > div {
+	display:inline-block;
+}
+
+.context-selector > .panel > div > i.filter {
+	font-size:22px;
+	margin-left: 5px;
+}
+
+.context-selector > .panel > div > i.secondary {
+	font-size:18px;
+	color: #7a7a7a;	
+}
+
+.context-selector div.selector.form-control {
+	width: inherit;
+	min-width: 180px;
+}
+
+.context-selector .selector {
+	height: 28px;
+	padding-top: 4px;
+	margin: 0px 5px 3px 5px;
+}
+
+.context-selector .selector:hover , i.secondary:hover {
+	cursor: pointer;
+}
+
+.context-selector .selector .select2 {
+	display: none;
+	opacity: 0;
+	position: absolute;
+}
+
+.context-selector .selector-input {
+	display:inline-block;
+	min-width: 100px;
+}
+
+.context-selector .selector-input > span {
+	color: #0063ba;
+	margin-left: 10px;
+}
+
+.context-selector .selector.normal > .selector-input > span:hover {
+	cursor: text;
+}
+
+.context-selector .selector-input > input {
+	margin-left: 5px;
+	display: block;
+	position: relative;
+	height: 17px;
+	background-color: #fff2cc;
+	border-color: #d9d9d9;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 5px;
+	color: #0070c0;
+}
+
+.context-selector .caret {
+	float: right;
+	margin-right: -10px;
+	margin-top: 2px;
+	padding-left: 10px;
+}
+
+.context-selector span {
+	font-size: 11px;
+	font-weight: bold;
+}
+
+.context-selector .secondary-box {
+	margin-top: 10px;
+	padding: 18px 30px 18px 10px!important;
+}
+
+.context-selector .secondary-box i.secondary {
+	position: relative;
+	top: -10px;
+	left: 15px;
+	flaot: right;
+}
+
+.member-selector-box {
+	border: 1px solid #ddd;
+	display: inline-block;
+	position: inherit;
+	float: left;
+}
+	
+.member-selector .modal-header .top-hz-mid {
+	padding-top: 10px;
+}
+
+.member-selector .top-hz-mid > span {
+	padding-right: 20px;
+}

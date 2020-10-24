@@ -1,0 +1,2416 @@
+/**
+*=========================================================
+* PAGE CONTENT CSS
+*=========================================================
+*/
+.sidebar-main{
+	z-index: 1;
+}
+.navbar-fixed-top{
+	z-index: 2;
+}
+#context-menu-layer{
+	z-index: 3 !important;
+}
+.hideAfter::after {
+	display: none !important;
+}
+.select2-dropdown span.evo-group-add-link.add-calc-group {
+    padding: 10px;
+    position: relative;
+    height: 25px;
+    color: #0573c1;
+    display: block;
+	font-weight: bold;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ddd;
+	cursor: pointer;
+}
+.dt-rowReorder-moving, .dt-rowReorder-moving td,.dt-rowReorder-float{
+	height: 40px !important;
+	display: block !important;
+    overflow: hidden !important;
+}
+.page-content ul.navigation li.active > a:after {
+	background: none !important;
+}
+body,
+.CodeMirror-code {
+	font-family: "Segoe UI";
+	font-size: 11.5px !important;
+}
+.connect-environment .dropdown-menu.dropdown-menu-right > li.active > a::before {
+    content: "\ed6e";
+    font-family: "Icomoon";
+    padding-right: 10px;
+}
+.connect-environment .dropdown-menu.dropdown-menu-right > li.active > a {
+	background: none;
+	color: #333333;
+}
+.connect-environment .dropdown-menu.dropdown-menu-right > li > a::before {
+    content: "";
+    padding-right: 20px;
+}
+#connect-to-an-environment-modal .modal-title {
+	font-weight: 600;
+    color: #555;
+}
+.page-content,
+.dropdown-menu,
+.nav-tabs > li {
+	font-size: 11.5px;
+}
+/* .page-content ul.navigation {
+	padding: 0;
+	max-height: calc(100vh - 70px);
+	overflow-y: auto;
+	overflow-x: hidden;
+} */
+.page-content .sidebar div:not(:first-child) ul.navigation {
+    padding: 0;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.page-content ul.navigation > li > a {
+	font-size: 11.5px;
+	font-weight: 600;
+}
+.page-content ul.navigation > li > a > i {
+	font-size: 12px;
+}
+.page-content .panel {
+	margin-bottom: 0px;
+	overflow-x: auto;
+}
+.page-content .label-neon {
+	background-color: #92d050;
+	border-color: #92d050;
+}
+.page-content .label-lite-green {
+	background: #00dea9;
+	border-color: #00dea9;
+}
+/* .page-content .panel-body {
+    padding: 20px 20px 0px;
+} */
+.page-content .panel-body .nav.nav-tabs a > .icon-cross {
+    float: right;
+    position: relative;
+    left: 4px;
+    top: 1px;
+	cursor: pointer;
+}
+.page-content .panel-body .tab-content-bordered .tab-content > .has-padding {
+	/* padding: 10px; */
+	overflow-x: auto;
+}
+.page-content .CodeMirror.ui-resizable {
+    width: 100% !important;
+}
+.page-content .ui-resizable-handle.ui-icon {
+	border-width: 0;
+}
+.ui-draggable-handle {
+	cursor: all-scroll;
+}
+/* .page-content .bk-yellow, */
+.page-content .row-modified {
+    background: #ffffc1 !important;
+}
+.page-content .icon-question4 {
+	color: #ddd !important;
+    font-size: 12px;
+    cursor: pointer;
+    padding-left: 10px;
+}
+.page-content .text-link {
+	color: #1e7fd0;
+}
+#dialog-confirm {
+	display: none;
+}
+.page-content .icon-plus3 {
+	font-size: 12px;
+}
+.page-content .multiselect {
+	height: 34px;
+}
+.page-content .form-control {
+	font-size: 11.5px;
+}
+.page-content .btn-group > .btn,
+.page-content .btn-group ul > li > a > label {
+	font-weight: normal !important;
+	font-size: 11.5px;
+}
+.page-content .dropdown-menu li > a {
+	font-size: 11.5px;
+	font-weight: bold;
+	text-transform: initial;
+}
+.select2-results__option {
+	font-size: 11.5px;
+    font-weight: normal !important;
+}
+.select2-selection--single .select2-selection__clear {
+	margin-top: 0px;
+}
+.page-content .text-size-11 {
+	font-size: 11.5px;
+}
+.page-content .select2-selection--single .select2-selection__rendered {
+	padding-top: 3px;
+}
+.page-content .select2-selection--multiple .select2-selection__choice {
+	background-color: #8faadc;
+	color: #FFF;
+}
+.page-content .text-black {
+	color: #000;
+}
+.page-content .text-red,
+.text-red {
+	color: #ff0000;
+}
+.page-content .text-normalize {
+	text-transform: none;
+}
+.page-content .label-cube {
+	background-color: #8faadc;
+}
+.page-content .label-master {
+	background-color: #5c95d4;
+}
+.page-content .label-hier {
+	background-color: #9e80da;
+}
+.page-content .label-spread {
+	background-color: #d969d4;
+}
+.page-content .label-first-cp {
+	background-color: #f19759;
+}
+.page-content .label-lite-grey {
+	color: #eee;
+    border-color: #eee;
+}
+.page-content .label-grey {
+	background-color: #eee;
+	width: 35px;
+}
+.page-content .primary-ids-max-val {
+	width: 270px;
+}
+.calculation-step-table .label-lite-green {
+	width: 35px;
+}
+.page-content .label,
+.page-content .text-semibold {
+	font-weight: 600;
+}
+.modal .btn-submit-ok {
+	background: none;
+    color: #00bcd4;
+    border-color: #00bcd4;
+    border-width: 1px;
+}
+.modal .btn-submit-ok:hover {
+	background: #00bcd4;
+	color: #FFF;
+}
+.modal .btn-submit-ok:active,
+.modal .btn-submit-ok:after,
+.modal .btn-submit-ok:focus {
+	background: #009fb4;
+	color: #FFF;
+}
+.spin{
+	-webkit-animation: spin 1.5s linear infinite;
+    -moz-animation: spin 1.5s linear infinite;
+    animation: spin 1.5s linear infinite;
+}
+.popover-title2 {
+	font-size: 12px;
+	line-height: 1.6666667;
+	border: 0;
+	padding: 0 15px 0 15px;
+	text-transform: uppercase;
+	font-weight: 500;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+.popover-title2[class*=bg-] {
+	padding: 10px 15px;
+	margin: -1px -1px 0 -1px;
+}
+.popover-content2 {
+	padding: 15px;
+}
+.popover {
+	font-size: 11.5px;
+	cursor: text;
+}
+.popover-content {
+	word-break: break-all;
+}
+.calc-group-detail .popover {
+	min-width: 350px;
+	word-wrap: break-word;
+}
+#driver-modal .popover,
+#step-modal .popover {
+	min-width: 250px;
+	word-wrap: break-word;
+}
+.calc-group-detail .popover2,
+.calc-group-detail .datasources-tab .advanced-options div:last-child .popover {
+	left: -245px !important;
+}
+.calc-group-detail .popover2 .arrow {
+	left: 84% !important;
+}
+.calc-group-detail .datasources-tab .advanced-options div:last-child .popover .arrow {
+	left: 80% !important;
+}
+.calculation-driver-table .popover,
+.calculation-step-table .popover,
+.variables-table .popover {
+	min-width: 250px;
+	word-wrap: break-word !important;
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}.calculation-driver-table .popover .arrow,
+.calculation-step-table .popover .arrow,
+.variables-table .popover .arrow {
+	right: -10px !important;
+}
+.calculation-step-table .popover,
+.variables-table .popover {
+	min-width: 350px;
+}
+.calculation-step-table > tbody> tr:first-child .popover {
+	top: -25px !important;
+}
+.variables-table > tbody> tr:first-child .popover {
+	top: 10px !important;
+}
+.text-bold {
+    font-weight: 600 !important;
+}
+.text-bolder {
+    font-weight: 700 !important;
+}
+.text-small {
+	text-transform: lowercase;
+}
+
+/*=== TABLE (CALCULATIONS GROUP, CALCULATIONS & VARIABLES) ===*/
+.table-striped > tbody > tr:nth-of-type(even) {
+	background: rgba(249,249,249,0.9);
+    border: 1px dashed #333;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background: rgba(255,255,255,0.7);
+    border: 1px dashed #333;
+}
+.calc-group-overview table > thead > tr > th,
+.calc-group-detail table > thead > tr > th,
+.audit-table-section table > thead > tr > th,
+.debugger-output-table > thead > tr > th,
+.calculation-driver-table > thead > tr > th,
+.calculation-step-table > thead > tr > th,
+.connect-environment-table > thead > tr > th {
+	color: #fff;
+	background: #44546a;
+	text-align: center;	
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: 5px 10px;
+	font-size: 11.5px;
+	white-space: nowrap;
+	font-weight: 600;
+}
+#debugger-query-parameters-modal {
+	overflow: hidden;
+}
+#debugger-query-parameters-modal .modal-title {
+	font-weight: 600;
+}
+#debugger-query-parameters-modal .modal-body {
+	height: calc(100vh - 150px);
+    overflow: auto;
+}
+#debugger-query-parameters-modal label.parameters-collapse {
+    padding: 5px 0 0;
+	text-transform: capitalize;
+	margin-bottom: 0;
+}
+.debugger-query-parameters-table {
+	border-top: none !important;
+}
+.debugger-query-parameters-table > thead > tr > th {
+	color: #fff;
+	background: #44546a;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: 5px 10px;
+	font-size: 11.5px;
+	white-space: nowrap;
+	font-weight: 600;
+}
+.debugger-query-parameters-table > tbody > tr > td {
+    padding: 0;
+    border: none;
+}
+.debugger-query-parameters-table > tbody > tr > td:not(:last-child) {
+	padding: 0 10px;;
+}
+.debugger-query-parameters-table > tbody > tr > td .select2-selection--single {
+	padding: 2px 0;
+	height: 28px;
+    border-radius: 0;
+}
+.debugger-query-parameters-table > tbody > tr > td .multiselect {
+	height: 30px;
+	border-radius: 0 !important;
+}
+.debugger-query-parameters-table > tbody > tr > td input {
+	height: 28px;
+    border-radius: 0;
+}
+.debugger-query-parameters-table > tbody > tr:not(:last-child) > td .select2-selection--single,
+.debugger-query-parameters-table > tbody > tr:not(:last-child) > td input,
+.debugger-query-parameters-table > tbody > tr:not(:last-child) > td .btn-group button {
+	border-bottom: none;
+}
+.debugger-query-parameters-table > tbody > tr > td > span.icon-question4.helptext-btn {
+	float: right;
+    top: 2px;
+    right: -5px;
+}
+.audit-table-section table > thead > tr > th {
+	cursor: pointer;
+}
+.audit-table-section table > thead > tr > th > span {
+	display: inline-block;
+}
+.audit-table-section .table-responsive,
+.debugger-content .table-responsive {
+	overflow-x: hidden;
+}
+.audit-table-section .table-responsive {
+	overflow: hidden;
+}
+.connect-environment-table > thead > tr > th {
+	text-align: left !important;
+	border: 1px solid #44546a !important;
+}
+.debugger-output-table > thead > tr > th > span {
+	cursor: pointer;
+}
+.calc-group-detail table > thead > tr > th > .icon-three-bars {
+	float: left;
+}
+.calc-group-overview table > tbody > tr > td,
+.calculation-driver-table > tbody > tr > td,
+.calculation-step-table > tbody > tr > td {
+	line-height: 1.2em;
+	padding: 5px 10px;
+	font-size: 11.5px;
+}
+.connect-environment-table > tbody > tr {
+	cursor: pointer;
+}
+.connect-environment-table > tbody > tr.selected {
+	background-color: #ddd;
+	transition: 0.3s;
+}
+.connect-environment-table > tbody > tr > td {
+	line-height: 2em;
+	padding: 5px 10px;
+	font-size: 11.5px;
+	border: 0;
+}
+.calculation-driver-table .advanced-options {
+	min-width: 70px;
+}
+.debugger-output-table {
+    position: relative;
+	width: 100% !important;
+	padding-top: 40px;
+}
+.calc-group-detail table > tbody > tr > td,
+.debugger-output-table > tbody > tr > td {
+	line-height: 1.2;
+	padding: 5px 10px;
+	text-align: center;
+	font-size: 11.5px;
+}
+.debugger-output-table > tbody > tr > td {
+	text-transform: uppercase;
+}
+.debugger-output-table > thead > tr > th,
+.debugger-output-table > tbody > tr > td {
+	height: 30px;
+	text-align: left !important;
+}
+.audit-table-section table > tbody > tr > td {
+	line-height: 1.2;
+	padding: 5px 10px;
+	font-size: 11.5px;
+}
+.audit-table-section table > tbody > tr > td {
+	text-align: left;
+}
+.calc-group-overview table > tbody > tr > td span.text-overflow,
+.calc-group-detail table > tbody > tr > td span.text-overflow,
+.calc-group-detail table > tbody > tr > td span.text-overflow-description,
+.calculation-section table > tbody > tr > td span.text-overflow-description,
+.audit-table-section table > tbody > tr > td span.text-overflow,
+.connect-environment-table > tbody > tr > td span.text-overflow-description {
+	display: block;
+    overflow: hidden;
+	word-break: break-all;
+	/* white-space: normal; */
+	text-align: left;
+	font-size: 11.5px;
+	white-space: pre-wrap;
+}
+.calc-group-overview table > tbody > tr > td span.text-overflow,
+.calc-group-detail table > tbody > tr > td span.text-overflow,
+.audit-table-section table > tbody > tr > td span.text-overflow {
+	height: 15px;
+}
+.calc-group-detail table > tbody > tr > td span.text-overflow-description,
+.calculation-section table > tbody > tr > td span.text-overflow-description {
+	height: 28px;
+	text-transform: none;
+}
+.connect-environment-table > tbody > tr > td span.text-overflow-description {
+	height: 24px;
+	text-transform: none;
+}
+.calc-group-detail .calculations-table > tbody > tr > td.drag-bar,
+.calculation-section .calculation-step-table > tbody > tr > td.drag-bar {
+    cursor: pointer;
+}
+.calc-group-detail .calculations-table,
+.calculation-section .calculation-step-table,
+.calculation-section .calculation-driver-table,
+.audit-table-section .audit-table {
+	width: 99.5%;
+}
+.calc-group-overview table > tbody > tr > td.dataTables_empty {
+	text-align: center;
+}
+.calc-group-overview table > tbody > tr > td > a.calc-group-title {
+	min-width: 150px;
+}
+.calc-group-overview table > tbody > tr > td > a.calc-group-title,
+.calc-group-detail table > tbody > tr > td > a.calculation-title,
+.calc-group-detail table > tbody > tr > td > a.variable-title,
+.calculation-driver-table > tbody > tr > td > a.driver-title,
+.calculation-step-table > tbody > tr > td > a.step-title {
+	float: left;
+	display: inline-block;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-last-updated {
+	min-width: 200px;
+}
+.calc-group-overview table > tbody > tr > td > span.label.label-success,
+.calc-group-detail table > tbody > tr > td > span.label.label-success {
+	min-width: 25px;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-actions {
+	min-width: 70px;
+}
+.calc-group-detail table > tbody > tr > td > .calculation-actions,
+.calc-group-detail table > tbody > tr > td > .variable-actions {
+    min-width: 50px;
+}
+.calc-group-overview table > thead > tr > th > .calc-group-cloud {
+	color: #FFF;
+}
+.calc-group-overview table > thead > tr > th > .calc-group-cloud > .icon-cloud-download {
+	font-size: 16px;
+}
+.calc-group-detail .icon-cloud-download {
+	font-size: 22px;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-actions a,
+.calc-group-detail table > tbody > tr > td > .calculation-actions a,
+.calc-group-detail table > tbody > tr > td > .variable-actions a {
+	padding-left: 3px;
+	padding-right: 3px;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-actions .icon-trash,
+.dt-rowReorder-moving .icon-trash,
+.calc-group-detail table > tbody > tr > td > .calculation-actions .icon-trash,
+.calc-group-detail table > tbody > tr > td > .variable-actions .icon-trash {
+	color: #e78874;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-actions .icon-copy3,
+.calc-group-detail table > tbody > tr > td > .calculation-actions .icon-copy3,
+.calc-group-detail table > tbody > tr.dt-rowReorder-moving .icon-copy3,
+.calc-group-detail table > tbody > tr > td > .variable-actions .icon-copy3 {
+	color: #e7bb4d;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-actions .icon-play3,
+.calc-group-detail table > tbody > tr.dt-rowReorder-moving .icon-play3,
+.calc-group-detail table > tbody > tr > td > .calculation-actions .icon-play3 {
+	color: #51971a;
+}
+.calc-group-overview table > tbody > tr > td > .calc-group-last-updated > span,
+.calc-group-detail table > tbody > tr > td > .calculation-last-updated > span {
+	color: #333;
+}
+.audit-table-section .top {
+	padding: 0 25px;
+}
+.audit-table-section .top .dataTables_info,
+.audit-table-section .top .dataTables_paginate {
+	margin-bottom: 10px;
+}
+.audit-table-section .dataTables_info {
+	position: absolute;
+	top: 2px;
+	left: 0;
+}
+.audit-table-section .dataTables_paginate {
+	position: absolute;
+	top: 2px;
+	right: 0;
+}
+.audit-table-section .dataTables_filter {
+	padding-left: 320px;
+}
+.audit-table-section table.dataTable thead .sorting::before, 
+.audit-table-section table.dataTable thead .sorting::after, 
+.audit-table-section table.dataTable thead .sorting_asc::before, 
+.audit-table-section table.dataTable thead .sorting_asc::after, 
+.audit-table-section table.dataTable thead .sorting_desc::before,
+.audit-table-section table.dataTable thead .sorting_desc::after {
+	display: none;
+}
+
+.debugger-content .dataTables_info, 
+.debugger-content .dataTables_paginate {
+	padding: 20px 10px;
+}
+
+.debugger-content .dataTables_filter,
+.debugger-content .dataTables_length {
+	/* margin: 15px 0; */
+	margin: 0 5px;
+}
+
+.debugger-content .dataTables_filter label > input {
+	padding-left: 30px;
+}
+
+.debugger-content .dataTables_filter label::after {
+	left: 12px;
+}
+
+.debugger-content .dataTable thead .sorting_desc:after,
+.debugger-content .dataTable thead .sorting_asc:after {
+	display: none;
+}
+
+/*=== DATATABLE OVERRIDE ===*/
+.calc-group-overview .dataTables_filter,
+.calc-group-detail .dataTables_filter {
+    display: none;
+}
+.audit-table-section .dataTables_filter input {
+	padding-left: 32px;
+}
+.audit-table-section .dataTables_filter>label:after {
+	left: 15px;
+}
+
+.audit-table-section .dataTable thead .sorting, 
+.audit-table-section .dataTable thead .sorting_asc, 
+.audit-table-section .dataTable thead .sorting_asc_disabled, 
+.audit-table-section .dataTable thead .sorting_desc, 
+.audit-table-section .dataTable thead .sorting_desc_disabled {
+	padding-right: 10px;
+}
+
+
+.dataTables_paginate .paginate_button.current, 
+.dataTables_paginate .paginate_button.current:focus, 
+.dataTables_paginate .paginate_button.current:hover {
+	background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+/**
+*=========================================================
+* FANCY TREE
+*=========================================================
+*/
+.fancytree-box {
+	width: 380px;
+	float: left;
+	font-size: 11.5px;
+	margin-right: 20px;
+}
+.fancytree-content {
+	overflow-y: auto;
+	height: calc(100vh - 180px);
+	position: relative;
+}
+.fancytree-content .fancytree-form {
+	position: absolute;
+	display: block;
+	padding: 15px 15px 10px;
+	width: 100%;
+	z-index: 1;
+	border-bottom: 1px solid #ddd;
+}
+.fancytree-content .fancytree-structure ul.fancytree-container {
+	padding: 15px;
+}
+.fancytree-content .fancytree-structure ul.fancytree-container > li:first-child {
+	margin-top: 40px;
+}
+.fancytree-content .fancytree-control-icons {
+	color: #333;
+	cursor: pointer;
+	z-index: 100;
+	top: 3px;
+}
+.fancytree-content .fancytree-control-icons.tree-timestamp {
+	padding-left: 5px;
+}
+.fancytree-content .fancytree-control-icons.tree-timemachine {
+	font-size: 20px;
+	top: 0;
+	color: #FF7043;
+}
+.fancytree-content .fancytree-switch-view-icons {
+	position: relative;
+    right: 20px;
+}
+.fancytree-content .fancytree-switch-view-icons .fancytree-control-icons {
+    padding-right: 10px;
+    top: 0px;
+	color: #eee;
+}
+.fancytree-content .fancytree-switch-view-icons .fancytree-control-icons:hover,
+.fancytree-content .fancytree-control-icons.active {
+	color: #4d8ce6;
+}
+.fancytree-content .radio {
+	margin: 0;
+}
+.fancytree-content .radio-inline > span {
+    margin-top: 3px;
+    display: inline-block;
+}
+.fancytree-content .fancytree-section-title {
+	font-weight: 700;
+    font-size: 13px;
+}
+.fancytree-content .fancytree-title {
+	margin-top: 1px;
+}
+.fancytree-content .fancytree-childcounter {
+	font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif;
+	color: #FFF;
+	padding: 2px;
+    line-height: 1.5384616;
+    border: 1px solid transparent;
+    font-size: 10px;
+	border-radius: 2px;
+	background-color: #4CAF50;
+	width: 25px;
+}
+.fancytree-content .fancytree-custom-icon {
+	position: static;
+	color: #207dc7;
+}
+.fancytree-content .fancytree-icon:after,
+.fancytree-content .icon-calculator3 > span {
+	display: none;
+}
+
+/* FANCYTREE CALC STRUCTURE */
+ul.ft-calc-context-menu {
+	width: 165px !important;
+}
+ul.ft-calc-context-menu > li:first-child {
+	width: 140px;
+}
+.fancytree-content .fancytree-calc-structure {
+	margin-top: 56px;
+}
+.fancytree-content .fancytree-calc-structure .form-group > * {
+    display: inline-block;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-group-label,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section .fancytree-calc-group-title {
+	font-weight: 700;
+	font-size: 13px;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel {
+	clear: both;
+}
+.fancytree-content .fancytree-calc-structure .form-group {
+	margin-bottom: 10px;
+}
+.fancytree-content .fancytree-calc-structure .form-group label {
+    position: relative;
+	top: 3px;
+	padding-left: 15px;
+}
+.fancytree-content .fancytree-calc-structure .form-group .fancytree-calc-group-selection-field {
+	width: 66%;
+    margin-left: 15px;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section {
+	/* background: #D9E3F3; */
+	padding: 15px;
+	border-top: 1px solid #ddd;
+	cursor: pointer;
+	display: block;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section .icon-tree6 {
+	font-size: 22px;
+    color: #717B8A;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section .fancytree-calc-group-title {
+	padding-left: 15px;
+    line-height: 20px;
+    margin-top: 2px;
+	display: inline-block;
+	cursor: pointer;
+	color: #404040;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section .fancytree-calc-group-title:hover,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .sidebar-calc-title:hover {
+    color: #544f4f;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calc-panel-section .fancytree-calc-group-options {
+	float: right;
+    line-height: 25px;
+    left: 3px;
+	position: relative;
+	cursor: pointer;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody {
+	cursor: pointer;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title.active,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title.active:hover,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr.active-row,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr.active-row:hover {
+    background-color: #00BCD4;
+	cursor: pointer;
+	color: #FFF;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title:hover,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr:hover {
+	/* background-color: #f8f8f8; */
+	background-color: rgba(0,0,0,.03);
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr.active-row .checker span {
+	color: #FFF;
+	border: 2px solid #FFF;
+} 
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title.active .fancytree-calc-group-title,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title.active .icon-tree6,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .sidebar-calc-group-title.active .icon-more2,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr.active-row .sidebar-calc-title {
+	color: #FFF;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr.active-row .text-muted {
+	color: #FFF;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .sidebar-calc-title {
+	font-weight: 700;
+	font-size: 11.5px;
+	cursor: pointer;
+	color: #404040;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr > td {
+	padding: 10px;
+}
+.fancytree-content .fancytree-control-icons.icon-more2 {
+	color: #999999;
+}
+.fancytree-content .fancytree-control-icons.icon-more2:hover,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .icon-more2:hover {
+	color: #b1b1b1;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr > td:not(:nth-child(3)) {
+	width: 35px;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table > tbody > tr > td:last-child {
+	/* width: 30px; */
+    padding: 0;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .checker span {
+    color: #21a6e6;
+    border: 2px solid #21a6e6;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .checker,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .checker input,
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .checker span {
+	width: 16px;
+	height: 16px;
+	top: -0.5px;
+}
+.fancytree-content .fancytree-calc-structure .fancytree-calc-panel .fancytree-calculation-table .checker span::after {
+	font-size: 14px;
+}
+.fancytree-calc-structure > span.text-red {
+	position: relative;
+    left: 15px;
+    top: 4px;
+}
+.fancytree-structure > span.text-red {
+    position: relative;
+    display: inline-block;
+	top: 60px;
+    left: 15px;
+}
+.calculations-table .icon-three-bars,
+.fancytree-calculation-table .icon-three-bars {
+	cursor: grab;
+}
+.calculations-table .icon-three-bars:active,
+.fancytree-calculation-table .icon-three-bars:active {
+	cursor: grabbing;
+}
+.timemachine-tooltip {
+	padding: 10px 20px;
+    background: #000;
+    max-width: 200px;
+    border-radius: 10px;
+    color: #FFF;
+    opacity: .8;
+	position: absolute;
+	top: 30px;
+    left: 250px;
+    z-index: 100;
+}
+.timemachine-tooltip::before {
+    position: absolute;
+    content: "";
+    border-left: 10px solid transparent;
+    border-top: 10px solid #000;
+    border-right: 10px solid transparent;
+    bottom: -10px;
+    left: 110px;
+}
+.fancytree-sidebar-tooltip {
+	padding: 10px 20px;
+    background: #FFF;
+    max-width: 250px;
+    border-radius: 5px;
+    /* color: #FFF; */
+    /* opacity: .8; */
+    position: absolute;
+	z-index: 100;
+	border: 1px solid #ddd;
+}
+/* .fancytree-sidebar-tooltip::before {
+	position: absolute;
+    content: "";
+    border-bottom: 5px solid transparent;
+    border-right: 8px solid #ddd;
+    border-top: 5px solid transparent;
+    top: 40%;
+    left: -8px;
+} */
+.timemachine-modal {
+	width: 280px;
+    height: auto;
+    position: absolute;
+    top: 69px;
+    left: 400px;
+    background: #FFF;
+    z-index: 100;
+    border: 1px solid #ddd;
+}
+.timemachine-modal .switchery {
+	left: 10px;
+    top: -2px;
+}
+.timemachine-modal .text-red {
+	margin-top: 5px;
+    display: inline-block;
+}
+.timemachine-modal .timemachine-body {
+	background: #f2f2f2;
+}
+/* .timemachine-modal .timemachine-body::after {
+    position: absolute;
+    content: "";
+    border-right: 8px solid #ddd;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    left: -8px;
+    top: 13%;
+    transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+} */
+.timemachine-modal .timemachine-body {
+	padding: 15px;
+	position: relative;
+}
+.timemachine-modal .timemachine-body {
+    border-top: 1px solid #ddd;
+}
+.timemachine-modal .timemachine-body p {
+	text-transform: uppercase;
+	font-weight: bold;
+	display: inline-block;
+}
+.timemachine-modal .timemachine-body form {
+	position: relative;
+	top: 10px;
+}
+.timemachine-modal .timemachine-body form > span {
+	margin-bottom: 5px;
+	display: inline-block;
+}
+.timemachine-modal .timemachine-body form .btn-group {
+	width: 100%;
+}
+.timemachine-modal .timemachine-body form button {
+	padding: 2px 15px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.timemachine-modal #timemachine-date-group,
+.timemachine-modal #timemachine-time-group {
+	cursor: pointer;
+}
+/**
+*=========================================================
+* CALC GROUP OVERVIEW
+*=========================================================
+*/
+/** 28-11 
+#drwn_tab_content.tab-content .tab-pane{
+	overflow: auto;
+}
+#cg_overview_pg{
+	width: 1032px;
+}
+/** 28-11 **/
+.darce-content-box .calculation-title {
+	font-weight: 500;
+	text-decoration: underline;
+}
+#drwn_tab_content.tab-content .tab-pane:before,
+#drwn_tab_content.tab-content .tab-pane:after{
+	content:"";
+	display: table;
+	clear: both;
+}
+#content{
+	overflow-x: auto;
+}
+.calc-group-builder-section {
+	min-width: 1020px;
+}
+.calc-group-box {
+	/* min-width: 660px; */
+	font-size: 11.5px;
+	/* padding-right: 5px; */
+}
+.calc-group-overview {
+	overflow-y: auto;
+	padding-top: 25px;
+	height: calc(100vh - 180px);
+	background: #FFF;
+}
+.calc-group-overview .calc-group-overview-save {
+	margin-bottom: 10px;
+	top: 5px;
+}
+.calc-group-overview .calc-group-overview-add {
+	padding: 6px 30px;
+}
+.calc-group-overview .calc-group-overview-add .icon-database-add {
+	font-size: 24px;
+}
+
+/**
+*=========================================================
+* CALC GROUP DETAIL
+*=========================================================
+*/
+
+/* New */
+.calc-group-detail .icon-tree6
+.calculation-section .icon-calculator3 {
+	font-size: 24px;
+    color: #717B8A;
+}
+.calc-group-detail .calc-group-header,
+.calculation-section .calc-header {
+	color: #9999B3;
+}
+.calc-group-detail .calc-group-heading,
+.calculation-section .calc-heading {
+	font-weight: bold;
+    padding: 10px;
+    font-size: 13px;
+    position: relative;
+    top: 2px;
+}
+.calc-group-detail .calc-group-control-btn {
+	margin-bottom: 10px;
+}
+.calc-group-detail .calc-group-control-btn button {
+	padding: 2px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11.5px;
+}
+.calc-group-detail.panel-flat>.stepy-header {
+	border-top: none;
+	width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+.calc-group-detail .stepy-header li span {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.calc-group-detail .calc-group-stepy-wizard fieldset {
+/* #calc-group-detail-form-step-0,
+#calc-group-detail-form-step-1 { */
+	margin-bottom: 20px;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-header {
+	border: 1px solid #ddd;
+	padding: 20px;
+	margin-bottom: 10px;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-datasource,
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-variable,
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-calculation {
+	padding: 0;
+	margin-bottom: 10px;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-variable,
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-calculation {
+	border: 1px solid #ddd;
+	height: calc(100vh - 430px);
+    overflow-y: auto;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-header .form-group {
+	margin-bottom: 20px;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-header .form-group:last-child {
+	margin-bottom: 0;
+}
+.calc-group-detail .calc-group-stepy-wizard .calc-group-stepy-header .advanced-options {
+	position: relative;
+    top: 3px;
+    width: 250px;
+    min-height: auto;
+}
+.calc-group-detail .calc-group-stepy-wizard .stepy-navigator .btn {
+	padding: 7px 12px;
+}
+.calc-group-detail .calc-group-stepy-wizard .stepy-step {
+	padding: 0;
+}
+.calc-group-detail .calc-group-stepy-wizard .button-next:active,
+.calc-group-detail .calc-group-stepy-wizard .button-next:focus,
+.calc-group-detail .calc-group-stepy-wizard .button-next:visited,
+.calc-group-detail .calc-group-stepy-wizard .button-next {
+	background-color: #00bcd4;
+	border-color: #00bcd4;
+}
+/* End */
+
+.btn-grey{
+	background-color:#ddd;
+}
+.calc-group-detail {
+	padding: 20px 20px 0 20px;
+	overflow-y: auto;
+	height: calc(100vh - 180px);
+}
+.calc-group-detail .calculations-tab .dropdown ul.dropdown-menu {
+	top: 90%;
+	left: 2%;
+}
+.calc-group-detail .calculations-tab .evo-group-add-link,
+.calc-group-detail .variables-tab .evo-group-add-link,
+.calculation-section .evo-group-add-link {
+	display: inline-block;
+	text-transform: uppercase;
+	font-weight: 600;
+	margin-bottom: 10px;	
+	padding: 20px 0px 0px 20px;
+}
+.calc-group-detail .form-horizontal textarea,
+.calculation-section .form-horizontal textarea,
+.debugger-content textarea,
+.modal textarea {
+	resize: none;
+}
+.calc-group-detail .form-horizontal .form-group,
+.modal .form-group {
+	margin-bottom: 10px;
+}
+.calc-group-detail .form-horizontal input[type=text],
+.calc-group-detail .form-horizontal button,
+.calc-group-detail .form-horizontal a.btn,
+.calculation-section .form-horizontal input[type=text],
+.calculation-section button,
+#step-form button,
+#driver-form button,
+.calculation-section a.btn,
+.rename-calc-group-modal input[type=text],
+.rename-calc-group-modal button,
+.rename-calc-group-modal a.btn,
+.modal .btn.btn-primary,
+.modal .btn.btn-grey,
+.calc-group-overview button,
+.modal .btn.btn-default {
+	padding: 2px 15px;
+	font-weight: 600;
+	text-transform: uppercase;
+	font-size: 11.5px;
+}
+.calc-group-detail .form-horizontal input[type=text],
+.calculation-section .form-horizontal input[type=text],
+.rename-calc-group-modal input[type=text] {
+	font-weight: normal;
+	text-transform: initial;
+}
+.calc-group-detail .nav-tabbable {
+	padding-bottom: 20px;
+}
+.calc-group-detail .form-horizontal label,
+.calculation-section .form-horizontal label,
+.calc-group-detail .nav-tabbable ul > li,
+.modal label {
+	text-transform: uppercase;
+	font-size: 11.5px;
+	font-weight: 600;
+	color: #333;
+}
+.modal .radio label {
+	text-transform: none;
+    color: #555;
+    font-weight: normal;
+}
+.modal .radio-styled-box .radio {
+	padding-top: 0;
+}
+.modal .radio-inline .choice {
+	top: 0;
+}
+.modal .radio-styled-box > label {
+	display: block;
+	cursor: pointer;
+}
+.modal .radio-styled-box span {
+    font-weight: normal;
+	text-transform: none;
+	line-height: 20px;
+    margin-top: -2px;
+}
+.calc-group-detail .calc-group-back,
+.calculation-section .calculation-back {
+	border: none;
+	background: none;
+}
+.calc-group-box .icon-loop3 {
+	margin-left:10px;
+	color: #44546a; 
+}
+.calc-group-detail .calc-group-back:hover,
+.calc-group-detail .calc-group-back:focus,
+.calc-group-detail .calc-group-back:active {
+	background: none;
+}
+.icon-cloud-download, 
+.icon-pencil7 {
+	cursor: pointer;
+}
+.calc-group-detail form .input-group input[type=text] {
+	/*border-right: none;*/
+}
+.calc-group-detail .advanced-options {
+	position: relative;
+    top: 10px;
+	bottom: 20px;
+	width: 220px;
+	min-height: 80px;
+	margin: 0 auto;
+}
+.calc-group-detail .advanced-options button,
+.calculation-section .advanced-options button {
+	border-radius: 20px;
+    width: 110px;
+    margin: 0 auto;
+}
+.calc-group-detail .datasources-tab .advanced-options {
+	position: relative;
+	top: 20px;
+	min-height: 80px;
+    width: 180px;
+}
+.calc-group-detail .datasources-tab .advanced-options button {
+	width: 70px;
+}
+.calc-group-detail .datasources-tab .inner-tabbable,
+.calc-group-detail .calculations-tab,
+.calc-group-detail .variables-tab {
+	background-color: #ffffff;
+}
+.calc-group-detail .datasources-tab .inner-tabbable {
+	padding: 20px;
+}
+.calc-group-detail .datasources-tab .icon-cancel-circle2 {
+	position: relative;
+    left: 5px;
+    font-size: 14px;
+    top: -1px;
+}
+.calc-group-detail .datasources-tab.user-ro .icon-cancel-circle2{
+	display: none;
+}
+.calc-group-detail .datasources-tab .nav-tabs-list {
+	position: relative;
+    margin: 0 auto;
+	overflow: hidden;
+	white-space: nowrap;
+	min-height: 39px;
+}
+.calc-group-detail .datasources-tab .nav-tabs-list .nav-tabs > li.active {
+	border-bottom: 1px solid #FFF;
+}
+.calc-group-detail .datasources-tab .nav-tabs-list ul {
+	position: relative;
+	/* border-bottom: none; */
+}
+.calc-group-detail .datasources-tab .scroller.scroller-left,
+.calc-group-detail .datasources-tab .scroller.scroller-right {
+    float: right;
+}
+.calc-group-detail .datasources-tab .inner-tabbable .tab-content {
+	border: 1px solid #ddd;
+    margin-top: -3px;
+}
+.calc-group-detail .datasources-tab .scroller {
+    text-align: center;
+    cursor: pointer;
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 20px;
+	background-color: #fff;
+	color: #2196f3;
+    border-bottom: 1px solid #ddd;
+}
+.calc-group-detail .datasources-tab .tab-pane .form-group:last-child {
+	margin-bottom: 0;
+}
+.calc-group-detail .calculations-tab.active,
+.calc-group-detail .variables-tab.active {
+	overflow-x: auto;
+	position: relative;
+	/* min-height: 150px; */
+	min-height: calc(100vh - 360px);
+}
+/* Warning message */
+.ui-dialog-title, .ui-dialog-content{
+	font-size:14.5px;
+}
+/* End Warning message */
+/*=== MODAL ===*/
+.modal label.label-block {
+	float: left;
+	width: 100%;
+}
+.modal button {
+	text-transform: uppercase;
+	border-radius: 3px !important;
+}
+.modal .advanced-options button {
+	border-radius: 20px !important;
+}
+.modal .CodeMirror:not(:last-child) {
+	margin-bottom: 20px;
+}
+.modal .modal-body {
+	text-align: left;
+}
+.modal-dialog .modal-header .modal-title{
+	text-transform: uppercase;
+}
+#step-modal span.codemirror-enlarge-view.icon-enlarge {
+	position: absolute;
+    right: 15px;
+    z-index: 100;
+    bottom: 25px;
+    top: auto;
+    cursor: pointer;
+}
+#step-modal .destination-checkbox-section > label,
+#run-calc-group-modal .calc-group-run-checkbox-section > label {
+    padding-right: 20px;
+}
+#step-modal .destination-checkbox-section {
+    display: inline-block;
+	width: 100%;
+	position: relative;
+    top: -15px;
+}
+#step-modal .destination-checkbox-section > label > span,
+#run-calc-group-modal .calc-group-run-checkbox-section > label > span {
+    left: 5px;
+    position: relative;
+    top: 1px;
+	color: #555;
+	text-transform: initial;
+}
+#step-modal .modal-body .step-switch-section {
+	top: 5px;
+	position: relative;
+}
+.modal .codemirror-enlarge-body .CodeMirror {
+	height: calc(100vh - 200px);
+}
+.modal .modal-header button.close {
+	padding: 0px !important;
+	font-weight: normal !important;
+	font-size: 19.5px !important;
+	width: auto;
+	z-index: 100;
+}
+.modal .modal-footer button {
+	width: auto !important;
+	font-weight: bold;
+    font-size: 11.5px;
+}
+.modal div.btn-group {
+	width: 100%;
+}
+
+/**
+*=========================================================
+* DEBUGGER
+*=========================================================
+*/
+.debugger-box {
+	min-width: 1020px;
+}
+.debugger-box .panel.panel-flat {
+	border: none;
+	background: none;
+}
+/* .debugger-content {
+	overflow: none;
+	height: calc(100vh - 180px);
+} */
+.debugger-content button {
+	font-size: 11.5px;
+}
+.debugger-content .table-responsive {
+	overflow-y: hidden;
+}
+.debugger-content .dataTables_wrapper {
+	clear: none;
+}
+.debugger-content .debugger-checkbox-section {
+	display: inline-block;
+	position: relative;
+	left: 35px;
+}
+.debugger-content .debugger-checkbox-section > label {
+	cursor: pointer;
+}
+.debugger-content .debugger-checkbox-section > label > span {
+    left: 5px;
+    position: relative;
+    top: 1px;
+	color: #555;
+	text-transform: initial;
+}
+.debugger-content .debugger-innertab-section .animated-refresh-btn {
+	position: relative;
+	top: 10px;
+	height: 20px;
+    right: 5px;
+    cursor: pointer;
+    z-index: 100;
+    color: #37474f;
+}
+.debugger-content .debugger-innertab-section .animated-refresh-btn > .icon-loop3 {
+	font-weight: 600;
+}
+.debugger-content .tab-content-bordered > .tab-content {
+	background: #FFF;
+}
+.debugger-content .tab-content-bordered > .tab-content > .tab-pane.active > .tab-content {
+	height: calc(100vh - 290px);
+    background: #FFF;
+	overflow-y: auto;
+	border: 1px solid #ddd;
+}
+.debugger-content .badge-thead-blue {
+	background-color: #44546a;
+	border-color: #44546a;
+}
+.debugger-content .tab-pane .content-group {
+	margin-bottom: 0 !important;
+}
+.debugger-content .script-template-btn button {
+	/* background: #deebf7; */
+	background: #ddd;
+	font-weight: bold;
+	width: 105px;
+	line-height: 25px;
+	margin-left: 10px;
+	padding: 5px;	
+}
+.debugger-content .script-template-btn button > span {
+	float: left;
+	width: 50%;
+}
+.debugger-content .script-template-btn button i {
+	/* background: #FFF; */
+    padding: 3px;
+    float: left;
+    font-size: 20px;
+}
+.debugger-content .run-script-btn {
+	background-color: #00a7e2;
+	border-color: #00a7e2;
+	margin: 15px 0;
+}
+.debugger-content .script-textarea {
+	height: calc(100vh - 405px);
+}
+.debugger-content .fl-scrolls {
+	bottom: 65px;
+}
+.debugger-content .nav.nav-tabs li > a {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.debugger-content label {
+	font-weight: 600;
+}
+.debugger-content .debugger-output-tab {
+	border: none;
+	position: relative;
+	top: 1px;
+}
+.debugger-content .debugger-output-tab > li > ul.dropdown-menu {
+	min-width: 320px;
+    max-height: 250px;
+    overflow-y: auto;
+    left: -210px;
+}
+.debugger-content .debugger-output-tab > li > ul.dropdown-menu .debugger-animated-icon {
+	display: block;
+    float: right;
+    top: -2px;
+    right: -5px;
+}
+.debugger-content .debugger-output-tab > li.dropdown > a {
+	cursor: pointer;
+}
+.debugger-content .debugger-output-tab > li.dropdown > a::after {
+	content: '\e9c5';
+    font-family: icomoon;
+    left: 2px;
+	position: relative;
+	background: none !important;
+}
+.debugger-content .dt-buttons {
+    position: relative;
+    float: none;
+    display: inline-block;
+	/* margin: 15px 10px; */
+	margin: 0 5px;
+}
+.debugger-content .dt-buttons > a.dt-button {
+    background: #2196f3;
+	color: #FFF;
+    border-radius: 5px;
+}
+.debugger-content .dt-buttons > a.dt-button.buttons-csv {
+    margin-left: 10px;
+}
+.debugger-content .dt-buttons > a.dt-button.buttons-colvis::after {
+    content: "\e9c1";
+    font-family: Icomoon;
+    padding-left: 5px;
+    top: 2px;
+    position: relative;
+}
+.debugger-content .dataTables_paginate {
+	position: absolute;
+    top: 20px;
+    right: 0;
+}
+.debugger-content .dataTables_info {
+	position: absolute;
+    top: 30px;
+}
+.debugger-content .debugger-loader {
+	text-align: center;
+	margin-top: 15%;
+}
+.debugger-content .debugger-loader > img {
+	width: 50px;
+}
+.dt-button-collection {
+	max-height: 250px;
+	overflow: auto;
+}
+
+/* Additional Filter Modal */
+.additional-filter-modal .modal-body p.info {
+	color: #cb2c2c;
+	font-weight: bold;
+    top: 5px;
+    position: relative;
+}
+.additional-filter-modal .table-filter-column-pane {
+	height: calc(100vh - 300px);
+	position: relative;
+	overflow-y: auto;
+	padding: 20px;
+	border: 1px solid #ddd;
+}
+.additional-filter-modal .table-filter-column-pane .form-group:last-child {
+	margin-bottom: 0;
+}
+.additional-filter-modal .btn-submit-ok:focus {
+	background: none;
+    color: #00bcd4;
+}
+.additional-filter-modal .modal-body {
+	padding: 0 20px;
+}
+.additional-filter-modal .modal-footer {
+	padding: 10px 20px;
+}
+.additional-filter-modal .select2-selection--multiple .select2-search--inline .select2-search__field,
+.copy-config-main-section .select2-selection--multiple .select2-search--inline .select2-search__field {
+	width: 100% !important;
+}
+
+/**
+*=========================================================
+* Code Mirror
+*=========================================================
+*/
+.cm-models {
+	color: #8497B0;
+	font-weight: bold;
+}
+.cm-dimensions {
+	color: #106EBE;
+	font-weight: bold;
+}
+.cm-dimension-properties {
+	color: #106EBE;
+	font-style: italic;
+}
+.cm-percentage,
+/* .cm-single-percentage, */
+.CodeMirror-matchingbracket {
+	color: #7D48F2 !important;
+	font-weight: bold;
+}
+.cm-quotes {
+	color: #22A86D;
+	font-weight: bold;
+}
+.cm-valid-syntax {
+	color: #8497B0;
+}
+.cm-invalid-syntax {
+	color: #333;
+	/* text-decoration: underline wavy red; */
+	background-image: url(../images/wavy-underline.png);
+    background-position: 0 1.30em;
+    background-size: 7px 3px;
+    background-repeat: repeat-x;
+}
+.CodeMirror-nonmatchingbracket {
+	background-color: yellow;
+}
+.page-content .bk-yellow,
+.CodeMirror.cm-yellow {
+    background: #FFF2CC !important;
+}
+.CodeMirror-code span {
+    padding-bottom: 3px;
+}
+
+
+
+.cm-keyword,
+.cm-string ,
+.cm-percentage,
+.cm-dimension,
+.CodeMirror-matchingbracket {
+	font-weight: bold !important;
+}
+.cm-keyword {
+	color: blue !important;
+}
+.cm-dimension {
+	color: orange !important;
+}
+.CodeMirror { height: auto; border: 1px solid #ddd; }
+.CodeMirror-lines {
+    min-height: 150px !important;
+}
+.CodeMirror-code {
+	word-break: break-all;
+	white-space: normal;
+    /* font-family: "Roboto", Helvetica Neue, Helvetica, Arial, sans-serif; */
+	font-size: 11.5px;
+	letter-spacing: .3px;
+}
+
+/* floating-scroll stuff */
+.fl-scrolls {
+    bottom: 30px;
+    overflow: auto;
+    position: fixed;
+}
+.fl-scrolls div {
+    height:1px;
+    overflow:hidden;
+}
+.fl-scrolls div:before {
+    content:""; /* fixes #6 */
+}
+.fl-scrolls-hidden {
+    bottom:9999px;
+}
+/**
+*=========================================================
+* Audit
+*=========================================================
+*/
+.audit-box {
+	min-width: 1020px;
+}
+.audit-content {
+	padding: 15px;
+	/* overflow-y: auto; */
+	height: calc(100vh - 180px);
+	position: relative;
+}
+.audit-content .control-btn {
+	margin-bottom: 10px;
+}
+.audit-content .filter-panel {
+	position: relative;
+	top: -15px;
+	width: 45px;
+    float: right;
+}
+.audit-content select[multiple] {
+	height: 34px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+.audit-content .fl-scrolls {
+	bottom: 50px;
+}
+.audit-content .export-audit {
+	display: inline-block;
+}
+.audit-content .buttons-csv,
+.audit-content .buttons-print,
+.audit-content .dt-button {
+	display: none;
+}
+.audit-content .audit-table-section {
+	position: relative;
+	top: 10px;
+	border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.audit-content .search-form .search-info {
+    position: relative;
+    top: -1px;
+	margin: 0;
+	display: none;
+}
+.audit-content table .icon-filter3,
+.debugger-content table .icon-filter3 {
+	font-size: 12px;
+    top: -1px;
+    padding-left: 5px;
+}
+.audit-content table .dropdown,
+.debugger-content table .dropdown {
+	width: 20px;
+    display: inline-block;
+    text-align: right;
+}
+.audit-content table .dropdown-menu,
+.debugger-content table .dropdown-menu {
+	left: -30px;
+	min-width: 220px;
+}
+.audit-content table a.dropdown-toggle,
+.debugger-content table a.dropdown-toggle {
+	color: #FFF;
+}
+.audit-content .table-responsive {
+	min-height: 500px;
+	width: 100%;
+}
+.debugger-content .table-responsive {
+	min-height: 800px;
+	width: 100%;
+}
+.audit-content .search-form .search-info span:not(.timezone-field) {
+	margin-right: 7px;
+	font-weight: bold;
+	color: #2196f3;
+    cursor: pointer;
+}
+.audit-content .search-form .search-info span:not(.timezone-field):hover {
+    text-decoration: underline;
+}
+.audit-content .control-btn .btn.btn-green {
+	background-color: #00a7e2;
+    border-color: #00a7e2;
+	color: #FFF;
+	min-width: 115px;
+	margin-bottom: 5px;
+}
+.audit-content .form-horizontal label {
+	text-align: left;
+}
+.audit-content .form-horizontal .radio-inline {
+	margin-bottom: 10px;
+}
+.audit-content .form-horizontal .radio-inline .choice {
+	top: 0;
+}
+.audit-content .form-horizontal .radio-inline .date-fields-section {
+	position: relative;
+    top: -8px;
+}
+.audit-content .form-horizontal .radio-inline .date-fields-section .padding-sm {
+	padding: 8px 10px;
+}
+.audit-content .form-horizontal .form-group {
+	margin-bottom: 5px;
+}
+.audit-content .form-horizontal .form-control {
+	border-radius: 0;
+}
+.audit-content .audit-table-print {
+	display: none;
+}
+.audit-content i {
+	font-size: 11.5px;
+}
+#audit-row-detail-modal .well.well-sm {
+	min-height: 100px;
+}
+
+#audit-row-detail-modal .well.well-sm span {
+	/* padding: 5px; */
+}
+
+#audit-row-detail-modal .well.well-sm span > del {
+	font-weight: bold;
+	display: none;
+}
+
+#audit-row-detail-modal .well.well-sm span > ins {
+	background: #FFF2CC;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/**
+*=========================================================
+* CALCULATION ADD NEW SECTION
+*=========================================================
+*/
+.calculation-section {
+	overflow-y: auto;
+	padding: 20px;
+	/* min-width: 648px; */
+	height: calc(100vh - 180px);
+	background: #FFF;
+	border: 1px solid #ddd;
+}
+.calculation-section .CodeMirror-sizer {
+	min-height: calc(100vh - 630px) !important;
+}
+#step-form .CodeMirror-sizer,
+#driver-form .CodeMirror-sizer {
+	min-height: 80px !important;
+}
+.calculation-section .CodeMirror-lines {
+	min-height: 90px !important;
+    overflow-y: auto;
+    max-height: calc(100vh - 630px) !important;
+}
+#step-form .CodeMirror-lines,
+#driver-form .CodeMirror-lines {
+	min-height: 80px !important;
+    overflow-y: auto;
+    max-height: 80px !important;
+}
+.calculation-section .form-group,
+#step-form .form-group,
+#driver-form .form-group {
+	margin-bottom: 10px;
+}
+.calculation-section .calculation-header-form .row:last-child .form-group {
+	margin-bottom: 0;
+}
+#driver-form .input-group,
+#step-form .input-group,
+#calc-id-input-field .input-group,
+.cg-id-field .input-group,
+#variable-modal .input-group {
+	width: 300px;
+}
+.calculation-section .stepy-header li span {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.calculation-section .stepy-header li.stepy-active span {
+    color: #555;
+}
+.calculation-section .stepy-wizard .button-back,
+.calculation-section .stepy-wizard .button-next {
+	padding: 7px 12px;
+}
+.calculation-section .stepy-wizard .stepy-finish {
+	display: none;
+}
+.calculation-section .stepy-wizard .calculation-header-form,
+.calculation-section .stepy-wizard .calculation-driver-table-responsive,
+.calculation-section .stepy-wizard .calculation-step-table-responsive {
+	padding: 15px;
+    margin-bottom: 10px;
+	border: 1px solid #ddd;
+}
+.calculation-section .stepy-wizard .calculation-driver-table-responsive,
+.calculation-section .stepy-wizard .calculation-step-table-responsive {
+	height: calc(100vh - 400px);
+}
+.calculation-section .stepy-wizard .calculation-driver-table-responsive,
+.calculation-section .stepy-wizard .calculation-step-table-responsive,
+.calculation-section .stepy-wizard .stepy-step {
+	padding: 0;
+}
+.calculation-section .advanced-options button,
+#driver-form .advanced-options button,
+#step-form .advanced-options button {
+	width: 60px;
+    padding: 2px;
+}
+.calculation-section .advanced-options button {
+	display: inline-block;
+}
+.calculation-section .advanced-options .adv-btn-section .text-red {
+	position: absolute;
+	top: 0;
+	font-weight: bold;
+}
+.calculation-section .advanced-options .adv-btn-section,
+#step-form .advanced-options .adv-btn-section,
+#driver-form .advanced-options .adv-btn-section {
+	min-width: 70px;
+	margin-top: 5px;
+	display: inline-block;
+}
+#driver-modal .input-group .text-red,
+#step-modal .input-group .text-red {
+	display: inline-block;
+	clear: both;
+}
+#driver-modal .lookup-override-helptext {
+	float: right;
+	top: 3px;
+}
+#helptext-content pre {
+	white-space: pre-wrap;
+	word-wrap: break-word;
+	overflow: visible;
+}
+.calculation-section #driver-modal .adv-btn-section input[type=checkbox] {
+	display: none;
+}
+#driver-modal .inline-text-red {
+    position: absolute;
+    margin-left: 5px;
+}
+.calculation-section .button-next:active,
+.calculation-section .button-next:focus,
+.calculation-section .button-next:visited,
+.calculation-section .button-next {
+	background-color: #00bcd4;
+	border-color: #00bcd4;
+}
+.calculation-section .calculation-step-table > tbody > tr > td > span.text-overflow-description {
+	/* cursor: zoom-in; */
+}
+.calc-group-detail .calculations-table-responsive,
+.calc-group-detail .variables-table-responsive {
+	/* min-height: calc(100vh - 450px); */
+	padding-bottom: 50px !important;
+}
+.calculation-section .calculation-driver-table-responsive,
+.calculation-section .calculation-step-table-responsive {
+	overflow: auto;
+	padding-bottom: 50px !important;
+}
+.audit-table-section .audit-table-responsive {
+	padding-bottom: 50px !important;
+}
+.audit-table-section .audit-table > thead > tr > th:nth-child(8) .search-filter-select-column,
+.audit-table-section .audit-table > thead > tr > th:nth-child(9) .search-filter-select-column,
+.audit-table-section .audit-table > thead > tr > th:nth-child(10) .search-filter-select-column {
+	display: none;
+}
+.audit-table-section .audit-table > thead > tr > th:nth-child(8) .dropdown-menu,
+.audit-table-section .audit-table > thead > tr > th:nth-child(9) .dropdown-menu,
+.audit-table-section .audit-table > thead > tr > th:nth-child(10) .dropdown-menu {
+	left: -190px
+}
+.debugger-content .debugger-output-table > thead > tr > th:nth-last-child(1) .dropdown-menu,
+.debugger-content .debugger-output-table > thead > tr > th:nth-last-child(2) .dropdown-menu,
+.debugger-content .debugger-output-table > thead > tr > th:nth-last-child(3) .dropdown-menu {
+	left: -190px
+}
+/* AUDIT PRINT MEDIA CSS */
+@media print {
+	.audit-box .audit-table-print {
+		display: block;
+	}
+	.nav.nav-tabs, 
+	.audit-box .search-form, 
+	.audit-box .control-btn, 
+	.audit-box .filter-form, 
+	.audit-box .filter-panel,
+	.audit-box .dataTables_wrapper .dt-buttons,
+	.audit-box .dataTables_wrapper .top,
+	.audit-box .dataTables_wrapper .dataTables_filter,
+	.audit-box .audit-table,
+	.sidebar,
+	.audit-box hr {
+		display: none;
+	}
+	.audit-box .table {
+		width: 100%;
+	}
+	.nav.nav-tabs,
+	.tab-content,
+	.panel.panel-flat,
+	.audit-box .audit-content .audit-table-section {
+		border: none !important;
+		padding: 0;
+	}
+	.audit-box .audit-content {
+		height: auto;
+	}
+	.audit-box .audit-table-section table > thead > tr > th {
+		color: #fff;
+		background: #44546a;
+	}
+	.audit-box .audit-table-section table > tbody > tr > td span.text-overflow {
+		height: 100%;
+		overflow: unset;
+		word-break: keep-all;
+		min-width: 40px;
+		max-width: 100px;
+		word-wrap: break-word;
+		white-space: pre-wrap;
+	}
+	@page { 
+		size: A4 landscape;
+		margin: 0;
+	} 
+}
+
+/**
+*=========================================================
+* CONTEXT MENU ITEM
+*=========================================================
+*/
+.context-menu-list {
+	z-index: 100 !important;
+}
+.context-menu-list li.context-menu-item {
+	/* padding: 5px 15px; */
+	padding: 5px 10px;
+}
+.context-menu-list li.context-menu-item > span {
+	padding-left: 5px;
+}
+.context-menu-list li.context-menu-icon {
+    padding: 7px;
+}
+.context-menu-list li.context-menu-icon > span::before {
+	font-weight: 600;
+	font-family: "Icomoon";
+	padding-right: 10px;
+}
+.context-menu-list li.context-menu-icon-menu-add > span::before {
+    content: "\ed5a";
+}
+.context-menu-list li.context-menu-icon-menu-rename > span::before {
+    content: "\e912";
+}
+.context-menu-list li.context-menu-icon-menu-copy > span::before {
+    content: "\ea35";
+}
+.context-menu-list li.context-menu-icon-eye2 > span::before {
+    content: "\ecaf";
+}
+.context-menu-list li.context-menu-icon-lock2 > span::before {
+    content: "\eb66";
+}
+.context-menu-list li.context-menu-icon-pencil7 > span::before {
+    content: "\e914";
+}
+.context-menu-list li.context-menu-icon-menu-remove > span::before {
+    content: "\e9e7";
+}
+.context-menu-list li.context-menu-icon-menu-where-used > span::before {
+    content: "\ea9d";
+}
+.context-menu-list li.context-menu-icon-menu-delete > span::before {
+    content: "\e99e";
+}
+.context-menu-list li.context-menu-icon-menu-audit > span::before {
+    content: "\eae6";
+}
+.context-menu-list li.context-menu-icon-menu-run > span::before {
+    content: "\eb54";
+}
+.context-menu-list li.context-menu-icon-menu-add-existing > span::before {
+    content: "\ed28";
+}
+.context-menu-list li.context-menu-icon-menu-add-new > span::before {
+    content: "\e9bf";
+}
+.context-menu-list li.context-menu-icon-menu-audit, .context-menu-list li.context-menu-icon-menu-delete {
+	border-top: 1px solid #ddd;
+}
+.context-menu-list li.context-menu-icon-menu-remove {
+	border-bottom: 1px solid #ddd;
+}
+
+/**
+*=========================================================
+* ALERT CONFIRMATION
+*=========================================================
+*/
+.ui-dialog .ui-dialog-buttonpane {
+	/* padding: .3em 0em 1em .4em !important; */
+}
+.ui-dialog .ui-dialog-buttonpane button {
+	padding: 3px 20px;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    font-weight: bold;
+}
+.ui-dialog .ui-dialog-buttonpane button:hover {
+	color: #2196F3;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:active:not(:first-child) {
+	background-color: #f9f7f7;
+    font-weight: bold;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child {
+	color: #fff;
+	border: none;
+    background-color: #2196F3;
+	border-radius: 2px;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:first-child:active {
+    background-color: #2089dc;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button:not(:first-child) {
+	border: none;
+    background: none;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset button[disabled] {
+	cursor: not-allowed;
+	opacity: 0.65;
+	box-shadow: none;
+}
+.ui-dialog-title {
+	font-size: 14.5px;
+	font-weight: 600;
+}
+.ui-dialog-content .form-group:last-child, .ui-dialog-content p:last-child {
+    margin-bottom: 0;
+    font-size: 13.5px;
+}
+
+#run-calc-group-modal .select2-selection--multiple .select2-selection__choice .select2-selection__choice__remove {
+	margin-top: 1px;
+}
+
+/**
+*=========================================================
+* Settings - Data Sources / Settings
+*=========================================================
+*/
+.settings-main-section .settings-main-pg-box {
+	min-width: 1020px;
+}
+.settings-main-section .settings-main-pg {
+	overflow-y: auto;
+	padding-top: 25px;
+	height: calc(100vh - 170px);
+	background: #FFF;
+	border: 1px solid #ddd;
+}
+.settings-main-section .settings-main-add {
+	top: 10px;
+    left: 10px;
+}
+.settings-main-section .settings-main-save .settings-save-btn {
+	padding: 2px 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 11.5px;
+}
+.settings-main-section .settings-main-table > thead > tr > th {
+	color: #fff;
+	background: #44546a;
+	text-transform: uppercase;
+	border: 1px solid #fff;
+	padding: 5px 10px;
+	font-weight: 600;
+}
+.settings-main-section .settings-main-table > tbody > tr > td {
+	padding: 5px 10px;
+}
+.settings-main-section .dataTables_filter {
+    display: none;
+}
+
+/**
+*=========================================================
+* Copy Config
+*=========================================================
+*/
+.copy-config-main-section .nav-tabs-list .tab-content {
+	height: calc(100vh - 210px);
+	background: #FFF;
+	padding: 20px;
+	overflow-y: auto;
+}
+.copy-config-main-section .nav-tabs-list ul > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.copy-config-main-section .form-horizontal fieldset {
+	margin-bottom: 20px;
+}
+.copy-config-main-section .fieldset-title {
+	font-weight: bold;
+    margin-bottom: 15px;
+}
+.copy-config-main-section .form-horizontal .radio .choice, 
+.copy-config-main-section .form-horizontal .radio-inline .choice {
+	top: 0;
+}
+.copy-config-main-section fieldset > button {
+	color: #FFF;
+    font-weight: bold;
+    min-width: 80px;
+    text-transform: uppercase;
+}
+.copy-config-main-section .target-field .select2-selection--multiple .select2-selection__rendered {
+	margin-left: 0 !important;
+}
+.copy-config-main-section fieldset > .btn-default-grey,
+.copy-config-main-section fieldset > .btn-default-grey:hover {
+	color: #FFF;
+	background: #ddd;
+}
+.copy-config-main-section .delete-tab-pane .form-horizontal .form-group > label {
+	font-weight: bold;
+}
+.copy-config-main-section .copy-config-result,
+.copy-config-main-section .delete-config-result,
+.copy-config-main-section .convert-config-result {
+	display: inline-block;
+	padding-left: 20px;
+	font-weight: bold;
+}
+
+/**
+*=========================================================
+* MEDIA QUERY
+*=========================================================
+*/
+@media screen and (max-width: 768px) {
+	.table-responsive {
+		border: none;
+	}
+	.calc-group-detail .advanced-options {
+		top: 30px;
+		height: 80px;
+		position: static;
+	}
+	.audit-content .search-form .search-info span {
+		display: block;
+	}
+	 .audit-content .dataTables_filter, 
+	 .audit-content .dataTables_info, 
+	 .audit-content .dataTables_length {
+		float: left !important;
+	}
+	.audit-content .dataTables_paginate {
+		float: right !important;
+	}
+	.audit-table-section .dataTables_filter>label:after {
+		left: -150px;
+	}
+	.calculation-section .stepy-header li {
+		width: 33.33%;
+	}
+	#drwn_tabs > .nav-tabs {
+		margin-bottom: 0;
+		padding: 0;
+		border: 0;
+	}
+	#drwn_tabs > .nav-tabs > li {
+		float: left;
+		margin-bottom: -2px;
+	}
+	#drwn_tabs > .nav-tabs > li > a { 
+		border: 1px solid transparent;
+	}
+	#drwn_tabs > .nav-tabs:before {
+		display: none;
+	}
+	#drwn_tabs > .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+		background-color: #fff;
+    	border: 1px solid #ddd;
+		border-bottom: 0 !important;
+	}
+	#drwn_tabs > .nav-tabs > li.active > a:after, .nav-tabs > li.active > a:hover:after, .nav-tabs > li.active > a:focus:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: auto;
+		width: 100%;
+		height: 2px;
+		background-color: #2196F3;
+	}
+}
+@media screen and (max-width: 998px) { 
+	
+}
+@media screen and (max-width: 1199px) { 
+	.audit-content .filter-panel,
+	.audit-content .audit-table-section {
+		top: 0;
+		margin-bottom: 10px;
+	}
+}
+
+#help-about-evo-modal .modal-dialog .modal-header .modal-title {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+#calc-where-used-modal {
+	font-size: 14.5px;
+}
+#calc-where-used-modal .modal-dialog .modal-header .modal-title {
+    text-transform: capitalize;
+    font-size: 14.5px;
+    font-weight: 600;
+}
+#calc-where-used-modal .where-used-group-list ul {
+	padding-left: 0px;
+	margin-bottom: 0px;
+}
+#calc-where-used-modal .where-used-group-list ul li {
+    list-style: none;
+}
+#calc-where-used-modal .where-used-group-list{
+	max-height: 230px;
+    overflow: auto;
+}
+.debugger-content .dataTables_info, .debugger-content .dataTables_paginate {
+    margin: 0;
+    padding: 0;
+    margin-top: 15px;
+}
+.datasources-tab .CodeMirror-sizer {
+	min-height: calc(100vh - 630px) !important;
+}
+.datasources-tab .CodeMirror-lines {
+    overflow-y: auto;
+    max-height: calc(100vh - 630px) !important;
+}
+
+/* Custom Scrollbar */
+.simplebar-scrollbar {
+    position: absolute;
+    right: 2px;
+    width: 5px;
+    min-height: 10px;
+}
+.simplebar-scrollbar:before {
+    position: absolute;
+    content: '';
+    background: #938f8f;
+    border-radius: 7px;
+    left: 0;
+    right: -1px;
+    opacity: 0;
+	transition: opacity .2s linear;
+	top: 0;
+	bottom: 0;
+}
+.debugger-content .debugger-checkbox-section label {
+    padding-right: 30px;
+}
+
+.debugger-content .more-debugger-parameters-btn {
+	padding: 2px 15px;
+    font-weight: 600;
+}
+
+/*audit-row-detail-modal*/
+#audit-row-detail-modal .icon-enlarge{
+	position: absolute;
+    right: 15px;
+    z-index: 100;
+    bottom: 5px;
+    top: auto;
+    cursor: pointer;
+}

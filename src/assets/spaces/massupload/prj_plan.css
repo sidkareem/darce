@@ -1,0 +1,213 @@
+/**
+*=========================================================
+* prj-plan
+*=========================================================
+*/
+.prj-plan-box {
+  min-width: 1020px;
+}
+.prj-plan-content {
+  padding: 15px;
+  /* overflow-y: auto; */
+  height: calc(100vh - 180px);
+  position: relative;
+}
+.prj-plan-content .control-btn {
+  margin-bottom: 10px;
+}
+.prj-plan-content .cv-panel {
+  position: relative;
+  top: -15px;
+  width: 45px;
+    float: right;
+}
+.prj-plan-content select[multiple] {
+  height: 34px;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+.prj-plan-content .fl-scrolls {
+  bottom: 50px;
+}
+.prj-plan-content .export-prj-plan {
+  display: inline-block;
+}
+.prj-plan-content .buttons-csv,
+.prj-plan-content .buttons-print,
+.prj-plan-content .dt-button {
+  display: none;
+}
+.prj-plan-content .prj-plan-table-section {
+  position: relative;
+  top: 10px;
+  border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+.prj-plan-content .prj-plan-cv-colapsed-form .prj-plan-cv-colapsed {
+    position: relative;
+    top: -1px;
+  margin: 0;
+}
+
+.prj-plan-content .prj-plan-cv-colapsed-form .prj-plan-cv-colapsed div{
+  display: inline-block;
+}
+
+.prj-plan-content .prj-plan-cv-expanded {
+  display: none;
+}
+
+.prj-plan-content table .icon-filter3,
+.debugger-content table .icon-filter3 {
+  font-size: 12px;
+    top: -1px;
+    padding-left: 5px;
+}
+.prj-plan-content table .dropdown,
+.debugger-content table .dropdown {
+  width: 20px;
+    display: inline-block;
+    text-align: right;
+}
+.prj-plan-content table .dropdown-menu,
+.debugger-content table .dropdown-menu {
+  left: -30px;
+  min-width: 220px;
+}
+.prj-plan-content table a.dropdown-toggle,
+.debugger-content table a.dropdown-toggle {
+  color: #FFF;
+}
+.prj-plan-content .table-responsive {
+  min-height: 500px;
+  width: 100%;
+}
+
+.prj-plan-content .prj-plan-cv-colapsed-form .prj-plan-cv-colapsed span:not(.timezone-field) {
+  margin-right: 7px;
+  font-weight: bold;
+  color: #2196f3;
+    cursor: pointer;
+}
+.prj-plan-content .prj-plan-cv-colapsed-form .prj-plan-cv-colapsed span:not(.timezone-field):hover {
+    text-decoration: underline;
+}
+.prj-plan-content .control-btn .btn.btn-green {
+  background-color: #00a7e2;
+    border-color: #00a7e2;
+  color: #FFF;
+  min-width: 115px;
+  margin-bottom: 5px;
+}
+.prj-plan-content .form-horizontal label {
+  text-align: left;
+}
+.prj-plan-content .form-horizontal .radio-inline {
+  margin-bottom: 10px;
+}
+.prj-plan-content .form-horizontal .radio-inline .choice {
+  top: 0;
+}
+.prj-plan-content .form-horizontal .radio-inline .date-fields-section {
+  position: relative;
+    top: -8px;
+}
+.prj-plan-content .form-horizontal .radio-inline .date-fields-section .padding-sm {
+  padding: 8px 10px;
+}
+.prj-plan-content .form-horizontal .form-group {
+  margin-bottom: 5px;
+}
+.prj-plan-content .form-horizontal .form-control {
+  border-radius: 0;
+}
+.prj-plan-content .prj-plan-table-print {
+  display: none;
+}
+
+.prj-plan-content i {
+  font-size: 11.5px;
+}
+
+.rag-red {
+    background-color: lightcoral;
+}
+.rag-green {
+    background-color: lightgreen;
+}
+.rag-amber {
+    background-color: lightsalmon !important;
+}
+.rag-white {
+    background-color: lightgreen;
+}
+.rag-red-outer .rag-element {
+    background-color: lightcoral;
+}
+
+.rag-green-outer .rag-element {
+    background-color: lightgreen;
+}
+
+.rag-amber-outer .rag-element {
+    background-color: lightsalmon;  
+}
+
+.prj-plan-cv-expanded .member-selector {
+  float: right;
+  position: relative;
+  right: 10px;
+  top: -25px;
+}
+.btn_validate{
+  background-color: green !important;
+  border-color: green !important;
+}
+.btn_save{
+  background-color: blue !important;
+  border-color: blue !important;
+  margin-left: 10px;
+}
+.btn_delete{
+  background-color: red !important;
+  border-color: red !important;
+  margin-left: 10px;
+}
+
+.prj-plan-content #prj-plan-search-form #form-elements label {
+    padding-top: 5px;
+}
+
+.prj-plan-content #prj-plan-search-form #form-elements .form-control {
+    text-align: right;
+    padding-right: 30px;
+    height: 26px;
+    border: none;
+    float: left;
+}
+
+.prj-plan-content #prj-plan-search-form #form-elements .form-control[readonly] {
+    /* background-color: #FFF; */
+}
+
+.prj-plan-content #prj-plan-search-form #form-elements .form-input {
+    float: left;
+    padding: 0;
+}
+
+.prj-plan-content #prj-plan-search-form #form-elements .form-fields {
+    border: 1px solid #ddd;
+    height: 28px;
+    display: inline-block;
+    border-radius: 2px;
+}
+
+.prj-plan-cv-expanded .member-selector {
+    top: -21px !important;
+    color: #333;
+    right: 5px !important;
+}
+.ag-header-style {
+  background-color: #f5f7f7;
+  color: rgba(0,0,0,.54);
+}

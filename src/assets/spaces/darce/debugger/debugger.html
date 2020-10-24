@@ -1,0 +1,652 @@
+<!-- Content area -->
+<div class="debugger-box">
+	<div class="panel panel-flat">
+		<div class="debugger-content">
+			<div class="tabbable tab-content-bordered">
+				<ul class="nav nav-tabs nav-tabs-highlight">
+					<li class="active"><a href="#settings" data-toggle="tab">Settings</a></li>
+					<li><a href="#output" data-toggle="tab">Output</a></li>
+				</ul>																						     
+				<div  class="tab-content">
+					<div class="tab-pane has-padding active" id="settings">	
+						<form action="" class="form-horizontal">
+							<input type="hidden" id="log-scroll-pos" value="0">
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label class="control-label col-xs-3">Environment <span class="text-danger">*</span></label>
+										<div class="col-xs-8">
+											<select class="select-data-array-environments select-search form-control" id="debugger-environment-field">
+											</select>			
+										</div>
+									</div>												
+								</div>
+
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label class="control-label col-xs-3">Data Source <span class="text-danger">*</span></label>
+										<div class="col-xs-8">
+											<select class="select-data-array-models select-search form-control" id="debugger-model-field">
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>		
+						</form>				
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="script-template-btn">
+									<label for="">Insert Script Template</label>			
+									<button type="button" class="btn btn-labeled-right" onclick="getDarCEScript()"><i class="icon-tree6 position-left"></i> <span>Calc Group</span></button>
+									<button type="button" class="btn btn-labeled-right" onclick="getCopyScript()"><i class="icon-copy4 position-left"></i> <span>Copy</span></button>									
+									<button type="button" class="btn btn-labeled-right" onclick="getMoveScript()"><i class="icon-share2 position-left"></i> <span>Move</span></button>									
+									<button type="button" class="btn btn-labeled-right" onclick="getClearScript()"><i class="icon-trash position-left"></i> <span>Clear</span></button>									
+								</div>
+							</div>								
+						</div>								
+						<div class="row">				
+							<div class="col-sm-12">
+								<button type="button" class="btn btn-primary run-script-btn text-uppercase btn-labeled-right text-bold" onclick="runUJKT()">Run Script</button>
+								<div class="debugger-checkbox-section">
+									<label>
+										<input type="checkbox" name="WRITE" class="styled debugger-run-simulation" value="OFF" />
+										<span>Run Simulation</span>
+									</label>
+									<label>
+										<input type="checkbox" name="OUTPUT_TEMP_DATA_Y_N" class="styled debugger-temporary-data" value="Y" />
+										<span>Show Temporary Data</span>
+									</label>
+									<!-- <label>
+										<input type="checkbox" name="SHOW_SQL_Y_N" class="styled debugger-sql-queries" value="Y" />
+										<span>Show SQL Queries</span>
+									</label> -->
+									<label>
+										<button class="btn btn-default btn-xs more-debugger-parameters-btn" type="button">More...</button>
+									</label>
+								</div>
+							</div>
+							<div class="col-xs-12">
+								<textarea id="script" rows="10" cols="5" class="form-control script-textarea" placeholder="Enter script here"></textarea>
+								<textarea name="" id="script-default" class="hidden" cols="30" rows="10"></textarea>
+							</div>	
+						</div>							
+					</div>
+					<div class="tab-pane has-padding" id="output">
+						<ul class="nav nav-tabs debugger-output-tab nav-tabs-highlight" id="tabnames">
+						</ul>
+						<div  class="tab-content" id='tcontent'>
+
+								<div class="tab-pane has-padding debugger-log-window" id="bordered-justified-tab1" scroll-pos="0">
+									
+								</div>										
+
+								<div  class="tab-pane has-padding" id="mini2">
+								</div>
+
+								<div  class="tab-pane has-padding" id="mini3">
+								</div>
+
+								<div  class="tab-pane has-padding" id="mini4">
+								</div>
+								<div  class="tab-pane has-padding" id="mini5">
+								</div>
+								<div  class="tab-pane has-padding" id="mini6">
+								</div>
+								<div  class="tab-pane has-padding" id="mini7">
+								</div>
+								<div  class="tab-pane has-padding" id="mini8">
+								</div>
+								<div  class="tab-pane has-padding" id="mini9">
+								</div>
+								<div  class="tab-pane has-padding" id="mini10">
+								</div>
+								<div  class="tab-pane has-padding" id="mini11">
+								</div>
+								<div  class="tab-pane has-padding" id="mini12">
+								</div>
+								<div  class="tab-pane has-padding" id="mini13">
+								</div>
+								<div  class="tab-pane has-padding" id="mini14">
+								</div>
+								<div  class="tab-pane has-padding" id="mini15">
+								</div>
+								<div  class="tab-pane has-padding" id="mini16">
+								</div>
+								<div  class="tab-pane has-padding" id="mini17">
+								</div>
+								<div  class="tab-pane has-padding" id="mini18">
+								</div>
+								<div  class="tab-pane has-padding" id="mini19">
+								</div>
+								<div  class="tab-pane has-padding" id="mini20">
+								</div>
+								<div  class="tab-pane has-padding" id="mini21">
+								</div>
+								<div  class="tab-pane has-padding" id="mini22">
+								</div>
+								<div  class="tab-pane has-padding" id="mini23">
+								</div>
+								<div  class="tab-pane has-padding" id="mini24">
+								</div>
+								<div  class="tab-pane has-padding" id="mini25">
+								</div>
+								<div  class="tab-pane has-padding" id="mini26">
+								</div>
+								<div  class="tab-pane has-padding" id="mini27">
+								</div>
+								<div  class="tab-pane has-padding" id="mini28">
+								</div>
+								<div  class="tab-pane has-padding" id="mini29">
+								</div>
+								<div  class="tab-pane has-padding" id="mini30">
+								</div>
+								<div  class="tab-pane has-padding" id="mini31">
+								</div>
+								<div  class="tab-pane has-padding" id="mini32">
+								</div>
+								<div  class="tab-pane has-padding" id="mini33">
+								</div>
+								<div  class="tab-pane has-padding" id="mini34">
+								</div>
+								<div  class="tab-pane has-padding" id="mini35">
+								</div>
+								<div  class="tab-pane has-padding" id="mini36">
+								</div>
+								<div  class="tab-pane has-padding" id="mini37">
+								</div>
+								<div  class="tab-pane has-padding" id="mini38">
+								</div>
+								<div  class="tab-pane has-padding" id="mini39">
+								</div>
+								<div  class="tab-pane has-padding" id="mini40">
+								</div>
+							
+
+
+								<div  class="tab-pane has-padding" id="calc2">
+								</div>
+
+								<div  class="tab-pane has-padding" id="calc3">
+								</div>
+
+								<div  class="tab-pane has-padding" id="calc4">
+								</div>
+								<div  class="tab-pane has-padding" id="calc5">
+								</div>
+								<div  class="tab-pane has-padding" id="calc6">
+								</div>
+								<div  class="tab-pane has-padding" id="calc7">
+								</div>
+								<div  class="tab-pane has-padding" id="calc8">
+								</div>
+								<div  class="tab-pane has-padding" id="calc9">
+								</div>
+								<div  class="tab-pane has-padding" id="calc10">
+								</div>
+								<div  class="tab-pane has-padding" id="calc11">
+								</div>
+								<div  class="tab-pane has-padding" id="calc12">
+								</div>
+								<div  class="tab-pane has-padding" id="calc13">
+								</div>
+								<div  class="tab-pane has-padding" id="calc14">
+								</div>
+								<div  class="tab-pane has-padding" id="calc15">
+								</div>
+								<div  class="tab-pane has-padding" id="calc16">
+								</div>
+								<div  class="tab-pane has-padding" id="calc17">
+								</div>
+								<div  class="tab-pane has-padding" id="calc18">
+								</div>
+								<div  class="tab-pane has-padding" id="calc19">
+								</div>
+								<div  class="tab-pane has-padding" id="calc20">
+								</div>
+								<div  class="tab-pane has-padding" id="calc21">
+								</div>
+								<div  class="tab-pane has-padding" id="calc22">
+								</div>
+								<div  class="tab-pane has-padding" id="calc23">
+								</div>
+								<div  class="tab-pane has-padding" id="calc24">
+								</div>
+								<div  class="tab-pane has-padding" id="calc25">
+								</div>
+								<div  class="tab-pane has-padding" id="calc26">
+								</div>
+								<div  class="tab-pane has-padding" id="calc27">
+								</div>
+								<div  class="tab-pane has-padding" id="calc28">
+								</div>
+								<div  class="tab-pane has-padding" id="calc29">
+								</div>
+								<div  class="tab-pane has-padding" id="calc30">
+								</div>
+								<div  class="tab-pane has-padding" id="results2">
+								</div>
+								<div  class="tab-pane has-padding" id="results3">
+								</div>
+								<div  class="tab-pane has-padding" id="results4">
+								</div>
+								<div  class="tab-pane has-padding" id="results5">
+								</div>
+								<div  class="tab-pane has-padding" id="results6">
+								</div>
+								<div  class="tab-pane has-padding" id="results7">
+								</div>
+								<div  class="tab-pane has-padding" id="results8">
+								</div>
+								<div  class="tab-pane has-padding" id="results9">
+								</div>
+								<div  class="tab-pane has-padding" id="results10">
+								</div>
+								<div  class="tab-pane has-padding" id="results11">
+								</div>
+								<div  class="tab-pane has-padding" id="results12">
+								</div>
+								<div  class="tab-pane has-padding" id="results13">
+								</div>
+								<div  class="tab-pane has-padding" id="results14">
+								</div>
+								<div  class="tab-pane has-padding" id="results15">
+								</div>
+								<div  class="tab-pane has-padding" id="results16">
+								</div>
+								<div  class="tab-pane has-padding" id="results17">
+								</div>
+								<div  class="tab-pane has-padding" id="results18">
+								</div>
+								<div  class="tab-pane has-padding" id="results19">
+								</div>
+								<div  class="tab-pane has-padding" id="results20">
+								</div>
+								<div  class="tab-pane has-padding" id="results21">
+								</div>
+								<div  class="tab-pane has-padding" id="results22">
+								</div>
+								<div  class="tab-pane has-padding" id="results23">
+								</div>
+								<div  class="tab-pane has-padding" id="results24">
+								</div>
+								<div  class="tab-pane has-padding" id="results25">
+								</div>
+								<div  class="tab-pane has-padding" id="results26">
+								</div>
+								<div  class="tab-pane has-padding" id="results27">
+								</div>
+								<div  class="tab-pane has-padding" id="results28">
+								</div>
+								<div  class="tab-pane has-padding" id="results29">
+								</div>
+								<div  class="tab-pane has-padding" id="results30">
+								</div>
+								<div  class="tab-pane has-padding" id="results31">
+								</div>
+								<div  class="tab-pane has-padding" id="results32">
+								</div>
+								<div  class="tab-pane has-padding" id="results33">
+								</div>
+								<div  class="tab-pane has-padding" id="results34">
+								</div>
+								<div  class="tab-pane has-padding" id="results35">
+								</div>
+								<div  class="tab-pane has-padding" id="results36">
+								</div>
+								<div  class="tab-pane has-padding" id="results37">
+								</div>
+								<div  class="tab-pane has-padding" id="results38">
+								</div>
+								<div  class="tab-pane has-padding" id="results39">
+								</div>
+								<div  class="tab-pane has-padding" id="results40">
+								</div>
+								<div  class="tab-pane has-padding" id="results41">
+								</div>
+								<div  class="tab-pane has-padding" id="results42">
+								</div>
+								<div  class="tab-pane has-padding" id="results43">
+								</div>
+
+						</div>			
+					</div>																
+				</div>																											
+			</div>	
+		</div>	
+	</div>
+</div>
+
+<div id="debugger-query-parameters-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog modal-full">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h6 class="modal-title">Calc Group Parameters</h6>
+			</div>
+			<div class="modal-body">
+				<table class="table debugger-query-parameters-table">
+					<thead>
+						<tr>
+							<th width="30%">Parameter ID</th>
+							<th width="40%">Description</th>
+							<th width="30%">Value</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>QUERY <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="QUERY"></span></td>
+							<td>The standard Script parameter 'QUERY' has no effect and should be set to OFF</td>
+							<td><input type="text" class="form-control" name="" readonly placeholder="OFF" value="OFF">
+								<!-- <select name="QUERY" id="" class="form-control select2" readonly>
+									<option value="OFF">OFF</option>
+								</select> -->
+							</td>
+						</tr>
+						<tr>
+							<td>WRITE <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="WRITE"></span></td>
+							<td>Whether to write back data to the database or run in simulation</td>
+							<td>
+								<select name="WRITE" id="WRITE_option" class="form-control select2" data-placeholder="Default = ON">
+									<option value=""></option>
+									<!-- <option default>No Select</option> -->
+									<option value="NULL">No Select</option>
+									<option value="ON">ON</option>									
+									<option value="OFF">OFF</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>CALC_GROUP_ID <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="CALC_GROUP_ID"></span></td>
+							<td>List out the calculation group IDs to run in sequence</td>
+							<td>
+								<input type="text" class="form-control" name="CALC_GROUP_ID" placeholder="Default = &lt;blank&gt;">
+							</td>
+						</tr>
+						<tr>
+							<td>OUTPUT_TEMP_DATA_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_TEMP_DATA_Y_N"></span></td>
+							<td>Output temporarily queried and calculated data in the log or not</td>
+							<td>
+								<select name="OUTPUT_TEMP_DATA_Y_N" id="OUTPUT_TEMP_DATA_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+									<option value=""></option>
+									<option value="NULL">No Select</option>
+									<option value="Y">Y</option>
+									<option value="N">N</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>SHOW_SQL_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="SHOW_SQL_Y_N"></span></td>
+							<td>Display SQL statements in the log or not</td>
+							<td>
+								<select name="SHOW_SQL_Y_N" id="SHOW_SQL_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+									<option value=""></option>
+									<option value="NULL">No Select</option>
+									<option value="Y">Y</option>
+									<option value="N">N</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>CHECK_LOCKS_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="CHECK_LOCKS_Y_N"></span></td>
+							<td>Check work status locking when writing back data or not</td>
+							<td>
+								<select name="CHECK_LOCKS_Y_N" id="CHECK_LOCKS_Y_N_option" class="form-control select2" data-placeholder="Default = Y">
+									<option value=""></option>
+									<option value="NULL">No Select</option>
+									<option value="Y">Y</option>
+									<option value="N">N</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>CHECK_SECURITY_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="CHECK_SECURITY_Y_N"></span></td>
+							<td>Check user security data access when writing back data or not</td>
+							<td>
+								<select name="CHECK_SECURITY_Y_N" id="CHECK_SECURITY_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+									<option value=""></option>
+									<option value="NULL">No Select</option>
+									<option value="Y">Y</option>
+									<option value="N">N</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>DARCE_DIRECT_WRITE_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="DARCE_DIRECT_WRITE_Y_N"></span></td>
+							<td>Whether to write data directly to the database or go through BPC posting engine</td>
+							<td>
+								<select name="DARCE_DIRECT_WRITE_Y_N" id="DARCE_DIRECT_WRITE_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+									<option value=""></option>
+									<option value="NULL">No Select</option>
+									<option value="Y">Y</option>
+									<option value="N">N</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<td>DARCE_VERSION <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="DARCE_VERSION"></span></td>
+							<td>Which installed DarCE version to run on</td>
+							<td>
+								<input type="text" class="form-control" name="DARCE_VERSION" placeholder="Default = &lt;blank&gt;">
+							</td>
+						</tr>
+						<tr>
+							<td>OUTPUT_CALC_CUBES <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_CALC_CUBES"></span></td>
+							<td>Tell what calculation table(s) to output to the log</td>
+							<td>
+								<input type="text" class="form-control" name="OUTPUT_CALC_CUBES" placeholder="Default = &lt;blank&gt;">
+							</td>
+						</tr>
+						<tr>
+							<td>OUTPUT_MINI_CUBES <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_MINI_CUBES"></span></td>
+							<td>Tell what data source (mini) table(s) to output to the log</td>
+							<td>
+								<select placeholder="Default = &lt;blank&gt;" name="OUTPUT_MINI_CUBES" id="" class="form-control datasource-list" multiple></select>
+							</td>
+						</tr>
+						<tr>
+							<td>OUTPUT_RESULTS <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_RESULTS"></span></td>
+							<td>Tell what result table(s) to output to the log</td>
+							<td>
+								<select name="OUTPUT_RESULTS" id="" class="form-control datasource-list" multiple></select>
+							</td>
+						</tr>
+						<tr>
+							<td>OUTPUT_WRITE_BACK_TBLS <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_WRITE_BACK_TBLS"></span></td>
+							<td>Tell what write back table(s) to output to the log</td>
+							<td>
+								<select name="OUTPUT_WRITE_BACK_TBLS" id="" class="form-control datasource-list" multiple></select>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<label class="parameters-collapse" data-toggle="collapse" data-target="#less-commonly-used-parameters-section">
+					<icon class="icon-arrow-right22"></icon> Less Commonly Used Parameters
+				</label>
+				<div id="less-commonly-used-parameters-section" class="collapse">
+					<table class="table debugger-query-parameters-table">
+						<tbody>
+							<tr>
+								<td width="30%">DB_PLATFORM <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="DB_PLATFORM"></span></td>
+								<td width="40%">Identify the database name on which the engine runes</td>
+								<td width="30%">
+									<select name="DB_PLATFORM" id="DB_PLATFORM_option" class="form-control select2" data-placeholder="Default = &lt;blank&gt;">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="HDB">HDB</option>
+										<option value="MSSQL">MSSQL</option>
+										<option value="ORA">ORA</option>
+										<option value="DB6">DB6</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">DEBUG_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="DEBUG_Y_N"></span></td>
+								<td width="40%">Run the engine in Debugging mode</td>
+								<td width="30%">
+									<select name="DEBUG_Y_N" id="DEBUG_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">DROP_ORPHANED_TEMP_TABLES_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="DROP_ORPHANED_TEMP_TABLES_Y_N"></span></td>
+								<td width="40%">Clean up any obsolute temporary table from previous runs</td>
+								<td width="30%">
+									<select name="DROP_ORPHANED_TEMP_TABLES_Y_N" id="DROP_ORPHANED_TEMP_TABLES_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">EXECUTE_SQL_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="EXECUTE_SQL_Y_N"></span></td>
+								<td width="40%">Execute the generated SQL statements or not</td>
+								<td width="30%">
+									<select name="EXECUTE_SQL_Y_N" id="EXECUTE_SQL_Y_N_option" class="form-control select2" data-placeholder="Default = Y">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">KEEP_TEMP_TABLE_DATA_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="KEEP_TEMP_TABLE_DATA_Y_N"></span></td>
+								<td width="40%">Keep temporary queried and calculated table for debugging use or not</td>
+								<td width="30%">
+									<select name="KEEP_TEMP_TABLE_DATA_Y_N" id="KEEP_TEMP_TABLE_DATA_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">LARGE_DATASET_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="LARGE_DATASET_Y_N"></span></td>
+								<td width="40%">HANA DB specific parameter to tell the engine to use columnar tables or not</td>
+								<td width="30%">
+									<select name="LARGE_DATASET_Y_N" id="LARGE_DATASET_Y_N_option" class="form-control select2" data-placeholder="Default = Y">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">LOG_LEVEL <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="LOG_LEVEL"></span></td>
+								<td width="40%">What level of logging to write</td>
+								<td width="30%">
+									<select name="LOG_LEVEL" id="LOG_LEVEL_option" class="form-control select2" data-placeholder="Default = SUMMARY">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="SUMMARY">SUMMARY</option>
+										<option value="DETAIL">DETAIL</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">OUTPUT_SNAP_TO_LOG_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="OUTPUT_SNAP_TO_LOG_Y_N"></span></td>
+								<td width="40%">Whether to output the snapshot and delta tables to the log</td>
+								<td width="30%">
+									<select name="OUTPUT_SNAP_TO_LOG_Y_N" id="OUTPUT_SNAP_TO_LOG_Y_N_option" class="form-control select2" data-placeholder="Default = Y">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">SNAPSHOT_PCT <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="SNAPSHOT_PCT"></span></td>
+								<td width="40%">Set the SQL WHERE clause member threshold by percentage in the snapshot table</td>
+								<td width="30%">
+									<input type="text" class="form-control" name="SNAPSHOT_PCT" placeholder="Default = 50">
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">SNAPSHOT_THRESHOLD <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="SNAPSHOT_THRESHOLD"></span></td>
+								<td width="40%">Set the SQL WHERE clause member threshold by count in the snapshot table</td>
+								<td width="30%">
+									<input type="text" class="form-control" name="SNAPSHOT_THRESHOLD" placeholder="Default = 5000">
+								</td>
+							</tr>
+							<tr>
+								<td width="30%">SUPPRESS_ROW_COUNTS_Y_N <span class="icon-question4 helptext-btn" data-app="DEBUGGER" data-app-area="CALC GROUP PARAMETER" data-app-item="SUPPRESS_ROW_COUNTS_Y_N"></span></td>
+								<td width="40%">Whether to write the row counts to the log or not</td>
+								<td width="30%">
+									<select name="SUPPRESS_ROW_COUNTS_Y_N" id="SUPPRESS_ROW_COUNTS_Y_N_option" class="form-control select2" data-placeholder="Default = N">
+										<option value=""></option>
+										<option value="NULL">No Select</option>
+										<option value="Y">Y</option>
+										<option value="N">N</option>
+									</select>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" class="close" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary update-btn">Update</button>
+				<button type="button" class="btn btn-link update-btn copy-clipboard-btn"><icon class="icon-copy4"></icon></button>
+			</div>
+		</div>
+	</div>
+</div> 
+
+<div id="debugger-calc-group-parameters-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">                                    
+		<!-- Modal content-->
+		<div class="modal-content" attr-tab="__">
+			<div class="modal-header">
+				<button type="button" class="update-agg-dim-btn close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<label for="">Calc Group ID</label>
+				<select class="form-control" data-placeholder="Select a calculation..." multiple name="CALC_GROUP_ID" id="debugger-calc-group-parameters-list">
+				</select>
+				<span class="text-red"></span>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-submit btn-submit-ok">OK</button>
+			</div>
+		</div>                                    
+	</div>
+</div>
+
+<div id="debugger-output-calc-tubes-parameters-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog">                                    
+		<!-- Modal content-->
+		<div class="modal-content" attr-tab="__">
+			<div class="modal-header">
+				<button type="button" class="update-agg-dim-btn close" data-dismiss="modal">&times;</button>
+			</div>
+			<div class="modal-body">
+				<label for="">Output Calc Cubes</label>
+				<select class="form-control" data-placeholder="Select a calculation..." multiple name="CALC_GROUP_ID" id="debugger-output-calc-tubes-parameters-list">
+				</select>
+				<span class="text-red"></span>
+
+				<!-- <select name="CALC_GROUP_ID" id="debugger-output-calc-tubes-parameters-list" class="multiselect multiselect" multiple="multiple">
+				</select> -->
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary btn-submit btn-submit-ok">OK</button>
+			</div>
+		</div>                                    
+	</div>
+</div>
+<script type="text/javascript" src="assets/spaces/darce/debugger/debugger.js"></script>
+<!-- /content area -->

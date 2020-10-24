@@ -1,0 +1,119 @@
+<script type="text/javascript" src="assets/spaces/darce/datasources/ds_main.js"></script>
+
+<div id="datasources_main_pg" class="settings-main-section">
+    <div class="settings-main-pg-box">
+        <div class="settings-main-pg">
+            <div class="col-xs-4 settings-main-add">
+                <a href="javascript:void(0)" class="add-datasources-btn text-uppercase text-semibold">
+                    <i class="icon-plus3"></i> New Data Source
+                </a>
+            </div>
+            <div class="col-xs-4 settings-main-search">
+                <div class="form-group has-feedback has-feedback-left">
+                    <input type="text" class="form-control" id="search-datasources" placeholder="Search">
+                    <div class="form-control-feedback">
+                        <i class="icon-search4 text-size-base"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-4 settings-main-save text-right">
+                <!-- <button type="button" class="btn btn-grey settings-save-btn datasources-save-btn">Save</button> -->
+                <a class="btn btn-link datasources-refresh-btn"><i class="icon-loop3"></i></a>
+            </div>
+            <div class="col-xs-12">
+                <div class="table-responsive">
+                    <table class="table settings-main-table datasources-main-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Description</th>
+                                <th>Type</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <!-- New Data Sources Modal -->
+    <div id="datasources-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form action="" class="form-horizontal" id="datasources-form">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Add Data Source</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Data Source ID <span class="text-red">*</span></label>
+                            <div class="col-xs-9">
+                                <div class="input-field-group"></div>
+                            </div>
+                            <input type="hidden" class="form-control" name="Action">
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Description</label>
+                            <div class="col-xs-9">
+                                <textarea class="form-control input-field" name="DobjectDescr" id="ds-dobject-descr" rows="3" placeholder="Please enter the data source description here..."></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Type <span class="text-red">*</span></label>
+                            <div class="col-xs-9">
+                                <select class="form-control datasources-type select-field" id="ds-dobject-type" name="DobjectType" data-placeholder="Select a data source type...">
+                                    <option value="BPC_CUBE">BPC_CUBE</option>
+                                    <!-- <option value="FILE">FILE</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-12">
+                                <label for="">Detail <span class="text-red">*</span></label>
+                                <textarea class="form-control input-field" name="DobjectDetail" id="ds-dobject-detail" rows="3" placeholder="Please enter data source details here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Rename Datasource Modal -->
+	<div id="rename-datasource-modal" class="rename-datasource-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <form action="" class="form-horizontal">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Rename Datasource</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" id="rename-copy-datasource-id" name="DobjectId" class="form-control primary-id">
+                        <span class="text-red datasource-error-message"></span>
+                        <input type="hidden" id="default-datasource-id" name="Fromdobjectid">
+                        <input type="hidden" id="temp-datasource-id" name="Tempdobjectid">
+                        <input type="hidden" id="datasource-modal-action" name="Action">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary btn-submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="default_values"></div>
+
+</div>

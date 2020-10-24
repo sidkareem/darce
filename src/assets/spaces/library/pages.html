@@ -1,0 +1,446 @@
+<script type="text/javascript" src="assets/spaces/library/pages.js"></script>
+<div id="dar_pages_pg">
+	<div class="pages-detail-panel">
+		<div class= "panel panel-flat">
+			<div class="page-control-wizard">
+				<div class="row">
+					<div class="col-xs-8 pull-left text-left">
+						<div class="page-header">
+							<span class="page-heading"><i class="icon-file-empty"></i> Page Configuration</span>
+						</div>													
+					</div>
+					<div class="col-xs-4 pull-right text-right">
+						<button type="button" class="btn btn-default btn-action back-btn page-back">Back</button>
+						<button type="button" class="btn page-save btn-action btn-grey" data-popup="tooltip" data-original-title="Saving is not allowed because some of the required fields are still left blank!" data-placement="bottom">Save</button>
+						<a href="javascript:void(0)" class="page-refresh icon-loop3"></a>
+					</div>
+				</div>
+			</div>
+			<div class="stepy-page-detail-form-section">
+				<form class="stepy-pages-detail-form form-horizontal" action="#">
+					<fieldset title="1">
+						<legend class="text-semibold">Info</legend>
+						<div class="pages-detail-general">
+							<!-- <h1>New Page</h1> -->
+							<div class="row">
+								<div class="col-xs-5">
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Name<span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<input placeholder="Please enter page name here..." type="text" name="Name" class="form-control">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Icon<span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Select Icon" id="" name="Icon" class="form-control select2">
+												<!-- <option value="icon-chart" data-icon="icon-chart">ICON-CHART</option> -->
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Primary Filter <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please assign a primary filter here..." id="" name="PrimaryFilterId" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Template <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select onchange="return pageDetailTemplateFormValidation();" data-placeholder="Please select a page type here..." id="templateid" name="TemplateId" class="form-control template select2">
+												<option value=""></option>
+											</select>
+											<span class="text-red templateid-error error"></span>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Owner <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please select the template owner here..." id="" name="Owner" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Security <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please select a user or team who can edit this page..." name="Security" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Article <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please select an help article here..." id="" name="HelpLink" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-2">Description<span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<textarea name="Description" id="" rows="4" class="form-control" placeholder="Please enter page description here..."></textarea>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-2">Tags<span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<input type="text" name="Tags" class="form-control tags-input">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<fieldset title="2">
+						<legend class="text-semibold">Configure</legend>
+						<div class="pages-detail-advanced">
+							<!-- <h1>New Page</h1> -->
+							<div class="row">
+								<div class="col-xs-5">
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Name <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<input placeholder="Please enter page name here..." type="text" name="Name" class="form-control" value="">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Data Source <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please select a data source here..." name="DobjectId" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<!-- <div class="form-group">
+										<label for="name" class="control-label col-xs-3">Dimension <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Please select a dimension here..." name="DimensionId" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div> -->
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Data Filter <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<textarea name="DataFilter" id="PageDataFilter" rows="4" class="form-control" placeholder="Please enter the data filter here... (e.g. ID in @BAS(ACCOUNT_CONS, BAL_SHT))"></textarea>
+										</div>
+									</div>
+								</div>
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-4">Apply Data Profile Security  <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<input type="checkbox" class="styled" id="dataProfileSecurity">
+										</div>
+									</div>
+									<div class="page-configure-action-section">
+										<table class="table page-configure-action-table">
+											<thead>
+												<tr>
+													<th class="page_profile">Action</th>
+													<th class="page_enable">Enable</th>
+													<th class="page_profile">Profile (Optional)</th>
+													<th>Page Link</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span class="action-title">Add</span> <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></td>
+													<td><input type="checkbox" class="styled pages_add_check" name="applyDataEnable"></td>
+													<td>
+														<select data-placeholder="Choose a Profile" id="" class="form-control select2 apply-data-profile add-page-profile">
+															<option value=""></option>
+														</select>
+													</td>
+													<td>
+														<select data-placeholder="Choose a Page" id="" class="form-control select2 profile-page-link add-page-link">
+															<option></option>
+															<option value="1">Add Template 1</option>
+															<option value="2">Add Template 2</option>
+															<option value="3">Add Template 3</option>
+														</select>
+													</td>
+												</tr>
+												<tr>
+													<td><span class="action-title">Update</span> <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></td>
+													<td><input type="checkbox" class="styled pages_update_check" name="applyDataEnable"></td>
+													<td>
+														<select data-placeholder="Choose a Profile" id="" class="form-control select2 apply-data-profile update-page-profile">
+															<option value=""></option>
+														</select>
+													</td>
+													<!-- <td>
+														<select data-placeholder="Choose a Page" id="" class="form-control select2 profile-page-link update-page-link">
+															<option></option>
+															<option value="1">Add Template 1</option>
+															<option value="2">Add Template 2</option>
+															<option value="3">Add Template 3</option>
+														</select>
+													</td> -->
+												</tr>
+												<tr>
+													<td><span class="action-title">Delete</span> <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></td>
+													<td><input type="checkbox" class="styled pages_delete_check" name="applyDataEnable"></td>
+													<td>
+														<select data-placeholder="Choose a Profile" id="" class="form-control select2 apply-data-profile delete-page-profile">
+															<option value=""></option>
+														</select>
+													</td>
+													<!-- <td>
+														<select data-placeholder="Choose a Page" id="" class="form-control select2 profile-page-link delete-page-link">
+															<option></option>
+															<option value="1">ADD TEMPLATE 1</option>
+															<option value="2">ADD TEMPLATE 2</option>
+															<option value="3">ADD TEMPLATE 3</option>
+														</select>
+													</td> -->
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- <div class="form-group">
+										<label for="name" class="control-label col-xs-4">Allow Adds <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Yes, No, Choose a Profile" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-4">Allow Updates <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Yes, No, Choose a Profile" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-4">Allow Deletions <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-8">
+											<select data-placeholder="Yes, No, Choose a Profile" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div> -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12">
+									<div class="pages-detail-table-section">
+										<div class="pages-detail-table-properties">
+											<a href="#" class="btn-action btn-add-new-page-detail"><icon class="icon-plus3"></icon> New Property</a>
+										</div>
+										<table class="table table-striped pages-detail-table">
+											<thead>
+												<tr>
+													<th>Property</th>
+													<th>Description</th>
+													<th>Picklist Definition</th>
+													<th>Info</th>
+													<th width="150px">Read Only</th>
+												</tr>
+											</thead>
+											<tbody></tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="pages-detail-mass-upload hidden">
+							<!-- <h1>New Page</h1> -->
+							<div class="row">
+								<div class="col-xs-6">
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Name <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-6">
+											<input placeholder="Please enter page name here..." type="text" name="Name" class="form-control" value="">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="name" class="control-label col-xs-3">Data Source <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></label>
+										<div class="col-xs-6">
+											<select data-placeholder="Please select a data source here..." name="DobjectId" id="" class="form-control select2">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="pages-detail-mass-upload-table-section hidden">
+								<p class="table-title">Edit Template Structure <span class="icon-question4" data-app="" data-app-area="" data-app-item=""></span></p>
+								<div class="row border_class">
+									<div class="col-xs-4">
+										<table style="width: 95%;" class="table pages-detail-mass-upload-table hidden">
+											<thead>
+												<tr>
+													<th>Dimension</th>
+													<!-- <th>Row</th> -->
+													<!-- <th>Column</th> -->
+													<!-- <th>Page</th> -->
+													<th>Default Member</th>
+													<!-- <th>Lock</th> -->
+													<!-- <th>Hide</th> -->
+												</tr>
+											</thead>
+											<tbody></tbody>
+										</table>
+										<label for="name" class="control-label"><b>PAGE HEADERS</b></label>
+										<div class="well well-sm page_header" id="form-elements" style="padding: 5px 10px; width: 450px; height: 388px;
+										overflow: scroll; background: #F2F2F2;">
+											<div class="dropdown-menu-sortable"></div>
+											<!-- <div class="form-fields"> 
+												 <label for="" class="col-xs-4 control-label text-right text-semibold">ACC_SRC</label>
+												<div class="col-xs-8 form-input">
+													<input class="form-control" name="" value="SRC123">
+													<a class="member-selector icon-arrow-down5"></a>											
+											</div> -->
+											
+											<!-- <textarea disabled name="" id="" rows="1" cols="20" class="page-axis defaut-tags-input"></textarea> -->
+										</div>
+									</div>
+									<div class="col-xs-6">
+										<!-- <div class="page-axis-form-group">
+											<label for="name" class="control-label">Page Axis</label>
+											<textarea disabled name="" id="" rows="4" class="page-axis defaut-tags-input"></textarea>
+										</div> -->
+										
+										<table style="min-width: 135%" class="table pages-detail-mass-upload-axis-table">
+											<tbody>
+												<tr>
+													<td width="50%" class="no-border">
+
+													</td>
+													<td width="50%" class="vertical-bottom no-border-right">
+														<label for="name" class="control-label">COLUMNS</label>														
+													</td>
+												</tr>												
+												<tr>
+													<td width="50%" style="vertical-align: top; padding-top: 52px;" class="vertical-top row_header " rowspan="2">		
+														<label for="name" style="font-weight: bold;" class="control-label">ROWS</label>
+														<div class="dropdown-menu-sortable"></div>
+														<!-- <textarea disabled name="" id="" rows="4" class="row-axis defaut-tags-input"></textarea> -->
+													</td>
+													<td width="50%" class="col_header">
+														<div class="dropdown-menu-sortable"></div>
+														<!-- <textarea disabled name="" id="asa" rows="10" class="column-axis defaut-tags-input"></textarea>													 -->
+													</td>
+													
+												</tr>
+												<tr>
+													<!-- <td width="50%" class="col_ax">														
+													</td> -->
+													<td width="50%" class="vertical-middle">
+														 <div class="data_reg">
+														<label style="line-height: 160px; font-weight: bold;" for="name" class="control-label">DATA REGION</label>
+													</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+
+										
+									</div>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+
+					<button type="submit" class="btn btn-primary stepy-finish">Submit <i class="icon-check position-right"></i></button>
+				</form>
+			</div>
+		</div>
+
+		<div id="pageIconsModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog">
+
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				  <h4 class="modal-title">Choose Icon</h4>
+				</div>
+				<div class="modal-body">
+				  <!-- More icons here -->
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+		  
+			</div>
+		</div>	
+
+		<div id="propertyEditorModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+			<div class="modal-dialog">
+
+			  <!-- Modal content-->
+			  <div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Property Editor</h4>
+				</div>
+				<div class="modal-body">
+				  <form action="" class="form-horizontal">
+					  <div class="form-group">
+						  <label for="" class="control-label col-xs-3">Property Id</label>
+						  <div class="col-xs-8">
+							  <input id="property_id" type="text" class="form-control" placeholder="Enter property id here...">
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <label for="" class="control-label col-xs-3">Description</label>
+						  <div class="col-xs-8">
+							  <textarea id="property_description"  class="form-control" placeholder="Enter property description here..."></textarea>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <label for="" class="control-label col-xs-3">Picklist Definition</label>
+						  <div class="col-xs-8">
+							  <input type="text" id="property_picklist" class="form-control" placeholder="Enter picklist definition here...">
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <label for="" class="control-label col-xs-3">Info</label>
+						  <div class="col-xs-8">
+							   <textarea id="property_info" class="form-control" placeholder="Enter property info here..."></textarea>
+						  </div>
+					  </div>
+					  <div class="form-group">
+						  <label for="" class="control-label col-xs-3">Read Only</label>
+						  <div class="col-xs-8">
+							   <select name="" id="property_readonly" class="form-control select2">
+								   <option value="Y">Yes</option>
+								   <option value="N">No</option>
+							   </select>
+						  </div>
+					  </div>
+				  </form>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary btn-submit">Save</button>
+				</div>
+			  </div>
+		  
+			</div>
+		</div>	
+	</div>
+</div>
+
+<!-- <div class="dropdown-menu-sortable">			
+	<span>DRAG1</span>
+	<span>DRAG2</span>
+	<span>DRAG3</span>
+</div>	
+<div class="dropdown-menu-sortable">		
+	<span>DROP1</span>
+	<span>DROP2</span>
+	<span>DROP3</span>
+</div> -->

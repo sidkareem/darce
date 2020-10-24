@@ -1,0 +1,888 @@
+	
+	<!-- <script type="text/javascript" src="assets/spaces/home/emp_dashboard_pg.js"></script> -->
+	<script>
+	
+	$(function() {    
+	    // Switchery toggles
+	    // ------------------------------
+
+	    var switches = Array.prototype.slice.call(document.querySelectorAll('.switch'));
+	    switches.forEach(function(html) {
+	        var switchery = new Switchery(html, {color: '#4CAF50'});
+	    });
+
+
+	    // Bar charts with random data
+	    // ------------------------------
+
+	    // Initialize charts
+
+
+	    // trend line-bar charts
+	    // -------------------------------
+	    var done1 = false, done2 = false;
+	    
+	    var trend_data_special = [
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 0.206334608354311},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 0.21820485446434},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 0.199851365461389},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 3.16593548509653E-02},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 3.44864661196003E-02},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 3.14023493004460E-02},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 75800.5528801},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 73347.1666667},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 71463.1666667}    	
+	    ];
+	    
+	    var trend_data = [ 
+	    	
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},    	
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2016", "QUARTER": "2016.Q4", "TIME": "2016.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2017", "QUARTER": "2017.Q4", "TIME": "2017.DEC", "Value": 0},    	
+	    	
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 5707784},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 5307284},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 5280211},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 6553656},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 6234344},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 6127085},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 5996428},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 6600461},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 6004684},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 6224999},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 6383056},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 5463821},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 254587},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 321554},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 294514},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 284600},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 265334},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 305104},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 348852},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 312117},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 288505},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 256427},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 260428},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 289941},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 381},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q1", "TIME": "2018.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q2", "TIME": "2018.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q3", "TIME": "2018.JUL", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2018", "QUARTER": "2018.Q4", "TIME": "2018.OCT", "Value": 0},
+	    	
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 2707784},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 2536618},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 2794254},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 3058325},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 3065794},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 2798505},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 3055521},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 3062252},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 2788987},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 3061535},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 2644021},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 2915655},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 3046305},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 3074787},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 3008997},
+	    	//{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 3048065},
+	    	//{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 3111978},
+	    	//{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 2763379},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 3033964},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 3052598},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 2808568},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 3034433},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 2892693},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 2966424},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 2494778},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 2453455},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 2781624},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 3091368},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 2952385},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 2827029},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 2891817},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 3083557},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 2649484},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 2897268},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 2485128},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 2787800},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 566630},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 557747},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 586536},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 614873},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 616909},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 586439},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 614544},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 615898},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 583832},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 614159},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 566788},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 591971},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 607275},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 565070},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 686521},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 581543},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 640998},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 570943},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 678137},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 698690},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 562871},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 615935},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 608972},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 573500},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 421487},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 597312},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 634272},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 504369},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 478748},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 567628},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 659673},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 507408},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 505874},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 506768},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 613219},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 457220},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 126383},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 126658},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 115372},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 126260},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 126526},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 115008},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 126509},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 108866},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 120325},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 147226},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 91999},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 131123},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 132250},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 135099},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 124359},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 125061},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 116536},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 145012},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 140641},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 135575},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 116636},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 113070},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 101431},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 92783},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 118287},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 111258},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 111482},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 122183},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 117236},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 97503},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 111255},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 103072},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 124172},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 74331},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 66595},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 73212},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 80482},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 80532},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 73377},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 80408},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 80489},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 73394},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 80567},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 69732},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 76896},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 62788},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 64943},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 63223},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 69279},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 91002},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 61025},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 65605},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 67123},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 83775},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 90563},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 58160},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 90680},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 64708},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 69956},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 65864},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 94291},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 95117},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 70289},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 71717},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 80309},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 77823},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 90522},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 82769},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 78193},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 440},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 458},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 458},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 456},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 458},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 457},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 456},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 457},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 456},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 456},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 455},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 455},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 432},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 423},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 422},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 452},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 449},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 431},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 462},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 445},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 436},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 461},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 466},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 445},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.JAN", "Value": 420},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.FEB", "Value": 464},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q1", "TIME": "2019.MAR", "Value": 447},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.APR", "Value": 425},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.MAY", "Value": 450},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q2", "TIME": "2019.JUN", "Value": 430},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.JUL", "Value": 461},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.AUG", "Value": 432},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q3", "TIME": "2019.SEP", "Value": 460},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.OCT", "Value": 456},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.NOV", "Value": 466},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2019", "QUARTER": "2019.Q4", "TIME": "2019.DEC", "Value": 430},
+	    	
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q1", "TIME": "2020.JAN", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q2", "TIME": "2020.APR", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q3", "TIME": "2020.JUL", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2020", "QUARTER": "2020.Q4", "TIME": "2020.OCT", "Value": 0},
+	    	
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "BUD '19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "TGT FY19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "TOTAL COMP", "Version": "SEP FCST '18", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "BUD '19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "TGT FY19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "FRINGE", "Version": "SEP FCST '18", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "BUD '19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "TGT FY19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "MERIT", "Version": "SEP FCST '18", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "BUD '19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "TGT FY19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "AVG SALARY", "Version": "SEP FCST '18", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "BUD '19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "TGT FY19", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2021", "QUARTER": "2021.Q4", "TIME": "2021.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2022", "QUARTER": "2022.Q4", "TIME": "2022.DEC", "Value": 0},
+	    	{"ACCOUNT": "HEADCOUNT", "Version": "SEP FCST '18", "YEAR": "2023", "QUARTER": "2023.Q4", "TIME": "2023.DEC", "Value": 0}    	
+	    	];
+	    
+	    
+	    //mini bar graph KPI
+	    var kpiTCompData = sliceIntersectData(trend_data,{"ACCOUNT": "TOTAL COMP", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"})
+	    var kpiTCompLineData = sliceIntersectData(trend_data,{"ACCOUNT": "TOTAL COMP","Version": "BUD '19", "YEAR": "2019"});
+ 
+	    var kpiFringeData = sliceIntersectData(trend_data_special,{"ACCOUNT": "FRINGE", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"})
+	    var kpiFringeLineData = sliceIntersectData(trend_data,{"ACCOUNT": "FRINGE","Version": "BUD '19", "YEAR": "2019"});
+
+	    var kpiMeritData = sliceIntersectData(trend_data_special,{"ACCOUNT": "MERIT", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"})
+	    var kpiMeritLineData = sliceIntersectData(trend_data,{"ACCOUNT": "MERIT","Version": "BUD '19", "YEAR": "2019"});
+	    
+	    var kpiAvgSalData = sliceIntersectData(trend_data_special,{"ACCOUNT": "AVG SALARY", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"})
+	    var kpiAvgSalLineData = sliceIntersectData(trend_data,{"ACCOUNT": "AVG SALARY","Version": "BUD '19", "YEAR": "2019"});   
+	    
+	    var kpiHCData = sliceIntersectData(trend_data,{"ACCOUNT": "HEADCOUNT", "TIME": "/\DEC$", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"})
+	    var kpiHCLineData = sliceIntersectData(trend_data,{"ACCOUNT": "HEADCOUNT","Version": "BUD '19", "YEAR": "2019"});
+	    
+		var kpiTCompDataPromise = new Promise((response,reject) => {
+			setTimeout(function(){ 
+				response(sliceIntersectData(trend_data,{"ACCOUNT": "TOTAL COMP", "YEAR": "2019"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"}));	
+			},2000);
+			
+		});	
+		
+		var kpiTest = sliceIntersectData(kpiAvgSalLineData,{"Version":"ACTUAL"},null,{"TIME":['2019.JAN','2019.FEB','2019.MAR']});
+		
+		console.log(kpiTest,"kpiTest")
+		
+		var kpiFringeLineDataPromise = new Promise((response,reject) => {
+			setTimeout(function(){ 
+				response(kpiFringeLineData);	
+			},3000);
+			
+		});	
+		
+		var kpiMeritLineData2 = sliceIntersectData(trend_data,{"ACCOUNT": "MERIT","Version": "BUD '19", "YEAR": "2018"});
+	    
+	    var miniChart = miniCharts({
+	    	element: "hcm-small-charts",
+	    	defaultOptions: {
+	    		measureDisplay: "short"
+	    	},
+	    	selections: [{
+		    	name: "Total Comp",
+		    	data: kpiTCompDataPromise,
+		    	colors: "#4273C5",
+		    	barChart: {data: kpiTCompLineData, tooltip: {"TIME": "Time","Value": "Value"}}
+		    },{
+		    	name: "Fringe",
+		    	data: kpiFringeData,
+		    	measureDisplay: "percent",
+		    	colors: "#00D19F",
+		    	barChart: {
+		    		data: kpiFringeLineDataPromise, 
+		    		tooltip: {"TIME": "Time","Value": "Value"}
+		   		}
+		    },{
+		    	name: "Merit",
+		    	data: kpiMeritData,
+		    	measureDisplay: "percent",
+		    	colors: "#9F81DB",
+		    	barChart: {data: kpiMeritLineData, tooltip: {"TIME": "Time","Value": "Value"}}
+		    },{
+		    	name: "Avg Salary",
+		    	data: kpiAvgSalData,
+		    	colors: "#E87503",
+		    	barChart: {data: kpiAvgSalLineData, tooltip: {"TIME": "Time","Value": "Value"}}  	
+		    }, {
+		    	name: "Headcount",
+		    	data: kpiHCData,
+		    	colors: "#E456D0",
+		    	barChart: {data: kpiHCLineData, tooltip: {"TIME": "Time","Value": "Value"}}  	    	
+		    }],
+	    }).on("done", (e,s) => { 
+	    	done1 = true;
+	    	if (done1 && done2) {
+	    		var $refresh = $("#hc-home-context-selector > div > div > a");
+	    		$refresh.removeClass("spin");
+	    	}
+	    }).on("bars:click", (a, e, n) => {
+	    	trend.selectionsClick("CHART 1",n);
+	    });
+	    
+	    
+	    
+	    //console.log(miniChart);
+	    
+	    //trend graph
+	    var trendTCompData = sliceIntersectData(trend_data, {"ACCOUNT":"TOTAL COMP"});
+	    var trendFringeData = sliceIntersectData(trend_data, {"ACCOUNT":"FRINGE"});
+	    var trendMeritData = sliceIntersectData(trend_data, {"ACCOUNT":"MERIT"});
+	    var trendAvgSalData = sliceIntersectData(trend_data, {"ACCOUNT":"AVG SALARY"});
+	    var trendHCData = sliceIntersectData(trend_data, {"ACCOUNT":"HEADCOUNT"});
+	    var trendColor = ['#9cc3e7','#ffdb63','#f7b284', '#c7b2c4', '#aaaa11'];
+	    
+	    var trendPriorDataA = sliceIntersectData(trend_data, {"ACCOUNT":"TOTAL COMP","Version": "BUD '19", "YEAR": "2019"},{"Version":"TOTAL COMP"});
+	    var trendPriorDataB = sliceIntersectData(trend_data, {"ACCOUNT":"FRINGE","Version": "BUD '19", "YEAR": "2019"},{"Version":"FRINGE"});
+	    var trendPriorDataC = sliceIntersectData(trend_data, {"ACCOUNT":"MERIT","Version": "BUD '19", "YEAR": "2019"},{"Version":"MERIT"});
+	    var trendPriorDataD = sliceIntersectData(trend_data, {"ACCOUNT":"AVG SALARY","Version": "BUD '19", "YEAR": "2019"},{"Version":"AVG SALARY"});    
+	    
+	    var trendPriorData = trendPriorDataA.concat(trendPriorDataB).concat(trendPriorDataC).concat(trendPriorDataD);
+	    
+	    var trendTCompDataP = new Promise((rs,rj) => {
+	    	setTimeout(() => {
+	    		rs(sliceIntersectData(trend_data, {"ACCOUNT":"TOTAL COMP"}));
+	    	}, 5000)
+	    }); 
+	    
+	    trendBarTComp = {
+			data: trendTCompDataP,
+	    	colors: "#4273C5",			
+			measureDisplay: 'short',
+	    	z: {dimension: "Version", type:["bar","bar",'bar','bar','line']}		
+	    };
+	    
+	    trendBarFringe = {
+	    	colors: "#00D19F",
+			data: trendFringeData
+	    };   
+	    
+	    trendBarMerit = {
+	    	colors: "#9F81DB",	    		
+			data: trendMeritData
+	    };    
+	    
+	    trendBarAvgSal = {
+	        	colors: "#E87503",		    		
+	    		data: trendAvgSalData
+	        };    
+	        
+	    trendBarHC = {
+			data: trendHCData,
+	    	colors: "#E456D0",				
+			y: {label: "Heads"},  	
+	    	measureDisplay: 'default'
+	    }; 
+	    
+	    trendBarPrior = {
+			data: trendPriorData,
+			colors: "#9F81DB",
+			measureDisplay: 'short',
+			tooltip: {measureDisplay:"default", type:"full"},
+	    	z: {dimension: "Version", type:["bar","bar",'bar','line','line']},			
+			y: {label: "Dollars"}
+	    }
+	    
+	    var trend = trendCharts({
+	    	element: 'hcm_trend_line_bar',
+	    	chartGroup: [{
+				name:"CHART 1",
+				chart: "bar-line",
+				defaultOptions: {
+							measureDisplay: 'short',
+							responsive: false,
+							tooltip: {measureDisplay:"default", type:"full"},
+				        	//x: {dimension: "TIME"},
+				        	x: [
+				        		{name: "MONTH",
+				        		 dimension: "TIME",
+				        		 filter: {"YEAR": "2019"}},
+				        		{name: "QUARTER",
+				        	     dimension: "QUARTER",
+				        	     sumDimension: "TIME",
+				        	     filter: {"YEAR": "/^(2018|2019|2020)$"}
+				        	    },
+				        	    {name: "YEAR",
+				        	     dimension: "YEAR",
+				        	     sumDimension: ["TIME","QUARTER"],
+				        	     }
+				        	],
+				        	y: {label: "Dollars", ticks: 3},  
+				        	z: {dimension: "Version"}
+				        	},
+				selections: [{
+					title: "TOTAL COMP TREND",
+					value: "Total Comp",
+					selected: true,						
+					chartParam: trendBarTComp
+						},{
+					title: "FRINGE TREND",
+					value: "Fringe",				
+					chartParam: trendBarFringe
+						},{
+					title: "MERIT TREND",
+					value: "Merit",		
+					chartParam: trendBarMerit    					
+						},{
+					title: "AVG SALARY TREND",
+					value: "Avg Salary",			
+					chartParam: trendBarAvgSal
+						},{
+					title: "HEADCOUNT TREND",
+					value: "Headcount",
+					chartParam: trendBarHC
+					}]
+				},{
+				name: "CHART 2",
+				chart: "bar-line",
+				defaultOptions: {responsive: false},
+				selections: [{
+					title: "EARNINGS BREAKDOWN",
+					value: "Prior",
+					chartParam: trendBarPrior
+					}]
+				}]
+	    }).on("done", (e,s) => {
+	    	done2 = true;
+	    	console.log("done2");
+	    	if (done1 && done2) {
+	    		var $refresh = $("#hc-home-context-selector > div > div > a");
+	    		$refresh.removeClass("spin");
+	    	}
+	    });
+
+	    
+	    
+	    var time_lst_data = [{"id": "2016.TOTAL", "title": "2016 Total", "parent": "", "folder": "False", "icon": "icon-calendar3"},
+	    	{"id": "2016.Q1", "title": "2016 Q1", "parent": "2016.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2016.01", "title": "2016 Jan", "parent": "2016.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.02", "title": "2016 Feb", "parent": "2016.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.03", "title": "2016 Mar", "parent": "2016.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.Q2", "title": "2016 Q2", "parent": "2016.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2016.04", "title": "2016 Apr", "parent": "2016.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.05", "title": "2016 May", "parent": "2016.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.06", "title": "2016 June", "parent": "2016.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.Q3", "title": "2016 Q3", "parent": "2016.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2016.07", "title": "2016 July", "parent": "2016.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.08", "title": "2016 Aug", "parent": "2016.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.09", "title": "2016 Sep", "parent": "2016.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.Q4", "title": "2016 Q4", "parent": "2016.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2016.10", "title": "2016 Oct", "parent": "2016.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.11", "title": "2016 Nov", "parent": "2016.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2016.12", "title": "2016 Dec", "parent": "2016.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.TOTAL", "title": "2017 Total", "parent": "", "folder": "False", "icon": "icon-calendar3"},
+	    	{"id": "2017.Q1", "title": "2017 Q1", "parent": "2017.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2017.01", "title": "2017 Jan", "parent": "2017.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.02", "title": "2017 Feb", "parent": "2017.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.03", "title": "2017 Mar", "parent": "2017.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.Q2", "title": "2017 Q2", "parent": "2017.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2017.04", "title": "2017 Apr", "parent": "2017.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.05", "title": "2017 May", "parent": "2017.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.06", "title": "2017 June", "parent": "2017.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.Q3", "title": "2017 Q3", "parent": "2017.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2017.07", "title": "2017 July", "parent": "2017.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.08", "title": "2017 Aug", "parent": "2017.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.09", "title": "2017 Sep", "parent": "2017.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.Q4", "title": "2017 Q4", "parent": "2017.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2017.10", "title": "2017 Oct", "parent": "2017.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.11", "title": "2017 Nov", "parent": "2017.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2017.12", "title": "2017 Dec", "parent": "2017.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.TOTAL", "title": "2018 Total", "parent": "", "folder": "False", "icon": "icon-calendar3"},
+	    	{"id": "2018.Q1", "title": "2018 Q1", "parent": "2018.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2018.01", "title": "2018 Jan", "parent": "2018.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.02", "title": "2018 Feb", "parent": "2018.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.03", "title": "2018 Mar", "parent": "2018.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.Q2", "title": "2018 Q2", "parent": "2018.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2018.04", "title": "2018 Apr", "parent": "2018.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.05", "title": "2018 May", "parent": "2018.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.06", "title": "2018 June", "parent": "2018.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.Q3", "title": "2018 Q3", "parent": "2018.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2018.07", "title": "2018 July", "parent": "2018.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.08", "title": "2018 Aug", "parent": "2018.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.09", "title": "2018 Sep", "parent": "2018.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.Q4", "title": "2018 Q4", "parent": "2018.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2018.10", "title": "2018 Oct", "parent": "2018.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.11", "title": "2018 Nov", "parent": "2018.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2018.12", "title": "2018 Dec", "parent": "2018.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.TOTAL", "title": "2019 Total", "parent": "", "folder": "False", "icon": "icon-calendar3"},
+	    	{"id": "2019.Q1", "title": "2019 Q1", "parent": "2019.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2019.01", "title": "2019 Jan", "parent": "2019.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.02", "title": "2019 Feb", "parent": "2019.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.03", "title": "2019 Mar", "parent": "2019.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.Q2", "title": "2019 Q2", "parent": "2019.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2019.04", "title": "2019 Apr", "parent": "2019.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.05", "title": "2019 May", "parent": "2019.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.06", "title": "2019 June", "parent": "2019.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.Q3", "title": "2019 Q3", "parent": "2019.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2019.07", "title": "2019 July", "parent": "2019.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.08", "title": "2019 Aug", "parent": "2019.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.09", "title": "2019 Sep", "parent": "2019.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.Q4", "title": "2019 Q4", "parent": "2019.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2019.10", "title": "2019 Oct", "parent": "2019.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.11", "title": "2019 Nov", "parent": "2019.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2019.12", "title": "2019 Dec", "parent": "2019.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.TOTAL", "title": "2020 Total", "parent": "", "folder": "False", "icon": "icon-calendar3"},
+	    	{"id": "2020.Q1", "title": "2020 Q1", "parent": "2020.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2020.01", "title": "2020 Jan", "parent": "2020.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.02", "title": "2020 Feb", "parent": "2020.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.03", "title": "2020 Mar", "parent": "2020.Q1", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.Q2", "title": "2020 Q2", "parent": "2020.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2020.04", "title": "2020 Apr", "parent": "2020.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.05", "title": "2020 May", "parent": "2020.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.06", "title": "2020 June", "parent": "2020.Q2", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.Q3", "title": "2020 Q3", "parent": "2020.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2020.07", "title": "2020 July", "parent": "2020.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.08", "title": "2020 Aug", "parent": "2020.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.09", "title": "2020 Sep", "parent": "2020.Q3", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.Q4", "title": "2020 Q4", "parent": "2020.TOTAL", "folder": "False", "icon": "icon-calendar2"},
+	    	{"id": "2020.10", "title": "2020 Oct", "parent": "2020.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.11", "title": "2020 Nov", "parent": "2020.Q4", "folder": "False", "icon": "icon-calendar52"},
+	    	{"id": "2020.12", "title": "2020 Dec", "parent": "2020.Q4", "folder": "False", "icon": "icon-calendar52"}
+	    ];
+	    
+	    var cost_center_lst_data = [{"id": "ALL_COST_CENTER", "title": "All Cost Center", "parent": "", "folder": "false", "icon": "icon-office"},
+	    	{"id": "ADMIN", "title": "Admin", "parent": "ALL_COST_CENTER", "folder": "false", "icon": "icon-office"},
+	    	{"id": "FINANCE", "title": "Finance", "parent": "ALL_COST_CENTER", "folder": "false", "icon": "icon-office"},
+	    	{"id": "10000", "title": "Admin 1", "parent": "ADMIN", "folder": "false", "icon": "icon-store"},
+	    	{"id": "10010", "title": "Admin 2", "parent": "ADMIN", "folder": "false", "icon": "icon-store"},
+	    	{"id": "10020", "title": "Admin 3", "parent": "ADMIN", "folder": "false", "icon": "icon-store"},
+	    	{"id": "20000", "title": "Finance 1", "parent": "FINANCE", "folder": "false", "icon": "icon-store"},
+	    	{"id": "20010", "title": "Finance 2", "parent": "FINANCE", "folder": "false", "icon": "icon-store"},
+	    	{"id": "20020", "title": "Finance 3", "parent": "FINANCE", "folder": "false", "icon": "icon-store"},
+	    	{"id": "20030", "title": "Finance 4", "parent": "FINANCE", "folder": "false", "icon": "icon-store"}];
+	    
+	    var manager_lst_data = [{"id": "ALL_MANAGERS", "title": "All Managers", "parent": "", "folder": "false", "icon": "icon-users4"},
+	    	{"id": "MANAGERS", "title": "Managers", "parent": "ALL_MANAGERS", "folder": "false", "icon": "icon-users"},
+	    	{"id": "NO_MANAGER", "title": "No Manager", "parent": "ALL_MANAGERS", "folder": "false", "icon": "icon-user-block"},
+	    	{"id": "MANAGER1", "title": "Manager 1", "parent": "MANAGERS", "folder": "false", "icon": "icon-user"},
+	    	{"id": "MANAGER2", "title": "Manager 2", "parent": "MANAGERS", "folder": "false", "icon": "icon-user"},
+	    	{"id": "MANAGER3", "title": "Manager 3", "parent": "MANAGERS", "folder": "false", "icon": "icon-user"},
+	    	{"id": "OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO", "title": "Manager 3", "parent": "MANAGERS", "folder": "false", "icon": "icon-user"}];
+	    
+	    var version_lst_data = [{"id": "ACTUAL", "title": "Actual", "parent": "", "folder": "false", "icon": "icon-stats-bars2"}];
+	    
+	    var version_lst_data2 = [{"id": "ACTUAL", "title": "Actual", "parent": "", "folder": "false", "icon": "icon-stats-bars2"},
+	    	{"id": "BUDGET", "title": "Budget", "parent": "", "folder": "false", "icon": "icon-stats-bars"},
+	    	{"id": "FORECAST", "title": "Forecast", "parent": "", "folder": "false", "icon": "icon-stats-bars"},
+	    	{"id": "BUDGET_18_01", "title": "Budget - 2018", "parent": "BUDGET", "folder": "false", "icon": "icon-stats-bars2"},
+	    	{"id": "BUDGET_19_01", "title": "Budget - 2019", "parent": "BUDGET", "folder": "false", "icon": "icon-stats-bars2"},
+	    	{"id": "FCST_FY19_01", "title": "Forecast - 2019", "parent": "FORECAST", "folder": "false", "icon": "icon-stats-bars2"},
+	    	{"id": "TGT_FY19", "title": "Target 2019", "parent": "FORECAST", "folder": "false", "icon": "icon-stats-bars2"}];	  
+	    
+	    var emp_lst_data = [{"id": "ALL_EMPL", "title": "All Employees", "parent": "", "folder": "false", "icon": "icon-users4"},
+	    	{"id": "EXISTING_EMPL", "title": "Existing Employees", "parent": "ALL_EMPL", "folder": "false", "icon": "icon-users"},
+	    	{"id": "NEW_EMPL", "title": "New Employees", "parent": "ALL_EMPL", "folder": "false", "icon": "icon-user"},
+	    	{"id": "NO_EMPL", "title": "No Employee", "parent": "ALL_EMPL", "folder": "false", "icon": "icon-user-block"}];
+	    
+	    var jg_lst_data = [{"id": "ALL_JG", "title": "All Job Grades", "parent": "", "folder": "false", "icon": "icon-users4"},
+	    	{"id": "NO_JG", "title": "No Job Grade", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_01", "title": "Job Grade 01", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_02", "title": "Job Grade 02", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_03", "title": "Job Grade 03", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_04", "title": "Job Grade 04", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_05", "title": "Job Grade 05", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_06", "title": "Job Grade 06", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_07", "title": "Job Grade 07", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_08", "title": "Job Grade 08", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_09", "title": "Job Grade 09", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"},
+	    	{"id": "JG_10", "title": "Job Grade 10", "parent": "ALL_JG", "folder": "false", "icon": "icon-user"}];	    
+	    
+	    
+	    var promise = new Promise((response,reject) => {
+	    	setTimeout(function(){
+	    		//console.log("Done!");
+	    		response(version_lst_data2);
+				}, 5000);
+	    });
+	    
+	    
+	    var ps = primarySelector({
+	    	element: "hc-home-context-selector",
+	    	selection: [
+	    		{
+	    			name: "Version",
+	    			currentMember: "Actual",
+	    			topNode: {"id": "All Versions","title": "All Versions", "expanded": true,"icon":"icon-stats-bars"},
+	    			data: promise
+	    		},{
+	    			name: "TIME",
+	    			currentMember: "2019.TOTAL",
+	    			view: "id - desc",
+	    			data: time_lst_data
+	    		},{
+	    			name: "COST_CENTER_E",
+	    			currentMember: "ALL_COST_CENTER",
+	    			data: cost_center_lst_data
+	    		},{
+	    			name: "MANAGER",
+	    			currentMember: "ALL_MANAGERS",
+	    			view: "id",
+	    			data: manager_lst_data
+	    		},{
+	    			name: "EMPLOYEE",
+	    			currentMember: "ALL_EMPL",
+	    			view: "desc",
+	    			data: emp_lst_data
+	    		},{
+	    			name: "JOB GRADE",
+	    			currentMember: "ALL_JG",
+	    			view: "desc",
+	    			data: jg_lst_data
+	    		}
+	    	]}
+	    );
+	    
+	    var $refresh = $("#hc-home-context-selector > div > div > a");
+		$refresh.addClass("spin");   
+		
+	    ps.on("refresh", d => {
+    		var kpiTCompDataPromise2 = new Promise((response,reject) => {
+    			setTimeout(function(){ 
+    				response(sliceIntersectData(trend_data,{"ACCOUNT": "TOTAL COMP", "YEAR": "2018"}, {"TIME": "TOTAL", "QUARTER":"TOTAL"}));	
+    			},5000);
+    			
+    		});
+    		var kpiMeritLineData2 = sliceIntersectData(trend_data,{"ACCOUNT": "MERIT","Version": "BUD '19", "YEAR": "2018"});
+    		var param = [{	 
+    				name: "Total Comp",
+	    			data: kpiTCompDataPromise2
+	    		},{
+	    			name: "Merit",
+	    			barChart: {data: kpiMeritLineData2}}
+	    		];
+    		miniChart.refreshAll(param);	 
+    		trend.refresh();
+        	done1 = false;
+        	done2 = false;
+    		var $refresh = $("#hc-home-context-selector > div > div > a");
+    		$refresh.addClass("spin");    		
+	    });
+	    
+	    ps.on("change",null, (d, v) => {
+	    	console.log(v,"value");
+	    })
+	    
+	    $("#test-button").on("click" ,e => {
+	    	//ps.refresh("Version",jg_lst_data);
+	    	var arg = [{
+	    		name : "Version",
+	    		data : jg_lst_data
+	    	},{
+	    		name : "JOB GRADE",
+	    		data : promise
+	    	}];
+	    	ps.refreshAll(arg);
+	    })
+
+		
+		var kpiTCompDataX = sliceIntersectData(trend_data,{"YEAR": "2019"}, {"QUARTER": "QRT"}, 
+				{"TIME" : periodExpansion("2019.APR",5), "Version": "BUD '19, ACTUAL"});
+		//console.log(kpiTCompDataX);	    
+	    
+	});
+	
+	//console.log(periodExpansion("2010.02",36, 'quarter'));
+	
+	</script>
+			
+		<!-- Progress counters -->
+		<div class="dashboard">
+			<!-- <button id="test-button">TEST</button> -->
+			<div class="row">
+				<div id="hc-home-context-selector" class="context-selector col-md-9"></div>
+			</div>
+			<div class="row dashboard-small-charts" style="min-width:1215px">
+				<div class="col-md-12" id="hcm-small-charts"></div>
+			</div>
+			<div class="row trend-bar-container">
+				<div class="col-md-12 dashboard-trend-charts">
+
+					<!-- Available hours -->
+					<div class="panel" id="hcm_trend_line_bar" style="width:1194px">
+
+					</div>
+					<!-- /available hours -->
+
+				</div>				
+			</div>
+		</div>

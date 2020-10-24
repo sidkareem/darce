@@ -1,0 +1,338 @@
+<script type="text/javascript" src="assets/spaces/darce/cg_overview.js"></script>
+
+<div id="cg_overview_pg" class="calc-group-builder-section">
+	<!-- admin panel -->
+	<div class="fancytree-box">
+		<!-- Tree sorting -->
+		<div id="fancytree">
+			
+		</div>
+		<!-- Tree sorting -->
+	</div>
+	<div class="calc-group-box">
+		<!-- Page Content -->
+		<div class="parameters">
+			<input type="hidden" id="param-calc-group-id" value=""/>
+			<input type="hidden" id="param-model-id" value=""/>
+			<input type="hidden" id="param-variable-id" value=""/>
+			<input type="hidden" id="param-calc-id" value=""/>
+
+			<input type="hidden" id="param-calc-add-new" value=0 />
+			<input type="hidden" id="param-calc-add-existing" value=0 />
+			<input type="hidden" id="param-calc-rename" value=0 />
+			<input type="hidden" id="param-calc-copy" value=0 />
+			<input type="hidden" id="param-calc-remove" value=0 />
+			<input type="hidden" id="param-calc-delete" value=0 />
+
+			<input type="hidden" id="param-load-calc-group" value=""/>
+			<input type="hidden" id="param-calculations-sort-order" value="0"/>
+			<input type="hidden" id="param-audit-model" value=""/>
+			<input type="hidden" id="param-audit-calc-group-id" value=""/>
+			<input type="hidden" id="param-audit-calc-id" value=""/>
+			<input type="hidden" id="param-audit-variable-driver-step-id" value=""/>
+			<input type="hidden" id="param-load-calculation" value=""/>
+			<input type="hidden" id="param-load-variable" value=""/>
+			<input type="hidden" id="param-load-sidebar-calc-group" value=""/>
+
+			<input type="hidden" id="param-calc-driver-modal" value=""/>
+			<input type="hidden" id="param-calc-step-modal" value=""/>
+
+			<input type="hidden" id="param-context-menu-action" value=""/>
+			<input type="hidden" id="param-context-menu-title" value=""/>
+			<input type="hidden" id="param-active-node-key" value=""/>
+			<input type="hidden" id="param-calc-node-key" value=""/>
+			<input type="hidden" id="param-form-track" value=""/>
+			<input type="hidden" id="param-ft-view" value=""/>
+			<input type="hidden" id="param-date-time-last-changed" value=""/>
+			<input type="hidden" id="param-datasourceorder-changed" value=""/>
+			<input type="hidden" id="param-new-cg" value=""/>
+			<input type="hidden" id="param-close-tab" value="0"/>
+			<input type="hidden" id="param-clear-cache" value=""/>
+			<input type="hidden" id="param-fancytree-render" value="0"/>
+		</div>
+		<div id="content">
+			<div class="calc-group-overview"></div>
+		</div>
+		<div class="default_values"></div>
+		<!-- Page Content -->
+
+		<div id="timemachine-modal" style="display: none;" class="timemachine-modal">
+			<div class="timemachine-body">
+				<p>DarCE Rewind <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UI" data-app-item="DARCE REWIND"></span></p> 
+				<input type="checkbox" class="timemachine-switch">
+				<input type="hidden" id="timemachine-check" value=0>
+				<div id="timemachine-mode-off">
+					<span>DarCE Rewind is switched off. Calc Groups are displayed as in now (real time).</span>
+				</div>
+				<div id="timemachine-mode-on" style="display: none;">
+					<form id="timemachine-form">
+						<span>Pick a date to view Calc Groups as of that day</span>
+						<div class="input-group">
+							<span class="input-group-addon" id="timemachine-date-group"><i class="icon-calendar3"></i></span>
+							<input type="text" class="form-control" name="timemachine_date" id="timemachine-date" placeholder="Format date must be YYYY-MM-DD">
+						</div>
+						<div class="input-group">
+							<span class="input-group-addon" id="timemachine-time-group"><i class="icon-watch2"></i></span>
+							<input type="text" class="form-control" name="timemachine_time" id="timemachine-time" placeholder="Format time must be HH:MM">
+						</div>
+						<div class="btn-group">
+							<span class="text-red"></span>
+							<button type="button" class="btn btn-primary btn-submit pull-right">Go</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Add New Calc Group Modal -->
+	<div id="add-new-calc-group-modal" class="add-new-calc-group-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" id="calc-group-modal-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add New Calculation Group</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="" class="col-lg-4 control-label">Calc Group ID <span class="text-red">*</span></label>
+							<div class="col-lg-8 input-field">
+								<input type="text" name="CalcGroupId" id="add-new-calc-group-id" class="form-control">
+								<span class="text-red calc-group-id-error"></span>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-4 control-label">Primary Data Source ID <span class="text-red">*</span></label>
+							<div class="col-lg-8">
+								<select name="DsourceId" class="form-control select-field datasource-list"></select>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Rename Calc Group Modal -->
+	<div id="rename-calc-group-modal" class="rename-calc-group-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rename Calculation Group</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" id="rename-copy-calc-group-id" class="form-control">
+						<span class="text-red calc-group-id-error"></span>
+						<input type="hidden" id="default-calc-group-id">
+						<input type="hidden" id="calc-group-action">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Add New Calculation Modal -->
+	<div id="calculation-modal" class="calculation-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" id="calculation-modal-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Add New Calculation</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="" class="col-lg-4 control-label">Calculation ID <span class="text-red">*</span></label>
+							<div class="col-lg-8 input-field">
+								<input type="text" name="CalcId" class="form-control primary-id">
+								<span class="text-red"></span>
+								<input type="hidden" name="Action" value="A">
+								<input type="hidden" name="Enabled" value="Y">
+								<input type="hidden" name="CalcOrder">
+								<input type="hidden" name="CalcInstance" value="1">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-4 control-label">Source ID <span class="text-red">*</span></label>
+							<div class="col-lg-8">
+								<select name="SourceId" class="form-control select-field datasource-list"></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-4 control-label">Target ID <span class="text-red">*</span></label>
+							<div class="col-lg-8">
+								<select name="TargetId" class="form-control select-field datasource-list"></select>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Rename Variable Modal -->
+	<div id="rename-variable-modal" class="rename-variable-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rename Variable</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" id="rename-copy-variable-id" name="VariableId" class="form-control primary-id">
+						<span class="text-red variable-error-message"></span>
+						<input type="hidden" id="default-variable-id" name="Fromvariableid">
+						<input type="hidden" id="temp-variable-id" name="Tempvariableid">
+						<input type="hidden" id="variable-modal-action" name="Action">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Rename calculation Modal -->
+	<div id="rename-calculation-modal" class="rename-calculation-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Rename Calculation</h4>
+					</div>
+					<div class="modal-body">
+						<input type="text" id="rename-copy-calculation-id" name="CalcId" class="form-control primary-id">
+						<span class="text-red calculation-error-message"></span>
+						<input type="hidden" id="default-calculation-id" name="Fromcalcid">
+						<input type="hidden" id="temp-calculation-id" name="Tempcalcid">
+						<input type="hidden" id="calculation-modal-action" name="Action">
+						<input type="hidden" name="CalcOrder">
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>	
+
+	<!-- Add Variable Modal -->
+	<div id="variable-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" id="variable-modal-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close close-variable-modal">&times;</button>
+						<h4 class="modal-title">Add New Variable</h4>
+					</div>
+					<div class="modal-body">
+						<input type="hidden" name="Action" id="variable-action" value="">
+						<div class="form-group variable-id-input-field">
+							<label for="" class="col-lg-3 control-label">Variable ID <span class="text-red">*</span></label>
+							<div class="col-lg-7 input-field">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-3 control-label">Variable Type <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="VARIABLE" data-app-item="VARIABLE TYPE"></span></label>
+							<div class="col-lg-7">
+								<select name="VariableType" id="variable-type" class="form-control select-field">
+									<!-- <option value="" selected="selected"></option> -->
+									<option value="STANDARD" selected>STANDARD</option>
+									<option value="REPEAT">REPEAT</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-3 control-label">Dimension</label>
+							<div class="col-lg-7">
+								<select name="Dimension" id="variable-dimension" data-placeholder="Select a dimension..." class="form-control select-field dimension-list">
+									<option value="" selected="selected"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-3 control-label">Property</label>
+							<div class="col-lg-7">
+								<select name="Property" id="variable-property" data-placeholder="Select a property..." class="form-control select-field property-list">
+									<option value="" selected="selected"></option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-12 control-label">Variable Filter <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="VARIABLE" data-app-item="VARIABLE FILTER"></span></label>
+							<div class="col-lg-12">
+								<textarea name="VariableFilter" id="variable-filter" rows="3" class="form-control textarea-field"></textarea>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link close-variable-modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+    <!-- Select Existing Calculation Modal -->
+	<div id="select-existing-calculation-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<form action="" id="existing-calculation-add-modal-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Select Calc(s)</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<label for="" class="col-lg-3 control-label">Model</label>
+							<div class="col-lg-7">
+								<select class="form-control existing-datasource-list" data-placeholder="Select a model..." id="select-existing-calc-model-field">
+									<option value="">&nbsp;</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="" class="col-lg-3 control-label">Calculation</label>
+							<div class="col-lg-7">
+								<select class="form-control" data-placeholder="Select a calculation..." multiple name="CalcIds" id="select-existing-calc-calculation-field">
+								</select>
+								<span class="text-red"></span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary btn-submit">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</div>

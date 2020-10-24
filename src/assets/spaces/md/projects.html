@@ -1,0 +1,102 @@
+<script type="text/javascript" src="assets/spaces/md/projects.js"></script>
+
+<div id="projects_main_pg" class="projects-main-section">
+    <div class="panel panel-flat">
+        <div class="row">
+            <div class="projects-main-pg">
+                <div class="col-xs-4 projects-main-add">
+                    <a href="javascript:void(0)" class="add-projects-btn text-uppercase text-semibold">
+                        <i class="icon-plus3"></i> New Project
+                    </a>
+                </div>
+                <div class="col-xs-4 projects-main-search">
+                    <div class="form-group has-feedback has-feedback-left">
+                        <input type="text" class="form-control" id="search-projects" placeholder="Search">
+                        <div class="form-control-feedback">
+                            <i class="icon-search4 text-size-base"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4 projects-main-save text-right">
+                    <!-- <button type="button" class="btn btn-grey projects-save-btn projects-save-btn">Save</button> -->
+                    <a class="btn btn-link projects-refresh-btn"><i class="icon-loop3"></i></a>
+                </div>
+                <div class="col-xs-12">
+                    <div class="table-responsive">
+                        <table class="table projects-main-table projects-main-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>                
+                </div>
+            </div>
+        </div>
+
+        <!-- New Project Modal -->
+        <div id="projects-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form action="" class="form-horizontal" id="projects-form">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Add Project</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="" class="control-label col-xs-3">Project ID <span class="text-red">*</span></label>
+                                <div class="col-xs-9">
+                                    <div class="input-field-group"></div>
+                                </div>
+                                <input type="hidden" class="form-control" name="Action">
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label col-xs-3">Description</label>
+                                <div class="col-xs-9">
+                                    <textarea class="form-control input-field" name="ProjectDescription" id="project-description" rows="3" placeholder="Please enter the project description here..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Rename project Modal -->
+        <div id="rename-project-modal" class="rename-project-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form action="" class="form-horizontal">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Rename Project</h4>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" id="rename-copy-project-id" name="Id" class="form-control primary-id" placeholder="Please enter the project id here...">
+                            <span class="text-red project-error-message"></span>
+                            <input type="hidden" id="default-project-id" name="Fromdobjectid">
+                            <input type="hidden" id="temp-project-id" name="Tempdobjectid">
+                            <input type="hidden" id="project-modal-action" name="Action">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary btn-submit">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

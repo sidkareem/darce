@@ -1,0 +1,297 @@
+
+<script type="text/javascript" src="assets/spaces/library/help_article/hlpa_main.js"></script>
+
+<div id="help-article-main-pg">
+	<div class="help-article-top">
+		<div class="article-new">
+			<a>
+				<span>+ NEW ARTICLE</span>
+			</a>
+		</div>
+        <div class="col-xs-3 search">
+            <div class="form-group has-feedback has-feedback-left">
+                <input type="text" class="form-control" id="search-help-article" placeholder="Search">
+                <div class="form-control-feedback">
+                    <i class="icon-search4 text-size-base"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-3 button-group text-right">
+        	<a href="javascript:void(0)" class="refresh icon-loop3"></a>
+        </div>
+	</div>
+	<div class="help-article-body">
+         <table class="table table-striped help-article-table" style="width:1200px">
+             <thead>
+                 <tr>
+                    <th class="text-left">ARTICLE NAME</th>
+                    <th>APPLICATION</th>
+					<th>AREA</th>
+                    <th>UPDATED BY</th>
+                    <th>UPDATED ON</th>
+                 </tr>
+             </thead>
+             <tbody></tbody>
+         </table>
+	</div>
+	
+	<div id="help-article-view-modal" class="modal fade help-article-modal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content large">
+				<form action="" id="help-article-view-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<!-- <h4 class="modal-title">View Article</h4> -->
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="article-switch">
+								<div class="col-lg-2">ARTICLE</div>
+								<label>
+									<input type="checkbox" data-on-text="VIEW" data-off-text="EDIT" class="form-check-input-switch" data-size="small" checked>
+								</label>
+							</div>						
+						</div>
+						<div class="form-group">
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">APPLICATION</label>
+								<div class="col-lg-5 modal-content-input" id="help-article-view-form-application-input">
+									<input class="form-control" placeholder="Enter an application..." id="select-ha-application-field" readonly>
+									<a href="javascript:void(0)" data-modal-name="application"><i class="icon-pencil5"></i></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">AREA</label>
+								<div class="col-lg-5 modal-content-input"  id="help-article-view-form-area-input">
+									<input class="form-control" placeholder="Enter an area..." id="select-ha-area-field" readonly>
+									<a href="javascript:void(0)" data-modal-name="area"><i class="icon-pencil5"></i></a>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">NAME</label>
+								<div class="col-lg-5 modal-content-input" id="help-article-view-form-name-input">
+									<input class="form-control" placeholder="Enter a name..." id="select-ha-name-field" readonly>
+									<a href="javascript:void(0)" data-modal-name="name"><i class="icon-pencil5"></i></a>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-lg-12">
+								<div class="form-control contents-editor" id="ha-contents-editor"></div>
+								<span class="text-red"></span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn accept" data-dismiss="modal">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<div id="help-article-new-modal" class="modal fade help-article-modal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content large">
+				<form action="" id="help-article-view-form" class="form-horizontal">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">New Article</h4>
+					</div>
+					<div class="modal-body">
+						<div class="form-group">
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">APPLICATION</label>
+								<div class="col-lg-5 modal-content-input" id="help-article-view-form-application-input">
+									<input class="form-control" placeholder="Enter an application..." id="select-ha-application-field">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">AREA</label>
+								<div class="col-lg-5 modal-content-input"  id="help-article-view-form-area-input">
+									<input class="form-control" placeholder="Enter an area..." id="select-ha-area-field">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="" class="col-lg-2 control-label">NAME</label>
+								<div class="col-lg-5 modal-content-input" id="help-article-view-form-name-input">
+									<input class="form-control" placeholder="Enter a name..." id="select-ha-name-field">
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-lg-12">
+								<div class="form-control contents-editor" id="ha-contents-editor"></div>
+								<span class="text-red"></span>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+						<button type="button" class="btn accept">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modals-mini">
+		<div id="view-help-article-application-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content small">
+					<form action="" id="help-article-edit-application-form" class="form-horizontal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">EDIT APPLICATION</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="" class="col-lg-3 control-label">APPLICATION</label>
+								<div class="col-lg-9">
+									<input class="form-control input" placeholder="Please enter an application here...">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="view-help-article-area-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content small">
+					<form action="" id="help-article-edit-application-form" class="form-horizontal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">EDIT AREA</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="" class="col-lg-3 control-label">AREA</label>
+								<div class="col-lg-9">
+									<input class="form-control input" placeholder="Please enter an area here...">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>	
+		<div id="view-help-article-name-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content small">
+					<form action="" id="help-article-edit-application-form" class="form-horizontal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">EDIT NAME</h4>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label for="" class="col-lg-3 control-label">NAME</label>
+								<div class="col-lg-9">
+									<input class="form-control input" placeholder="Please enter a name here...">
+								</div>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="delete-help-article-confirm" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content small">
+					<form action="" id="help-article-edit-application-form" class="form-horizontal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+						</div>
+						<div class="modal-body">
+							<div class="form-group">
+								<label class="warning-label">Do you want to delete the article permanently?</label>
+								<label class="warning-label intersection" id="warning-intersection"></label>
+							</div>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Cancel</button>
+							<button type="button" class="btn accept btn-primary" data-dismiss="modal">OK</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div id="copy-help-article-modal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+				<div class="modal-content small">
+					<form action="" id="help-article-edit-application-form" class="form-horizontal">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">COPY ARTICLE</h4>
+						</div>
+						<div class="modal-body">
+							<div class="locked-input">
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label">APPLICATION</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-application-field0" readonly>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label">AREA</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-area-field0" readonly>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label">NAME</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-name-field0" readonly>
+									</div>
+								</div>																						
+							</div>
+							<hr>
+							<div class="inputtable">
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label">NEW APPLICATION</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-application-field" placeholder="Please enter an application here...">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label">NEW AREA</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-area-field" placeholder="Please enter an area here...">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="" class="col-lg-3 control-label" >NEW NAME</label>
+									<div class="col-lg-9">
+										<input class="form-control input" id="copy-ha-name-field" placeholder="Please enter a name here...">
+									</div>
+								</div>
+							</div>							
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+							<button type="button" class="btn accept">Save</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>				
+	</div>	
+</div>

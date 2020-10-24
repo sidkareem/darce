@@ -1,0 +1,87 @@
+<link href="assets/spaces/massupload/prj_plan.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="assets/js/plugins/notifications/pnotify.min.js"></script>
+
+<div id="templates" class="prj-plan-box">
+  <div class="panel panel-flat">
+    <div class="prj-plan-content">
+
+            <div class="control-btn">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-primary btn-icon prj-plan-validate btn_validate" style="width:36px; height:36px" title="Validate">
+                              <i id="validateicon" class="icon-check" style="font-size:16px;"></i> </button>
+                        <button type="button" class="btn btn-primary btn-icon prj-plan-save btn_save" style="width:36px; height:36px" title="Save">
+                              <i ID='saveicon' class="icon-floppy-disk" style="font-size:16px;"></i> </button>
+                        <button type="button" class="btn btn-primary btn-icon prj-plan-delete btn_delete" style="width:36px; height:36px" title="Delete">
+                              <i class="icon-trash" style="font-size:16px;"></i> </button>
+                    </div>
+                    <div class="col-sm-8">
+                      <label style="font-size: 20px; font-weight: 700; color:Grey;">Project Plan Mass Upload</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prj-plan-cv-colapsed-form"> 
+                <div class="row">
+                    <div class="col-sm-12 prj-plan-cv-colapsed">
+                        VERSION: <span name="prj-plan-category-field" class="prj-plan-cv-click prj-plan-category-label"><strong>BUDGET_FY18_1</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prj-plan-cv-expanded">
+                <form action="" class="form-horizontal" id="prj-plan-search-form">
+                    <input type="hidden" id="param-prj-plan-query" value="">
+                    <div id="form-elements">
+                        <!-- <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <label for="" class="col-xs-4 control-label text-right text-semibold">VERSION</label>
+                                    <div class="col-xs-8">
+                                        <input class="form-control" id="prj-plan-category-field" class="prj-plan-page-header-field" value="BUDGET_FY18_1">
+                                        <a class="member-selector caret"></a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4">
+                                <div class="form-group">
+                                    <div class="col-xs-8">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                </form>
+            </div>
+
+            <div class="cv-panel">
+                <a href="" class="text-black prj-plan-cv prj-plan-cv-click icon-arrow-up12">
+
+                </a>
+            </div>
+
+            <div class="prj-plan-section" id="prj-plan-section">
+              <div class="row"></div>
+            </div>
+
+            <div id="myGrid" class="ag-theme-balham table-responsive" style="height: 83%"></div>
+
+    </div>
+  </div>
+</div>
+<script type="text/javascript" src="assets/spaces/massupload/customHeader.js"></script>
+<script type="text/javascript" src="assets/spaces/massupload/prj_plan.js"></script>

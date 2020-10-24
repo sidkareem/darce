@@ -1,0 +1,50 @@
+<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/core.min.js"></script>
+<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/effects.min.js"></script>
+<script type="text/javascript" src="assets/js/core/libraries/jquery_ui/interactions.min.js"></script>
+
+<div class="panel panel-flat">
+    <div class="fancytree-content">
+        <div class="fancytree-form">
+            <a href="javascript:void(0)" class="fancytree-control-icons tree-timestamp icon-more2 pull-right"></a>
+            <a href="javascript:void(0)" class="fancytree-control-icons tree-refresh icon-loop3 pull-right spin"></a>
+            <div class="fancytree-switch-view-icons pull-right">
+                <a href="javascript:void(0)" class="fancytree-control-icons ft-listview icon-list2" title="List View"></a>
+                <a href="javascript:void(0)" class="fancytree-control-icons ft-treeview icon-lan2 active" title="Tree View"></a>                
+            </div>
+            <span class="fancytree-section-title">CALC GROUP TREE VIEW</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UI" data-app-item="VIEW PANE"></span>
+        </div>
+        <div id="fancytree-switch-box">
+            <div class="fancytree-structure hide"></div>
+            <div class="fancytree-calc-structure hide">
+                <div class="col-xs-12">
+                    <form action="" class="form-horizontal">
+                        <div class="form-group">
+                            <label>
+                                <span class="fancytree-calc-group-label">CALC GROUP</span>
+                            </label>
+                            <div class="fancytree-calc-group-selection-field">
+                                <select name="sidebar-calc-group-lists" id="sidebar-calc-group-lists" data-placeholder="Select a calc group" class="form-control sidebar-calc-group-lists">                                    
+                                </select>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="fancytree-calc-panel hide">
+                    <a href="javascript:void(0)" class="fancytree-calc-panel-section sidebar-calc-group-title">
+                        <i class="icon-tree6"></i>
+                        <span class="fancytree-calc-group-title"></span>
+                        <span class="fancytree-calc-group-options"><i class="icon-more2 text-muted"></i></span>
+                    </a>
+                    <div id="sidebar-calc-listview">
+                        <table class="table fancytree-calculation-table">
+                            <tbody>                               
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="assets/spaces/darce/fancytree/fancytree.js"></script>

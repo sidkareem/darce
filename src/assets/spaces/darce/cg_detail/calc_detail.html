@@ -1,0 +1,360 @@
+<div class="calculation-section">
+    <div class="row">
+        <div class="col-sm-8 pull-left text-left">
+            <div class="calc-header">
+                <i class="icon-calculator3"></i>
+                <span class="calc-heading"></span>
+            </div>
+        </div>
+        <div class="col-xs-4 pull-right text-right calculation-control-btn">
+            <button type="button" class="btn btn-default back-btn calculation-back">Back</button>
+            <button type="button"class="btn btn-grey back-btn calculation-save">Save</button>
+            <a href="javascript:void(0)" class="calculation-refresh icon-loop3 spin"></a>
+        </div>
+    </div>
+    <form class="stepy-wizard form-horizontal" id="calculation-form" action="#">
+        <input type="hidden" name="CalcOrder" id="CalcOrder">
+        <input type="hidden" name="Action" id="Action">        
+        <input type="hidden" name="Enabled" id="Enabled" value="Y">
+        <input type="hidden" name="CalcInstance" id="CalcInstance">
+        <fieldset title="1">
+            <legend class="text-semibold">Header</legend>
+            <div class="calculation-header-form">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Calculation ID <span class="text-red">*</span></label>
+                            <div class="col-xs-5">
+                                <div id="calc-id-input-field">
+                                    <input type="text" class="form-control input-field primary-ids-max-val" id="calc-id" name="CalcId" value="">
+                                    <span class="text-red calc-error-message"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Calculation Description</label>
+                            <div class="col-xs-9">
+                                <textarea class="form-control input-field" value="" id="calc-descr" name="CalcDescr" rows="3" placeholder="Please enter calculation description here..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-12">Data Filter</label>
+                            <div class="col-xs-12">
+                                <textarea cols="30" rows="0" class="form-control" id="calc-data-filter" name="CalcDataFilter" placeholder="Please enter source data filter here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="" class="control-label col-xs-3">Advanced Options</label>
+                            <div class="advanced-options clearfix">
+                                <div class="adv-btn-section">
+                                    <button type="button" class="source-id-btn btn btn-grey btn-block" data-toggle="modal" data-target="#calc-source-modal">
+                                        Source
+                                    </button>
+                                    <span class="text-red">*</span>
+                                </div>
+                                <div class="adv-btn-section">
+                                    <button type="button" class="target-id-btn btn btn-grey btn-block" data-toggle="modal" data-target="#calc-target-modal">
+                                        Target
+                                    </button>
+                                    <span class="text-red">*</span>
+                                </div>
+                                <div class="adv-btn-section">
+                                    <button type="button" class="calc-data-alias-btn btn btn-grey btn-block" data-toggle="modal" data-target="#calc-alias-modal">
+                                        Alias
+                                    </button>
+                                </div>
+                                <div class="adv-btn-section">
+                                    <button type="button" class="calc-ytd-btn btn btn-grey btn-block" data-toggle="modal" data-target="#calc-ytd-modal">
+                                        YTD
+                                    </button>
+                                </div>
+                                <div class="adv-btn-section">
+                                    <button type="button" class="aggregate-dims-btn btn btn-grey btn-block" data-toggle="modal" data-target="#calc-agg-modal">
+                                        Agg
+                                    </button>
+                                </div>
+                                <div class="adv-btn-section">
+                                    <button type="button" class="rem-data-btn btn btn-grey btn-block" data-toggle="modal" data-target="#rem-data-modal">
+                                        Remove
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                                   
+
+            <!-- Source Modal -->
+            <div id="calc-source-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="source-id" class="update-btn close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">DATA SOURCE (<span class="text-small">e.g.</span> MODEL) <span class="text-red">*</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="SOURCE"></span></label>
+                            <select name="SourceId" data-placeholder="Select Source Data Object" id="source-id" class="select2 datasource-list select-field">
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="source-id" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="source-id" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>	
+        
+            <!-- Target Modal -->
+            <div id="calc-target-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="target-id" class="update-btn close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">DATA TARGET (<span class="text-small">e.g.</span> MODEL) <span class="text-red">*</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="TARGET"></span></label>
+                            <select name="TargetId" data-placeholder="Select Target Data Object" id="target-id" class="select2 datasource-list select-field">
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="target-id" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="target-id" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>		
+        
+            <!-- Alias Modal -->
+            <div id="calc-alias-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="calc-data-alias" class="update-btn close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">SOURCE AMOUNT DATA ALIAS <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="ALIAS"></span></label>
+                            <input type="text" name="CalcDataAlias" id="calc-data-alias" attr-save-btn='disable' class="form-control input-field" placeholder="Default is AMOUNT">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="calc-data-alias" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="calc-data-alias" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- YTD Modal -->
+            <div id="calc-ytd-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog modal-sm">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="calc-ytd" class="update-btn close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="">YTD DATA FORMAT <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="YTD"></span></label>
+                            <select name="CalcYtd" id="calc-ytd"  attr-save-btn='disable' class="select2 select-field">
+                                <option value="0">None</option>
+                                <option value="-1">Fiscal Year-To-Date</option>
+                                <option value="C">Calendar Year-To-Date</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="calc-ytd" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="calc-ytd" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calc Aggregate Modal -->
+            <div id="calc-agg-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">                                    
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="aggregate-dims" class="update-btn close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <label for="">Aggregate Dimensions <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="AGG"></span></label>
+                                        <select id="aggregate-dims" class="multiselect dimension-list multiselect-field"  attr-save-btn='disable' multiple="multiple">
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-12">
+                                        <label for="">Aggregate Function <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="AGGREGATE FUNCTION"></span></label>
+                                        <select id="aggregate-function" data-placeholder="Select an Aggregate Function" attr-save-btn='disable' class="form-control select-field">
+                                            <option selected="selected" value="SUM">SUM (Default)</option>
+                                            <option value="COUNT">COUNT</option>
+                                            <option value="MAX">MAX</option>
+                                            <option value="MIN">MIN</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="aggregate-dims,aggregate-function" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="aggregate-dims,aggregate-function" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>                                    
+                </div>
+            </div>
+
+            <!-- Rem Data Modal -->
+            <div id="rem-data-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                <div class="modal-dialog">                                    
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" attr-id="rem-data" class="update-btn close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <label for="">REMOVE CALC SOURCE DATA IN DATA SOURCE CUBE <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC HEADER" data-app-item="REMOVE"></span></label>
+                                    <div class="radio-styled-box">
+                                        <label class="">
+                                            <div class="choice">
+                                                <!-- <span class="checked"> -->
+                                                    <input type="radio" class="rem-data checkbox-field" name="RemDataFromMini" value="Y">
+                                                <!-- </span> -->
+                                            </div>
+                                            <span>Yes (Remove any incoming data queried by this Calc)</span>
+                                        </label>
+                                
+                                        <label class="">
+                                            <div class="choice">
+                                                <!-- <span> -->
+                                                    <input type="radio" class="rem-data checkbox-field" name="RemDataFromMini" value="N">
+                                                <!-- </span> -->
+                                            </div>
+                                            <span>No (Keep all data queried by this Calc)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" attr-id="rem-data" class="update-btn btn btn-link" data-dismiss="modal">Close</button>
+                            <button type="button" attr-id="rem-data" class="update-btn update-checkbox-btn btn btn-primary btn-submit-ok">OK</button>
+                        </div>
+                    </div>                                    
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset title="2">
+            <legend class="text-semibold">Driver</legend>
+            <div class="calculation-driver-table-responsive">                                                  
+                <a href="javascript:void(0)" class="evo-group-add-link" id="calculation-driver-add-btn"><i class="icon-plus2"></i> New Driver</a>
+                <table class="table table-striped calculation-driver-table">
+                    <thead>
+                        <tr>
+                            <th id="driver-table-header-1"><div id='driver-table-header-1-sizer'></div>ENABLE</th>
+                            <th id="driver-table-header-2"><div id='driver-table-header-2-sizer'></div>DRIVER ID</th>
+                            <th id="driver-table-header-3"><div id='driver-table-header-3-sizer'></div>TYPE</th>
+                            <th id="driver-table-header-4"><div id='driver-table-header-4-sizer'></div>ADVANCED</th>
+                            <th id="driver-table-header-5"><div id='driver-table-header-5-sizer'></div>DATA OBJECT</th>
+                            <th id="driver-table-header-6"><div id='driver-table-header-6-sizer'></div>FIELD</th>
+                            <th id="driver-table-header-7"><div id='driver-table-header-7-sizer'></div>LOOKUP OVERRIDE</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+
+        <fieldset title="3">
+            <legend class="text-semibold">Step</legend>
+            <div class="calculation-step-table-responsive">                                                  
+                <a href="javascript:void(0)" class="evo-group-add-link" id="calculation-step-add-btn"><i class="icon-plus2"></i> New Step</a>
+                <table class="table table-striped calculation-step-table">
+                    <thead>
+                        <tr>
+                            <th id="step-table-header-1"><div id='step-table-header-1-sizer'></div></th>
+                            <th id="step-table-header-2"><div id='step-table-header-2-sizer'></div>ENABLE</th>
+                            <th id="step-table-header-3"><div id='step-table-header-3-sizer'></div>STEP ID</th>
+                            <th id="step-table-header-4"><div id='step-table-header-4-sizer'></div>WRITE</th>
+                            <th id="step-table-header-5"><div id='step-table-header-5-sizer'></div>IN CALC</th>
+                            <th id="step-table-header-6"><div id='step-table-header-6-sizer'></div>IN GRP</th>
+                            <th id="step-table-header-7"><div id='step-table-header-7-sizer'></div>REPEAT</th>
+                            <th id="step-table-header-8"><div id='step-table-header-8-sizer'></div>CRITERIA</th>
+                            <th id="step-table-header-9"><div id='step-table-header-9-sizer'></div>CALCULATION</th>
+                            <th id="step-table-header-10"><div id='step-table-header-10-sizer'></div>DESTINATION</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </fieldset>
+        <button type="submit" class="btn btn-primary stepy-finish">Submit <i class="icon-check position-right"></i></button>
+    </form> 
+    <!-- Rename step Modal -->
+	<div id="rename-step-modal" class="rename-step-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Rename Step</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" id="rename-copy-step-id" class="form-control">
+					<span class="text-red step-error-message"></span>
+                    <input type="hidden" id="default-step-id">
+                    <input type="hidden" id="temp-step-id">
+					<input type="hidden" id="rename-step-modal-action">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary btn-submit">Save</button>
+				</div>
+			</div>
+		</div>
+    </div>	
+
+    <!-- Rename Driver Modal -->
+	<div id="rename-driver-modal" class="rename-driver-modal modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Rename Variable</h4>
+				</div>
+				<div class="modal-body">
+					<input type="text" id="rename-copy-driver-id" class="form-control">
+					<span class="text-red rename-driver-error-message"></span>
+                    <input type="hidden" id="default-driver-id">
+                    <input type="hidden" id="temp-driver-id">
+					<input type="hidden" id="driver-modal-action">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary btn-submit">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>    
+    
+</div>
+<script>loadCalcStepyWizard();</script>
+<script src="assets/spaces/darce/cg_detail/calc_detail.js"></script> 

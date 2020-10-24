@@ -1,0 +1,27 @@
+.projects-main-section .projects-main-table > thead > tr > th {
+    background: #44546a;
+    border: 1px solid #fff;
+	color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+
+.projects-main-section .projects-main-table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+.projects-main-section .panel.panel-flat {
+    padding: 20px 20px 0 20px;
+    height: calc(100vh - 170px);
+}
+
+.projects-main-section .projects-main-add {
+    line-height: 40px;
+    left: 10px;
+}
+
+.projects-main-section .dataTables_filter {
+	display: none;
+}

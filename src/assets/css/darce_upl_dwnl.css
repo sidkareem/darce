@@ -1,0 +1,301 @@
+/**
+*=========================================================
+* Upload Download DarCE component
+*=========================================================
+*/
+
+.upl-dwnl-main-section .convert-config-form, 
+.upl-dwnl-main-section .copy-config-form {
+	min-width: 1500px;
+}
+
+.upl-dwnl-main-section .nav-tabs-list .tab-content {
+	height: calc(100vh - 210px);
+	background: #FFF;
+	overflow-y: scroll;
+	overflow-x: hidden;
+   	padding-top: 20px;
+   	padding-left: 20px;
+   	padding-bottom: 0px;
+}
+.upl-dwnl-main-section .nav-tabs-list ul > li > a {
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.upl-dwnl-main-section .form-horizontal fieldset:not(.last-row) {
+	margin-bottom: 20px;
+}
+.upl-dwnl-main-section .fieldset-title {
+	font-weight: bold;
+}
+.upl-dwnl-main-section .form-horizontal .radio .choice, 
+.upl-dwnl-main-section .form-horizontal .radio-inline .choice {
+	top: 0;
+}
+.upl-dwnl-main-section fieldset > button,
+.upl-dwnl-main-section button.input-grp-button,
+.upl-dwnl-main-section button.validation-button {
+	color: #FFF;
+    font-weight: bold;
+    min-width: 80px;
+    text-transform: uppercase;
+}
+
+.upl-dwnl-main-section #upload-val-btn {
+	margin-left: 10px;
+	margin-top: 15px;
+	/*margin-top: 25px;*/
+	margin-bottom: 10px;
+}
+
+.upl-dwnl-main-section .target-field .select2-selection--multiple .select2-selection__rendered {
+	margin-left: 0 !important;
+}
+.upl-dwnl-main-section fieldset > .btn-default-grey,
+.upl-dwnl-main-section fieldset > .btn-default-grey:hover {
+	color: #FFF;
+	background: #ddd;
+}
+.upl-dwnl-main-section .delete-tab-pane .form-horizontal .form-group > label {
+	font-weight: bold;
+}
+
+.upl-dwnl-main-section .option-input {
+	width: 120px;
+	display: inline;
+	margin-left: 20px;
+	position: relative;
+	top: 5px;
+}
+
+.upl-dwnl-main-section div.choices {
+	margin-bottom: 10px;
+}
+
+.upl-dwnl-main-section .has-option-input {
+	margin-top: -5px;
+}
+
+.upl-dwnl-main-section .bold {
+	font-weight: bold;
+}
+
+.upl-dwnl-main-section .input-grp-input {
+	width: 490px;
+	float: right;
+}
+
+.upl-dwnl-main-section div#upload_dz {
+	min-height: 85px;
+	border-width: 3px;
+}
+
+.upl-dwnl-main-section div.dz-file-preview {
+	height: 60px;
+}
+
+.upl-dwnl-main-section div.dz-file-preview > .dz-details {
+	padding: 1px;
+}
+
+.upl-dwnl-main-section div#upload_dz > div::before {
+	font-size: 40px;
+	top: 20px;
+	width: 60px;
+	height: 60px;
+	left: 50px;
+}
+
+.upl-dwnl-main-section div#upload_dz > div > span {
+	font-size: 11px;
+	margin-top: 5px;
+	color: #907E82;
+	margin-left: -40px;
+}
+
+.upl-dwnl-main-section div#upload_dz > div > span > span{
+	font-size: 10px;
+	color: #907E82;
+}
+
+.upl-dwnl-main-section .modal-section button.close {
+	top: unset;
+}
+
+.upl-dwnl-main-section .modal-section h5.modal-title {
+	margin-right: 35px;
+	margin-bottom: 10px;
+}
+
+.upl-dwnl-main-section .modal-section span.select2-container--id-desc {
+	width: 170px!important;
+	position: relative;
+	top: -4px;
+}
+
+.upl-dwnl-main-section .modal-section .select2-selection__rendered {
+    line-height: 15px;
+    position: relative;
+    top: -5px;
+    font-weight: normal;
+    
+}
+.upl-dwnl-main-section .modal-section .select2-container .select2-selection--single {
+    height: 25px !important;
+}
+.upl-dwnl-main-section .modal-section .select2-selection__arrow {
+    height: 34px !important;
+}
+
+.upl-dwnl-main-section .modal-section .selector-input > span.invalid {
+	color: red;
+}
+
+.upl-dwnl-main-section .modal-section .search-box {
+	display: inline-block;
+	position: relative;
+	top: -2px;
+	left: 20px;
+}
+
+.upl-dwnl-main-section .modal-section .search-box > input {
+	border: #ddd solid 1px;
+	padding: 3px 20px 3px 5px;
+	width: 250px;
+}
+
+.upl-dwnl-main-section .modal-section .search-box > button {
+	border: none;
+	background-color: rgba(0,0,0,0);
+}
+
+.upl-dwnl-main-section .modal-section .search-box > button > i {
+	font-size: 12px;
+	color: #7a7a7a;
+}
+
+.upl-dwnl-main-section .modal-section .search-box > button.search-close {
+	position: relative;
+	left: -54px;
+	font-size: 16px;
+}
+
+.upl-dwnl-main-section .modal-section button.close {
+	top: unset;
+}
+
+.upl-dwnl-main-section .modal-section div.modal-body {
+	padding-top: 5px;
+}
+
+.upl-dwnl-main-section .modal-section .selection-fancy-tree {
+	height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	border: solid 1px #eee;
+	padding: 0px 5px 5px 5px;
+}
+
+.upl-dwnl-main-section .padding-right-0 {
+	padding-right: 0px;
+}
+
+.upl-dwnl-main-section .input-group.fix-width {
+	min-width: 571px;
+}
+
+.upl-dwnl-main-section #upload-config {
+	float:left;
+	margin-right: 20px;
+	margin-left: 10px;
+}
+
+.upl-dwnl-main-section .error {
+	color: red;
+}
+
+/*.upl-dwnl-main-section .inv-json-message {
+    position: relative;
+    top: 8px;
+}*/
+
+.upl-dwnl-main-section .success {
+	color: #00B050;
+}
+
+.upl-dwnl-main-section .warning {
+	color: #C4C407;
+}
+
+.upl-dwnl-main-section #upload-error-message {
+	margin-top: 2px;
+}
+
+.upl-dwnl-main-section .fancytree-treefocus span.fancytree-selected .fancytree-title,
+.upl-dwnl-main-section span.fancytree-selected .fancytree-title,
+.upl-dwnl-main-section .fancytree-active .fancytree-title {
+	background-color: inherit;
+	color: inherit;
+}
+
+.upl-dwnl-main-section .fancytree-custom-icon.orphan {
+	color: #FF6D6D;
+}
+
+.upl-dwnl-main-section .fancytree-selected .fancytree-checkbox {
+	background-color: #435A64;
+	color: white;
+	border-color: #435A64;
+}
+
+.upl-dwnl-main-section .fancy-flag-new {
+    background-color: #00B050;
+}
+
+.upl-dwnl-main-section .fancy-flag-orphan {
+    background-color: #FF6D6D;
+}
+
+.upl-dwnl-main-section #upload-validate-message {
+    display: inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 5px;
+}
+
+.upl-dwnl-main-section .fancytree-custom-icon {
+	position: static;
+	color: #207dc7;
+}
+
+.upl-dwnl-main-section > div > div {
+	overflow: hidden;
+}
+
+.upl-dwnl-main-section #import-selection-box {
+	margin-left: 10px;
+}
+
+.upl-dwnl-main-section #upload-validate-message > div.one-line {
+	position: relative;
+	top: 0px;
+}
+
+.upl-dwnl-main-section #upload-validate-message > div.two-line {
+	position: relative;
+	top: 10px;
+	max-width: 500px;
+}
+
+.upl-dwnl-main-section #import-selection-container {
+	margin-left: -100px;
+}
+
+.upl-dwnl-main-section #upload-options-container {
+	margin-top: 25px;
+}
+
+.upl-dwnl-main-section #upload_dz > .dz-default.dz-message {
+	height: 80px;
+	margin-top: -40px;
+}

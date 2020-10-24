@@ -1,0 +1,168 @@
+<!-- Driver Modal -->
+<div id="driver-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <form action="" class="form-horizontal" id="driver-form">
+                <input type="hidden" id="driver_action" name="DriverAction" value="">
+                <div class="modal-header">
+                    <h5 class="modal-title">New Driver</h5>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="" class="col-xs-2 control-label">Driver ID <span class="text-red">*</span></label>
+                        <div class="col-xs-5 driver-id-input-field">
+                            <div class="input-group">
+                                <input type="text" class="form-control primary-ids-max-val input-field" name="DriverId" id="driver-id">
+                                <span class="text-red driver-error-message"></span>
+                                <span class="input-group-addon driver-id-rename"><i class="icon-pencil7"></i></span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-2 control-label">Driver Descr</label>
+                        <div class="col-xs-10">
+                            <textarea name="DriverDescr" id="driver-descr" cols="30" rows="3" class="form-control input-field" placeholder="Enter a driver description..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-2 control-label">Driver Type <span class="text-red">*</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="DRIVER" data-app-item="DRIVER TYPE"></span></label>
+                        <div class="col-xs-4">
+                            <select class="form-control select2 select-field" data-placeholder="Select a driver type..." name="DriverType" id="driver-type">                                
+                            </select>
+                        </div>
+                    </div>
+                    <div class="dependent-data master-data hidden">
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Dimension <br />(Data Object) <span class="text-red">*</span></label>
+                            <div class="col-xs-4">
+                                <select class="form-control select2 dimension-list select-field" id="driver-dimension" name="Dimension" data-placeholder="Select a dimension...">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <label for="" class="col-xs-2 control-label">Property (Field) <span class="text-red">*</span></label>
+                            <div class="col-xs-4">
+                                <select class="form-control select2 property-list select-field" id="dim-attribute" name="DimAttribute" data-placeholder="Select a property...">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dependent-data data-object hidden">
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Model (Data Object) <span class="text-red inline-text-red">*</span></label>
+                            <div class="col-xs-4">
+                                <select class="form-control select2 select-field" id="driver-source-id" name="SourceId" data-placeholder="Select a data object (model)...">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <label for="" class="col-xs-2 control-label">Amount (Field)</label>
+                            <div class="col-xs-4">
+                                <input type="text" class="form-control input-field" readonly>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-2 control-label">Lookup Override <span class="icon-question4 helptext-btn lookup-override-helptext" data-app="DARCE" data-app-area="DRIVER" data-app-item="LOOKUP OVERRIDE"></span></label>
+                        <div class="col-xs-10">
+                            <textarea name="DriverLookupOverride" id="driver-lookup-override" cols="30" rows="5" class="form-control textarea-field" placeholder="Enter a lookup override..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="control-label col-xs-2">Advanced</label>
+                        <div class="advanced-options clearfix">
+                            <div class="col-xs-1">
+                                <div class="adv-btn-section">
+                                    <button type="button" class="repeat-driver-btn btn btn-grey btn-block" data-toggle="modal" data-target="#repeat-driver-modal">
+                                        Repeat
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <div class="adv-btn-section">
+                                    <button type="button" class="driver-options-btn btn btn-grey btn-block" data-toggle="modal" data-target="#driver-options-modal">
+                                        Option
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="col-xs-1">
+                                <div class="adv-btn-section">
+                                    <button type="button" class="dims-to-ignore-in-lkup-btn btn btn-grey btn-block" data-toggle="modal" data-target="#dims-to-ignore-in-lkup-modal">
+                                        Ignore
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat Driver Modal -->
+                    <div id="repeat-driver-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog modal-sm">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" attr-id="repeat-driver" class="update-btn data-dismiss-modal close">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="">Repeat Driver <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="DRIVER" data-app-item="REPEAT"></span></label>
+                                    <textarea name="RepeatDriver" id="repeat-driver" cols="30" rows="4" class="form-control textarea-field" placeholder="Please enter repeating string here..."></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" attr-id="repeat-driver" class="update-btn data-dismiss-modal btn btn-link">Close</button>
+                                    <button type="button" attr-id="repeat-driver" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Driver Options Modal -->
+                    <div id="driver-options-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog modal-sm">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" attr-id="driver-options" class="update-btn data-dismiss-modal close">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="">Driver Options <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="DRIVER" data-app-item="OPTION"></span></label>
+                                    <textarea name="DriverOptions" id="driver-options" cols="30" rows="4" class="form-control textarea-field" placeholder="Please enter driver option(s) here..."></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" attr-id="driver-options" class="update-btn data-dismiss-modal btn btn-link">Close</button>
+                                    <button type="button" attr-id="driver-options" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dimensions to ignore in lookup-->
+                    <div id="dims-to-ignore-in-lkup-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                        <div class="modal-dialog modal-sm">
+                            <!-- Modal content-->
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" attr-id="dims-to-ignore-in-lkup" class="update-btn data-dismiss-modal close">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <label for="">Dimensions to ignore in lookup <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="DRIVER" data-app-item="IGNORE"></span></label>
+                                    <textarea name="DimsToIgnoreInLkup" id="dims-to-ignore-in-lkup" cols="30" rows="4" class="form-control textarea-field" placeholder="Please enter dimensions to ignore in lookup here..."></textarea>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" attr-id="dims-to-ignore-in-lkup" class="update-btn data-dismiss-modal btn btn-link">Close</button>
+                                    <button type="button" attr-id="dims-to-ignore-in-lkup" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link close-driver-form" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary add-modify-driver btn-submit">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,194 @@
+<script src="assets/spaces/darce/upl_dwnl/upl_dwnl_main.js"></script>
+
+<div id="upl_dwnl_main_pg" class="upl-dwnl-main-section">    
+    <div class="nav-tabs-list">
+        <ul class="nav nav-tabs nav-tabs-highlight">
+            <li class="active"><a data-toggle="tab" href="#ud_download">Download</a></li>
+            <li><a data-toggle="tab" href="#ud_upload">Upload</a></li>
+        </ul>
+    
+        <div class="tab-content">
+            <div id="ud_download" class="tab-pane fade in active">
+                <div class="copy-tab-pane">
+                    <form class="form-horizontal copy-config-form">
+                        <fieldset>
+                            <div class="col-xs-5">
+                            	<div class="form-group">
+                            		<label for="" class="col-sm-3 control-label bold padding-right-0">Environment
+                           				<span class="text-red">*</span>
+                           				<span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="DOWNLOAD" data-app-item="ENVIRONMENT"></span>
+                            		</label>
+                            		<div class="col-sm-8">
+                            			<select name="SourceEnvironmentD" id="dwnl-env-field" data-placeholder="Select an environment" class="form-control env-field">
+                            			</select>
+                            		</div>
+                            	</div>
+                            </div>                            
+                        </fieldset>
+                        <fieldset>
+                            <button class="btn btn-default-grey btn-submit" type="button" id="download-config">Download</button>
+                        </fieldset>                        
+                    </form>
+                </div>
+            </div>
+            <div id="ud_upload" class="tab-pane fade">
+                <div class="convert-tab-pane">
+                    <form class="form-horizontal convert-config-form">
+                        <fieldset>
+                            <div class="col-xs-5">
+                                <div class="form-group">
+                                    <label class="col-sm-3 control-label bold padding-right-0">Environment 
+                                    	<span class="text-red">*</span>
+                                    	<span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UPLOAD" data-app-item="ENVIRONMENT"></span>
+                                    </label>
+                                    <div class="col-sm-6 target-field">
+                                        <select name="SourceEnvironmentU" id="upl-env-field" data-placeholder="Select an environment" class="form-control env-field"></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="col-xs-5">
+                               	<div class="row">
+                                    <label class="col-sm-3 control-label bold">Upload File 
+                                    	<span class="text-red">*</span>
+                                    	<span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UPLOAD" data-app-item="UPLOAD FILE"></span>
+                                    </label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6 target-field">
+                                    	<div id="upload_dz" class="dropzone"></div>
+                                    </div>
+                                </div>
+                                <div class="row">
+									<!-- <button class="btn btn-default-grey validation-button" type="button" id="upload-val-btn">Validate</button>
+		                        	<div id="upload-validate-message">
+			                            <div class="one-line"><span class="success-message upload-message success" style="display:none;" >
+				                            <i class="icon-checkmark"></i>No errors found!</span>
+				                        </div>
+			                            <div class="two-line"><span class="error-message upload-message error" style="display:none;" >
+			                            	<i class="icon-cross2"></i>Validation failed. Please see downloaded log for details.<br><a>Click here to re-download the log again.</a></span>
+			                            </div>
+			                            <div class="two-line"><span class="warning-message upload-message warning" style="display:none;" >
+			                            	<i class="icon-warning"></i>Validation completed with warnings. Please see downloaded log for details.<br><a>Click here to re-download the log again.</a></span>
+			                            </div>
+		                        	</div>
+									         -->                       
+                                </div>
+                            </div>                            
+                            <div class="col-xs-6" id="import-selection-container">
+                            	<div class="row">
+		                            <label class="fieldset-title col-sm-5 control-label bold">Import Selection and Validation
+		                            	<span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UPLOAD" data-app-item="IMPORT SELECTION"></span>
+		                            </label>                            	
+                            	</div>
+	                            <div class="row">
+									<div class="input-group fix-width" id="import-selection-box">
+										<span class="input-group-prepend">
+											<button class="btn btn-default-grey input-grp-button" type="button" id="select-model-btn" data-init="0">Select</button>
+										</span>
+										<input type="text" class="form-control input-grp-input" id="select-model-input" readonly>
+									</div>	                            
+	                            </div>
+	                            <div class="row">
+	                            	<button class="btn btn-default-grey validation-button" type="button" id="upload-val-btn">Validate</button>
+		                        	<div id="upload-validate-message">
+			                            <div class="one-line"><span class="success-message upload-message success" style="display:none;" >
+				                            <i class="icon-checkmark"></i>No errors found!</span>
+				                        </div>
+			                            <div class="two-line"><span class="error-message upload-message error" style="display:none;" >
+			                            	<i class="icon-cross2"></i>Validation failed. Please see downloaded log for details.<br><a>Click here to re-download the log again.</a></span>
+			                            </div>
+			                            <div class="two-line"><span class="warning-message upload-message warning" style="display:none;" >
+			                            	<i class="icon-warning"></i>Validation completed with warnings. Please see downloaded log for details.<br><a>Click here to re-download the log again.</a></span>
+			                            </div>
+			                            <div class="one-line"><span class="inv-json-message upload-message error" style="display:none;" >
+				                            <i class="icon-checkmark"></i>Invalid json format</span>
+				                        </div>    
+		                        	</div>     	
+	                            </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                        	<div class="col-xs-8" id="upload-options-container">
+	                            <p class="fieldset-title">Upload Options 
+	                            	<span class="text-red">*</span>
+	                            	<span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="UPLOAD" data-app-item="UPLOAD OPTIONS"></span>
+	                            </p>
+	                            <div class="col-xs-6" id="upload-options">
+	                                <div class="form-group">
+	                                    <div class="row-xs-6 choices">
+	                                        <label class="radio-inline">
+	                                          <div class="choice">
+	                                          	<input type="radio" name="upload_option" class="styled" value="0">
+	                                          </div>
+	                                            <span id="upload-opt-c1">Overwrite all the imported records (at calc group level)</span>
+	                                        </label>
+	                                    </div>
+	                                    <div class="row-xs-6 choices has-option-input" >
+	                                        <label class="radio-inline">
+	                                          <div class="choice">
+	                                              <input type="radio" name="upload_option" class="styled" value="1">
+	                                          </div>                                                                                    
+	                                            <span id="upload-opt-c2">Upload as new records with prefix</span>
+	                                        </label>
+	                                       	<input id="upload-prefix-field" class="form-control option-input"></input>
+	                                    </div>
+	                                    <div class="row-xs-6 choices">
+	                                        <label class="radio-inline">
+	                                          <div class="choice">
+	                                              <input type="radio" name="upload_option" class="styled" value="2">
+	                                          </div>                                                                                    
+	                                            <span id="upload-opt-c3">Do a FULL replacement (Clear selected environment and replace with imported records)</span>
+	                                        </label>
+	                                    </div>                                        
+	                                </div>
+	                            </div>
+	                        </div>
+                        </fieldset>                        
+                        <fieldset class="last-row">	                        
+                        	<button class="btn btn-default-grey btn-submit" type="button" id="upload-config">Upload</button>
+                        	<div id="upload-error-message">
+	                            <div><span class="success-message upload-message success" style="display:none;" ><i class="icon-checkmark"></i> Upload was successful. Please see downloaded log for details.<br><a>Click here to re-download the log again. </a></span></div>
+	                            <div><span class="error-message upload-message error" style="display:none;" ><i class="icon-cross2"></i> Upload failed. Please see downloaded log for details.<br><a>Click here to re-download the log again. </a></span></div>
+	                            <div><span class="warning-message upload-message warning" style="display:none;" ><i class="icon-warning"></i> Upload completed with warnings. Please see downloaded log for details.<br><a>Click here to re-download the log again. </a></span></div>
+	                            <div><span class="inv-json-message upload-message error" style="display:none;" ><i class="icon-cross2"></i> Invalid json format.</span></div>
+                        	</div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-section">
+	    <div class="modal fade" id="selection-model-modal">
+	    	<div class="modal-dialog">
+	    		<div class="modal-content">
+	    			<div class="modal-header">
+		    			<button class="close" data-dismiss="modal">×</button>
+		    			<h5 class="modal-title">SELECT MODEL / CALC GROUP</h5>
+		    			<select class="id-desc-dropdown">
+		    				<option value="id">ID</option>
+		    				<option value="desc">Description</option>
+		    				<option value="id - desc">ID - Description</option>
+		    			</select>
+		    			<div class="search-box">
+		    				<input type="text" placeholder="Search for ID or Description">
+		    				<button class="search-find">
+		    					<i class="icon-search4"></i>
+		    				</button>
+		    				<button class="search-close" style="display:none;">×</button>
+		    			</div>
+	    			</div>
+	    			<div class="modal-body">
+	    				<div class="selection-fancy-tree" id="upl-sel-model-ftree"></div>
+	    			</div>
+	    			<div class="modal-footer">
+	    				<button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+	    				<button type="button" class="btn btn-primary" data-dismiss="modal">Apply</button>
+	    			</div>
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+</div>

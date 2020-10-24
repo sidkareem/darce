@@ -1,0 +1,392 @@
+<div class="cg-detail-form-content">
+    <div class="clone_data_source_link hide">
+        <li class="datasource-tab-__"><a href="#datasource-tab-__" data-toggle="tab"><span class="datasource-tab-title">DATA SOURCE __</span><i class="icon-cancel-circle2" class="datasource-remove" onclick="removeDataSourceTab('__');"></i></a></li>
+    </div>
+    <div class="clone_data_source_tab hide">
+        <div class="tab-pane" id="datasource-tab-__">
+            <div class="inner-tabbable">
+                <div class="row">
+                    <div class="col-xs-8 dsource-form-groups">
+                        <div class="form-group">
+                            <label for="" class="col-xs-4 control-label">
+                                Data Source ID <span class="text-red">*</span>  <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="DATA SOURCE ID"></span>
+                            </label>
+                            <div class="col-xs-8">
+                                <select name="dataSources[__][DsourceId]" id="datasource-dsource-id-__" class="form-control select-field datasource-list">
+                                    <option value="" selected="selected"></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-4 control-label">
+                                Scope Dims  <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="SCOPE DIMS"></span>
+                            </label>
+                            <div class="col-xs-8">
+                                <select name="dataSources[__][ScopeDims]" id="datasource-scope-dims-__" class="form-control multiselect dimension-list multiselect-field" multiple="multiple">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="advanced-options text-center">
+                            <div>
+                                <label>Advanced Options</label>
+                                <div class="row">
+                                    <div class="col-xs-6">
+                                        <button type="button" class="agg-dim-btn-__ btn btn-grey btn-block" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#datasource-aggregate-modal-__">
+                                            Agg
+                                        </button>
+                                        <!-- Aggregate Dimensions Modal -->
+                                        <div id="datasource-aggregate-modal-__" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                            <div class="modal-dialog">                                    
+                                                <!-- Modal content-->
+                                                <div class="modal-content" attr-tab="__">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="update-agg-dim-btn close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label for="">Aggregate Dimensions <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="AGG"></span></label>
+                                                        <select name="dataSources[__][AggDims]" id="agg-dim-__" class="multiselect dimension-list multiselect-field" multiple="multiple">
+                                                        </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="update-agg-dim-btn btn btn-link" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="update-agg-dim-btn btn btn-primary btn-submit-ok">OK</button>
+                                                    </div>
+                                                </div>                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <button type="button" class="index-dim-btn-__ btn btn-grey btn-block" data-toggle="modal" data-target="#datasource-index-dimensions-modal-__">
+                                            Index
+                                        </button>
+                                        <!-- Index Dimensions Modal -->
+                                        <div id="datasource-index-dimensions-modal-__" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                            <div class="modal-dialog">                                    
+                                                <!-- Modal content-->
+                                                <div class="modal-content" attr-tab="__">
+                                                    <div class="modal-header">
+                                                        <button type="button" class="update-index-dim-btn close" data-dismiss="modal">&times;</button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <label for="">Index Dimensions <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="INDEX"></span></label>
+                                                        <select name="dataSources[__][IndexDims]" id="index-dim-__" class="multiselect dimension-list multiselect-field" multiple="multiple">
+                                                        </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="update-index-dim-btn btn btn-link" data-dismiss="modal">Close</button>
+                                                        <button type="button" class="update-index-dim-btn btn btn-primary btn-submit-ok">OK</button>
+                                                    </div>
+                                                </div>                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">                                                                                                
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">
+                                Data Filter <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="DATA FILTER"></span>
+                            </label>
+                            <div class="col-xs-12">
+                                <textarea name="dataSources[__][Criteria]" id="datasource-criteria-__" cols="30" rows="8" class="form-control textarea-field"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    
+    <div class="calc-group-detail panel panel-flat">
+        <div class="calc-group-control-btn">
+            <div class="row">
+                <div class="col-sm-8 pull-left text-left">
+                    <div class="calc-group-header">
+                        <i class="icon-tree6"></i>
+                        <span class="calc-group-heading"></span>
+                    </div>
+                </div>
+                <div class="col-xs-4 pull-right text-right">
+                    <button type="button" class="btn btn-default back-btn calc-group-back">Back</button>
+                    <button type="button"class="btn btn-grey calc-group-save">Save</button>
+                    <a href="javascript:void(0)" class="calc-group-refresh icon-loop3 spin"></a>
+                </div>
+            </div>
+        </div>
+       <form class="calc-group-stepy-wizard form-horizontal" action="#" id="calc-group-detail-form">
+            <fieldset title="1">
+                <legend class="text-semibold">Header</legend>
+                <div class="calc-group-stepy-header">
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">
+                            CALC GROUP ID <span class="text-red">*</span>
+                        </label>
+                        <div class="col-xs-8 col-xs-10">
+                            <div class="cg-id-field">
+                                <div class="input-group">
+                                    <input type="text" class="form-control input-field primary-ids-max-val" id="calc-group-id" name="CalcGroupId" value="" readonly="readonly">
+                                    <span class="input-group-addon" id="rename-calc-group-btn"><i class="icon-pencil7"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">
+                            CALC GROUP DESCR
+                        </label>
+                        <div class="col-xs-9">
+                            <textarea class="form-control input-field" id="calc-group-desc" name="CalcGroupDescr" value="" rows="5" placeholder="Please enter calculation group description here..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">
+                            ADVANCED OPTIONS
+                        </label>
+                        <div class="advanced-options col-xs-9">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <button type="button" class="run-criteria-btn btn btn-grey btn-block" data-target="#run-criteria-modal">
+                                        Run Criteria
+                                    </button>
+                                </div>
+                                <div class="col-xs-6">
+                                    <button type="button" class="scope-adj-btn btn btn-grey btn-block" data-target="#scope-adjustment-modal">
+                                        Scope Adj
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Run Criteria Modal -->
+                            <div id="run-criteria-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-dialog">                                    
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="update-run-criteria-btn close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="">Run Criteria <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="RUN CRITERIA"></span></label>
+                                            <textarea name="RunCriteria" id="run-criteria" attr-save-btn='disable' cols="30" rows="6" class="form-control textarea-field"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="update-run-criteria-btn btn btn-link" data-dismiss="modal">Close</button>
+                                            <button type="button" class="update-run-criteria-btn btn btn-primary btn-submit-ok">OK</button>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+
+                            <!-- Scope Adjustment Modal -->
+                            <div id="scope-adjustment-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                <div class="modal-dialog">                                    
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="update-scope-adj-btn close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <label for="">Pre Run Scope Adjustment <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="PRE RUN SCOPE ADJUSTMENT"></span></label>
+                                            <textarea name="PreRunScopeAdj" id="pre-run-scope-adj" attr-save-btn='disable' cols="30" rows="6" class="form-control textarea-field"></textarea>
+                                            <label for="">Post Run Scope Adjustment <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="POST RUN SCOPE ADJUSTMENT"></span></label>
+                                            <textarea name="PostRunScopeAdj" id="post-run-scope-adj" attr-save-btn='disable' cols="30" rows="6" class="form-control textarea-field"></textarea>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="update-scope-adj-btn btn btn-link" data-dismiss="modal">Close</button>
+                                            <button type="button" class="update-scope-adj-btn btn btn-primary btn-submit-ok">OK</button>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset title="2">
+                <legend class="text-semibold">Data Source</legend>
+                <div class="datasources-tab nav-tabbable calc-group-stepy-datasource" id="datasources-tab">   
+                    <div class="datasources-tab">
+                        <!-- <div class="inner-tabbable"> -->
+                            <div class="scroller scroller-right"><i class="icon-circle-right2"></i></div>
+                            <div class="scroller scroller-left"><i class="icon-circle-left2"></i></div>
+                            <div class="nav-tabs-list">
+                                <ul class="nav nav-tabs nav-tabs-highlight">
+                                    <li class="datasource-tab-1 active"><a href="#datasource-tab-1" data-toggle="tab">Primary Data Source</a></li>
+                                    <li class="add-data-source" ><a href="javascript:void(0)"><span class="icon-database-add"></span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="datasource-tab-1">
+                                    <div class="inner-tabbable">
+                                        <div class="row">
+                                            <div class="col-xs-8 dsource-form-groups">
+                                                <div class="form-group">
+                                                    <label for="" class="col-xs-4 control-label">
+                                                        Data Source ID <span class="text-red">*</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="DATA SOURCE ID"></span>
+                                                    </label>
+                                                    <div class="col-xs-8">
+                                                        <select name="dataSources[1][DsourceId]" id="datasource-dsource-id-1" class="form-control select-field datasource-list">
+                                                            <option value="" selected="selected"></option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="" class="col-xs-4 control-label">
+                                                        Scope Dims <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="SCOPE DIMS"></span>
+                                                    </label>
+                                                    <div class="col-xs-8">
+                                                        <select name="dataSources[1][ScopeDims]" id="datasource-scope-dims-1" class="form-control multiselect dimension-list multiselect-field" multiple="multiple">
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-4">
+                                                <div class="advanced-options text-center">
+                                                    <div>
+                                                        <label>Advanced Options</label>
+                                                        <div class="row">
+                                                            <div class="col-xs-6">
+                                                                <button type="button" class="agg-dim-btn-1 btn btn-grey btn-block" data-toggle="modal" data-target="#datasource-aggregate-modal-1">
+                                                                    Agg
+                                                                </button>
+                                                                <div id="datasource-aggregate-modal-1" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                                                    <div class="modal-dialog">     
+                                                                        <div class="modal-content" attr-tab="1">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="update-agg-dim-btn close" data-dismiss="modal">×</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <div class="row">
+                                                                                    <div class="col-xs-12">
+                                                                                        <label for="">Aggregate Dimensions <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="AGG"></span></label>
+                                                                                        <select name="dataSources[1][AggDims]" id="agg-dim-1" class="multiselect dimension-list multiselect-field" multiple="multiple">
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="update-agg-dim-btn btn btn-link" data-dismiss="modal">Close</button>
+                                                                                <button type="button" class="update-agg-dim-btn btn btn-primary btn-submit-ok">OK</button>
+                                                                            </div>
+                                                                        </div>                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-xs-6">
+                                                                <button type="button" class="index-dim-btn-1 btn btn-grey btn-block" data-toggle="modal" data-target="#datasource-index-dimensions-modal-1">
+                                                                    Index
+                                                                </button>
+                                                                <div id="datasource-index-dimensions-modal-1" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+                                                                    <div class="modal-dialog">     
+                                                                        <div class="modal-content" attr-tab="1">
+                                                                            <div class="modal-header">
+                                                                                <button type="button" class="update-index-dim-btn close" data-dismiss="modal">×</button>
+                                                                            </div>
+                                                                            <div class="modal-body">
+                                                                                <label for="">Index Dimensions <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="INDEX"></span></label>
+                                                                                <select name="dataSources[1][IndexDims]" id="index-dim-1" class="multiselect dimension-list multiselect-field" multiple="multiple">
+                                                                                </select>
+                                                                            </div>
+                                                                            <div class="modal-footer">
+                                                                                <button type="button" class="update-index-dim-btn btn btn-link" data-dismiss="modal">Close</button>
+                                                                                <button type="button" class="update-index-dim-btn btn btn-primary btn-submit-ok">OK</button>
+                                                                            </div>
+                                                                        </div>                                    
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xs-12">                                                                                                
+                                                <div class="form-group">
+                                                    <label for="" class="col-xs-3 control-label">
+                                                        Data Filter  <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="CALC GROUP" data-app-item="DATA FILTER"></span>
+                                                    </label>
+                                                    <div class="col-xs-12">
+                                                        <textarea name="dataSources[1][Criteria]" id="datasource-criteria-1" cols="30" rows="8" class="form-control textarea-field"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-- </div>      -->
+                    </div>      
+                </div>
+            </fieldset>
+
+            <fieldset title="3">
+                <legend class="text-semibold">Variable</legend>
+                <div class="variables-tab calc-group-stepy-variable" id="variables-tab">
+                    <a href="javascript:void(0)" class="evo-group-add-link" id="variable-add-btn"><i class="icon-plus2"></i> New Variable</a>
+                    <div class="variables-table-responsive">
+                        <table class="table table-striped variables-table">
+                            <thead>
+                                <tr>
+                                    <th id="variables-table-column-header-1">Variable ID<div id='variables-table-column-header-1-sizer'></div></th>
+                                    <th id="variables-table-column-header-2">Type<div id='variables-table-column-header-2-sizer'></div></th>
+                                    <!-- <th id="variables-table-column-header-3">Actions<div id='variables-table-column-header-3-sizer'></div></th> -->
+                                    <th id="variables-table-column-header-3">Dimension<div id='variables-table-column-header-3-sizer'></div></th>
+                                    <th id="variables-table-column-header-4">Property<div id='variables-table-column-header-4-sizer'></div></th>
+                                    <th id="variables-table-column-header-5">Variable Filter<div id='variables-table-column-header-5-sizer'></div></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset title="4" class="calc_stepy">
+                <legend class="text-semibold">Calculation</legend>
+                <div class="calculations-tab calc-group-stepy-calculation" id="calculations-tab">
+                    <div class="dropdown">
+                        <a href="" class="evo-group-add-link dropdown-toggle" data-toggle="dropdown"><i class="icon-plus2"></i> New Calculation
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" id="calculation-select-existing-btn"><i class="icon-select2"></i> Select Existing</a></li>
+                            <li><a href="#" id="calculation-add-btn"><i class="icon-add-to-list"></i> Create New</a></li>
+                        </ul>
+                    </div>
+                    <div class="calculations-table-responsive">
+                        <table class="table table-striped calculations-table">
+                            <thead>
+                                <tr>
+                                    <th id="calculations-table-column-header-1"><div id='calculations-table-column-header-1-sizer'></div></th>
+                                    <th id="calculations-table-column-header-2">Enable<div id='calculations-table-column-header-2-sizer'></div></th>
+                                    <th id="calculations-table-column-header-3">Calculations<div id='calculations-table-column-header-3-sizer'></div></th>
+                                    <th id="calculations-table-column-header-4">Drivers<div id='calculations-table-column-header-4-sizer'></div></th>
+                                    <th id="calculations-table-column-header-5">Steps<div id='calculations-table-column-header-5-sizer'></div></th>
+                                    <th id="calculations-table-column-header-6">Calc Description<div id='calculations-table-column-header-6-sizer'></div></th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+
+            <button type="submit" class="btn btn-primary stepy-finish">Submit <i class="icon-check position-right"></i></button>
+        </form>
+        <!-- Revert here for old changes -->
+        <input type="hidden" id="total-data-source-tabs" value="2"/>
+        
+    </div>
+</div>
+<script>
+    loadCalcGroupStepyWizard('.calc-group-stepy-wizard');
+</script>
+<script type="text/javascript" src="assets/spaces/darce/cg_detail/cg_detail.js"></script>

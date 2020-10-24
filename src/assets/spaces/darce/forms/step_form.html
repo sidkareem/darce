@@ -1,0 +1,174 @@
+<!-- Step Modal -->
+<div id="step-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+	<div class="modal-dialog modal-lg">
+		<!-- Modal content-->
+		<div class="modal-content">
+			<form action="" class="form-horizontal" id="step-form">
+				<input type="hidden" id="step_action" name="step_action" value="">
+				<div class="modal-header">
+					<h5 class="modal-title">Add Step</h5>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+					<div class="form-group">
+						<label for="" class="col-xs-2 control-label">Step ID <span class="text-red">*</span></label>
+						<div class="col-xs-5 step-id-input-field">
+							<div class="input-group">
+								<input type="text" name="StepId" id="step-id" class="form-control input-field primary-ids-max-val" readonly="">
+								<span class="text-red step-error-message"></span>
+								<span class="input-group-addon step-id-rename"><i class="icon-pencil7"></i></span>
+							</div>
+							
+						</div>
+						<label for="" class="col-xs-1 control-label text-right">Enable</label>
+						<div class="col-xs-1">
+							<div class="step-switch-section">
+								<input type="checkbox" name="Enabled" id="step-enabled" class="js-switch" />
+							</div>
+						</div>
+						<label for="" class="col-xs-2 control-label text-right">Advanced Option</label>
+						<div class="advanced-options">
+							<div class="adv-btn-section">
+								<button type="button" class="repeat-step-btn btn btn-grey btn-block" data-toggle="modal" data-target="#repeat-step-modal">
+									Repeat
+								</button>
+							</div>
+						</div>
+						<!-- Repeat Step Modal -->
+						<div id="repeat-step-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+							<div class="modal-dialog modal-sm">
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" attr-id="repeat-step" class="update-btn data-dismiss-modal close">&times;</button>
+									</div>
+									<div class="modal-body">
+										<label for="">Repeat Step Parameter</label>
+										<input type="text" name="RepeatStep" id="repeat-step" class="form-control input-field" placeholder="Please enter repeating string here...">
+									</div>
+									<div class="modal-footer">
+										<button type="button" attr-id="repeat-step" class="update-btn data-dismiss-modal btn btn-link">Close</button>
+										<button type="button" attr-id="repeat-step" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-xs-2 control-label">Step Descr</label>
+						<div class="col-xs-10">
+							<textarea name="StepDescr" id="step-descr" cols="30" rows="2" class="form-control input-field" placeholder="Enter a step description here..."></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-xs-12">Criteria <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="CRITERIA"></span></label>
+						<div class="col-xs-12">
+							<textarea name="Criteria" id="step-criteria" cols="30" rows="4" class="form-control textarea-field" placeholder="Enter the step criteria here..."></textarea>
+							<span class="codemirror-enlarge-view icon-enlarge" data-target="#step-criteria-modal" data-content="step-criteria"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-xs-12">Calculation  <span class="text-red">*</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="CALCULATION"></span></label>
+						<div class="col-xs-12">
+							<textarea name="Calculation" id="step-calculation" cols="30" rows="4" class="form-control textarea-field" placeholder="Enter the step calculation here..."></textarea>
+							<span class="codemirror-enlarge-view icon-enlarge" data-target="#step-calculation-modal" data-content="step-calculation"></span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-xs-12">Destination <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="DESTINATION"></span></label>
+						<div class="col-xs-12">
+							<textarea name="ResultDimOvr" id="result-dim-ovr" cols="30" rows="4" class="form-control textarea-field" placeholder="Define target destination to store the step calculated results herellll"></textarea>
+							<span class="codemirror-enlarge-view icon-enlarge" data-target="#step-result-dim-ovr-modal" data-content="result-dim-ovr"></span>
+						</div>
+						<div class="col-xs-12">
+							<div class="destination-checkbox-section">
+								<label>
+									<input type="checkbox" class="styled" name="WriteResults" id="write-results" />
+									<span>Write results</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="WRITE RESULTS"></span>
+								</label>
+								<label>
+									<input type="checkbox" class="styled" name="ReuseResultsInCalc" id="reuse-results-in-calc" />
+									<span>Share results with other steps in the same calc</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="SHARE IN CALC"></span>
+								</label>
+								<label>
+									<input type="checkbox" class="styled" name="ReuseResultsInGrp" id="reuse-results-in-grp" />
+									<span>Share results with other calcs in the same group</span> <span class="icon-question4 helptext-btn" data-app="DARCE" data-app-area="STEP" data-app-item="SHARE IN GRP"></span>
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-link close-step-form" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary add-modify-step btn-submit">Save</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!-- Step Criteria-->
+<div id="step-criteria-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="update-btn close-modal close">&times;</button>
+            </div>
+            <div class="modal-body codemirror-enlarge-body">
+                <label for="">Criteria<span class="icon-question4 helptext-btn" data-content="#helptext-calc-criteria-content"></span></label>
+				<div>
+					<textarea name="Criteria" id="step-criteria-cm" cols="30" class="form-control textarea-field" placeholder="Enter the step criteria here..."></textarea>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn update-btn close-modal btn-link">Close</button>
+                <button type="button" attr-id="step-criteria" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Step Criteria-->
+<div id="step-calculation-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="update-btn close-modal close">&times;</button>
+            </div>
+            <div class="modal-body codemirror-enlarge-body">
+                <label for="">Calculation<span class="icon-question4 helptext-btn" data-content="#helptext-calc-calculation-content"></span></label>
+				<div>
+					<textarea name="Calculation" id="step-calculation-cm" cols="30" class="form-control textarea-field" placeholder="Enter the step calculation here..."></textarea>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn update-btn close-modal btn-link">Close</button>
+                <button type="button" attr-id="step-calculation" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Step Criteria-->
+<div id="step-result-dim-ovr-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="update-btn close-modal close">&times;</button>
+            </div>
+            <div class="modal-body codemirror-enlarge-body">
+                <label for="">Destination<span class="icon-question4 helptext-btn" data-content="#helptext-calc-destination-content"></span></label>
+				<div>
+					<textarea name="ResultDimOvr" id="result-dim-ovr-cm" cols="30" class="form-control textarea-field" placeholder="Define target destination to store the step calculated results herellll"></textarea>
+				</div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn update-btn close-modal btn-link">Close</button>
+                <button type="button" attr-id="result-dim-ovr" class="update-btn btn btn-primary btn-submit-ok">OK</button>
+            </div>
+        </div>
+    </div>
+</div>

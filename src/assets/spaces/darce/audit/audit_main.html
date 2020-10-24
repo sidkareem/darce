@@ -1,0 +1,282 @@
+<script src="assets/spaces/darce/audit/audit_main.js"></script>
+
+<div id="audit-main-pg" class="audit-box">
+    <div class="panel panel-flat">
+        <div class="audit-content">
+            <div class="control-btn">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <button class="btn btn-green text-uppercase text-bold text-size-11 refresh-audit">Refresh</button>
+                        <button class="btn btn-green text-uppercase text-bold text-size-11 clear-audit">Clear</button>
+                        <button class="btn btn-green text-uppercase text-bold text-size-11 print-audit">Print</button>
+                        <div class="export-audit dropdown">
+                            <button class="btn btn-green text-uppercase text-bold text-size-11 dropdown-toggle" data-toggle="dropdown">Export
+                            <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#" class="export-audit-pdf"><i class="icon-file-pdf"></i> PDF</a></li>
+                                <li><a href="#" class="export-audit-csv"><i class="icon-file-spreadsheet"></i>CSV</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="search-form">
+                <div class="row">
+                    <div class="col-sm-12 search-info">
+                        Model: <span class="model-field"><strong>ALL</strong></span>
+                        Calc Group: <span class="calc-group-field"><strong>ALL</strong></span>
+                        Calculation: <span class="calculation-field"><strong>ALL</strong></span>
+                        User: <span class="user-field"><strong>ALL</strong></span>
+                        Action: <span class="action-field"><strong>ALL</strong></span>
+                        Time Zone: <span class="timezone-field"><strong>PST</strong></span>
+                        &nbsp;&nbsp;&nbsp;Changed Date between: <span class="datetime-field"><strong>Anytime</strong></span>
+                    </div>
+                </div>
+            </div>
+            <div class="filter-form">
+                <form action="" class="form-horizontal" id="audit-search-form">
+                    <input type="hidden" id="param-audit-query" value="">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="" class="col-xs-4 control-label text-right text-semibold">Model</label>
+                                <div class="col-xs-8">
+                                    <select multiple="multiple" id="audit-model-field">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-xs-4 control-label text-right text-semibold">Calc Group</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="audit-calc-group-field">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-xs-4 control-label text-right text-semibold">Calculation</label>
+                                <div class="col-xs-8">
+                                    <input class="form-control" id="audit-calculation-field">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <div class="col-xs-8">
+                                    <label class="radio-inline text-semibold">
+                                        <div class="choice">
+                                            <input type="radio" name="time" class="styled audit-datetime-field" value="0" checked>
+                                        </div>
+                                        <span>Anytime</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <label class="radio-inline">
+                                        <div class="choice">
+                                            <input type="radio" name="time" class="styled audit-datetime-field" value="1">
+                                        </div>
+                                        <div class="date-fields-section">
+                                            <div class="row">
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="row">
+                                                        <div class="col-xs-3 padding-sm">
+                                                            <span class="text-semibold">Date</span>
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <input type="text" class="form-control" id="audit-daterange-from" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-6">
+                                                    <div class="row">
+                                                        <div class="col-xs-3 padding-sm">
+                                                            <span class="text-semibold">and</span>
+                                                        </div>
+                                                        <div class="col-xs-9">
+                                                            <input type="text" class="form-control" id="audit-daterange-to" value="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-4">
+                            <div class="form-group">
+                                <label for="" class="col-xs-2 control-label text-right text-semibold">User</label>
+                                <div class="col-xs-10">
+                                    <select multiple="multiple" id="audit-user-field">
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="col-xs-2 control-label text-right text-semibold">Action</label>
+                                <div class="col-xs-10">
+                                    <select multiple="multiple" id="audit-action-field">
+                                        <option value="Add">Add</option>
+                                        <!-- <option value="Copy">Copy</option> -->
+                                        <option value="Delete">Delete</option>
+                                        <!-- <option value="Rename">Rename</option> -->
+                                        <option value="Update">Update</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="filter-panel">
+                <a href="" class="text-black filter-type">
+                    <span class="icon-filter3"></span>
+                    <span class="icon-arrow-down12"></span>
+                </a>
+            </div>
+            <div class="audit-table-section" id="audit-table-section">
+                <p class="text-red text-bold hide additional-filter-result">Your selection criteria has returned 
+                    <span id="threshold-records">xxxx</span> 
+                    records, more than the threshold of 20,000 records. 
+                    Please narrow down your filtering criteria and try again.
+                </p>
+                <div class="audit-table-responsive">
+                    <table class="table table-striped audit-table" id="audit-table" width="100%">
+                        <thead>
+                            <tr>
+                                <th id="audit-table-column-header-1" width="150px"><span>Model<div id="audit-table-column-header-1-sizer"></div></span></th>
+                                <th id="audit-table-column-header-2" width="100px"><span>Calc Grp/Calc ID<div id="audit-table-column-header-2-sizer"></div></span></th>
+                                <th id="audit-table-column-header-3" width="100px"><span>Section<div id="audit-table-column-header-3-sizer"></div></span></th>
+                                <th id="audit-table-column-header-4" width="150px"><span>Section Item ID<div id="audit-table-column-header-4-sizer"></div></span></th>
+                                <th id="audit-table-column-header-5" width="80px"><span>Field<div id="audit-table-column-header-5-sizer"></div></span></th>
+                                <th id="audit-table-column-header-6"><span>User<div id="audit-table-column-header-6-sizer"></div></span></th>
+                                <th id="audit-table-column-header-7"><span>Action<div id="audit-table-column-header-7-sizer"></div></span></th>
+                                <th id="audit-table-column-header-8"><span>Date<div id="audit-table-column-header-8-sizer"></div></span></th>
+                                <th id="audit-table-column-header-9"><span>Old Value<div id="audit-table-column-header-9-sizer"></div></span></th>
+                                <th id="audit-table-column-header-10"><span>New Value<div id="audit-table-column-header-10-sizer"></div></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+
+                    <table class="table table-striped audit-table-print" width="100%">
+                        <thead>
+                            <tr>
+                                <th width="80px">Model</th>
+                                <th width="100px">Calc Grp/Calc ID</th>
+                                <th width="100px">Section</th>
+                                <th width="150px">Section Item ID</th>
+                                <th width="80px">Field</th>
+                                <th>User</th>
+                                <th>Action</th>
+                                <th>Date</th>
+                                <th>Old Value</th>
+                                <th>New Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="audit-row-detail-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-horizontal">
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Date</label>
+                            <div class="col-xs-4">
+                                <input type="text" id="au-date" class="form-control" readonly="readonly">
+                            </div>
+                            <label for="" class="col-xs-2 control-label text-right">User</label>
+                            <div class="col-xs-4">
+                                <input type="text" id="au-user" class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Calc Grp/Calc ID</label>
+                            <div class="col-xs-10">
+                                <input type="text" id="au-calc-grp-calc-id" class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Section Item ID</label>
+                            <div class="col-xs-4">
+                                <input type="text" id="au-section-item-id" class="form-control" readonly="readonly">
+                            </div>
+                            <label for="" class="col-xs-2 control-label text-right">Field</label>
+                            <div class="col-xs-4">
+                                <input type="text" id="au-field" class="form-control" readonly="readonly">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-2 control-label">Action</label>
+                            <div class="col-xs-4">
+                                <input type="text" id="au-action" class="form-control" readonly="readonly">
+                            </div>                            
+                            <div class="col-xs-6">
+                              
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-12">Old Value</label>
+                            <div class="col-xs-12">
+                                <div id="au-old-value" class="well well-sm"><span></span></div>
+                                <!-- <textarea id="au-old-value" cols="30" rows="4" class="form-control textarea-field" placeholder="" readonly="readonly"></textarea> -->
+                                <!-- <span class="icon-enlarge" data-target="#audit-old-new-value-modal" data-content="au-old-value"></span> -->
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-12">New Value</label>
+                            <div class="col-xs-12">
+                                <div id="au-new-value" class="well well-sm"><span></span></div>
+                                <!-- <textarea id="au-new-value" cols="30" rows="4" class="form-control textarea-field" placeholder="" readonly="readonly"></textarea> -->
+                                <!-- <span class="icon-enlarge" data-target="#audit-old-new-value-modal" data-content="au-new-value"></span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn close-modal btn-link">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="audit-old-new-value-modal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close-modal close">&times;</button>
+                </div>
+                <div class="modal-body enlarge-body">
+                    <div class="form-group">
+                        <label for="">Old Value</label>
+                        <div>
+                            <textarea name="" id="au-old-value-el" cols="30" rows="15" class="form-control textarea-field" placeholder="" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">New Value</label>
+                        <div>
+                            <textarea name="" id="au-new-value-el" cols="30" rows="15" class="form-control textarea-field" placeholder="" readonly="readonly"></textarea>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn close-modal btn-link">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>   
+</div>

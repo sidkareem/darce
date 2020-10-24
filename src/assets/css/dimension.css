@@ -1,0 +1,176 @@
+.dim-fx-main-table .dim-main-search-form{
+    width:500px;
+}
+.dimension-main-table {
+    position: relative;
+    clear: both;
+    width: 1200px;
+}
+table#dimension-main-table tbody tr td {
+    padding: 8px;
+    border-bottom: 1px solid #cdcdcc;
+}
+#dimension-main-table tbody tr td:first-child{
+    text-align: left;
+    color:#007CC0;
+}
+#dimension-main-table tbody tr td.dim-member-id .fancytree-title{
+    display: list-item;
+    list-style: disc;
+}
+ul#drwn_dim_tab li i:first-child {
+    padding-right: 5px;
+}
+.back_save{
+    float: right;
+    padding-right: 30px;
+}
+.dimension-refresh{
+    font-size: 12px;
+    color: black;
+    margin-top: -25px;
+}
+.dimension-refresh:hover{
+    color: black;
+}
+.btn-dimension-back-page{
+    background: lightgray;
+    padding: 5px 25px 5px 25px;
+    border: none;
+    color: white;
+}
+.btn-dimension-back-page:hover{
+    color: white;
+}
+.btn-dimension-save-page{    
+    padding: 5px 25px 5px 25px;    
+}
+.dimension-main-table thead tr th{
+   text-align: left !important;
+}
+.dim-fx-user-actions .btn{
+    padding: 5px 15px;
+}
+.dim-fx-user-actions a{
+    text-transform: uppercase;
+    font-weight: 600;
+}
+#dim_overview .nav-tabs-list .tab-content {
+    height: calc(100vh - 210px);
+    background: #FFF;
+    overflow-y: scroll;
+    overflow-x: hidden;   
+}
+.dim-fx-user-actions .btn-add-new-dim{
+    background-color: #f2f2f2;
+    color: #9c9c9c;
+    border-color: #cdcdcc;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.dim-fx-user-actions .btn-add-new-dim .icon-plus3{
+    font-size: 7px;
+}
+.dim-fx-user-actions .btn-import-dim{
+    background-color: #00b0f0;
+    border-color: #00b0f0;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.dim-fx-user-actions .btn-export-dim{
+    background-color: #ffffff;
+    color: #00b0f0;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.dim-fx-user-action-right {
+    padding-right: 50px;
+}
+/* .dim-fx-user-action-left a{
+    font-size: 13px;
+}
+.dim-fx-user-action-right a{
+    font-size: 12px;
+} */
+.dim-fx-user-actions .dim-fx-user-action-right .btn{
+    padding: 2px 20px;
+}
+.dim-fx-user-action-right .btn-dim-back{
+    background-color: #f2f2f2;
+    color: #9c9c9c;
+    border-color: #cdcdcc;
+}
+.dix-fx-action-close{
+    position: absolute;
+    top: 0px;
+    right: 10px; 
+}
+.dix-fx-action-close a{
+    color: #000;
+}
+.dix-fx-action-close .btn-dim-refresh{
+    font-size: 11px;
+}
+.dimension-main-table thead tr th{
+    background: #44546a;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    font-weight: 600;
+}
+.dimension-main-table tbody tr td{
+    font-weight: 600;
+}
+#dim-content .nav-tabs .close-dim-tab{
+    font-size: 12px;
+}
+#dim-content .nav-tabs li{
+    min-width: 150px;
+}
+
+/** Member modal popup style*/
+.dim-member-id-form .modal-dialog{
+    width: 750px;
+}
+.dim-member-id-form .dim-member-id-form-section-2, .dim-member-id-form .modal-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+.dim-member-id-form .modal-header .close{
+    right: 0px;
+    top: 0px;
+}
+.dim-member-id-form  .modal-footer{
+    padding-bottom: 0px;
+}
+.dim-member-id-form .dim-member-id-form-section-2 .icon-question4{
+    padding-left: 0px;
+    padding-right: 10px;    
+    color: #BDBDBD !important;
+}
+.bk-gray{
+    background: #ececec !important;
+}
+.dim-member-id-form .add-dim-member-id{
+    background-color: #00B0F0 !important;
+    padding: 7px 12px !important;
+    min-width: 80px;
+    border-color: #00B0F0;
+    margin-left: 25px !important;
+}
+.btn-blue-outline{
+    min-width: 80px;
+    border-color: #00B0F0;
+    color: #00B0F0;
+}
+.btn-blue-outline:hover{
+    border-color: #00B0F0;
+    color: #00B0F0;
+}

@@ -9,6 +9,7 @@ import TimeDrop from '../Pages/cards/UI/dropDown/dropdown_time';
 import CalcCard from './cards/calc_card';
 import CalcCard2 from './cards/calc_card2';
 import  SimpleTabs from './cards/UI/ui_pagethree/tab';
+import CustomizedTables from './cards/UI/ui_pagefour/table_datasource';
 
 
 
@@ -62,7 +63,8 @@ const PageFour= () => {
        
 
 
-        
+        <CustomizedTables />
+
         
          </Card>
         

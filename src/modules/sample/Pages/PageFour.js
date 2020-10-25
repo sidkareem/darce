@@ -10,12 +10,12 @@ import CalcCard from './cards/calc_card';
 import CalcCard2 from './cards/calc_card2';
 import  SimpleTabs from './cards/UI/ui_pagethree/tab';
 import CustomizedTables from './cards/UI/ui_pagefour/table_datasource';
-
-
-
+import CardHeader from '@material-ui/core/CardHeader';
+import CardContent from '@material-ui/core/CardContent';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import Card from '@material-ui/core/Card';
 import { Grid } from '@material-ui/core';
+import SimplePopover from './cards/UI/popover';
 const useStyles = makeStyles({
   root1: {
     width: '100%',
@@ -53,17 +53,23 @@ const PageFour= () => {
         <Box component='h4'  fontSize={20}>
         
          <Card className={classes.root1} >
-         <Grid container spacing={4} className={classes.grid} >
+           <CardHeader>
+             <SimplePopover/>
+           </CardHeader>
+           <CardContent>
+           <Grid container spacing={4} className={classes.grid} >
          
            
-         
+         <CustomizedTables />
            
-           <SimpleTabs className={classes.tab}/>
+           
          </Grid>
        
+            
+           </CardContent>
+         
 
-
-        <CustomizedTables />
+      
 
         
          </Card>

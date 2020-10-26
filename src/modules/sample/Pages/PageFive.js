@@ -16,8 +16,10 @@ import CardContent from '@material-ui/core/CardContent';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import Card from '@material-ui/core/Card';
 import {Grid} from '@material-ui/core';
-import AutorenewIcon from '@material-ui/icons/Autorenew';
+import Button from '@material-ui/core/Button';
 
+import AutorenewIcon from '@material-ui/icons/Autorenew';
+import AppTableContainer from 'C:/Users/sidka/darce/src/@crema/core/AppTableContainer';
 import SimplePopover from './cards/UI/popover';
 import SearchIcon from '@material-ui/icons/Search';
 import SpringModal from './cards/UI/ui_pagefour/newsource_modal';
@@ -88,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-const PageFour = () => {
+const PageFive = () => {
   const classes = useStyles();
   return (
     <AppAnimate animation='transition.slideUpIn' delay={200}>
@@ -96,9 +98,8 @@ const PageFour = () => {
         <Box component='h4' fontSize={20}>
           <Card className={classes.root1}>
             <Grid container spacing={4} className={classes.grid}>
-              <Grid item md={3} xs={3} sm={3}>
-                <SpringModal />
-              </Grid>
+              <Grid item md={3} xs={3} sm={3} />
+
               <Grid item md={8} xs={8} sm={8}>
                 <div className={classes.search}>
                   <div className={classes.searchIcon}>
@@ -118,12 +119,12 @@ const PageFour = () => {
               <Grid item md={1} xs={1} sm={1}>
                 <AutorenewIcon fontSize='large' />
               </Grid>
-              <Grid item md={12} xs={12} sm={12} />
-              <Grid item md={12} xs={12} sm={12} />
-              <Grid item md={12} xs={12} sm={12} />
+              <Grid item md={12} />
+              <Grid item md={12} />
+              <Grid item md={12} />
 
               <Grid item md={12}>
-                <CustomizedTables />
+                <AppTableContainer />
               </Grid>
             </Grid>
           </Card>
@@ -133,4 +134,4 @@ const PageFour = () => {
   );
 };
 
-export default PageFour;
+export default PageFive;

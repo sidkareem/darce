@@ -36,7 +36,35 @@ export const samplePagesConfig = [
         component: React.lazy(() => import('./Pages/PageFour')),
       },
     ],
-  }, {
+  },
+  {
+    auth: ['user'],
+    routes: [
+      {
+        path: '/sample/page-5',
+        component: React.lazy(() => import('./Pages/PageFive')),
+      },
+    ],
+  },
+  {
+    auth: ['user'],
+    routes: [
+      {
+        path: '/sample/page-6',
+        component: React.lazy(() => import('./Pages/PageSix')),
+      },
+    ],
+  },
+  {
+    auth: ['user'],
+    routes: [
+      {
+        path: '/sample/page-',
+        component: React.lazy(() => import('./Pages/PageOne')),
+      },
+    ],
+  },
+  {
     auth: ['user'],
     routes: [
       {
@@ -44,31 +72,8 @@ export const samplePagesConfig = [
         component: React.lazy(() => import('./Pages/PageOne')),
       },
     ],
-  }, {
-    auth: ['user'],
-    routes: [
-      {
-        path: '/sample/page-1',
-        component: React.lazy(() => import('./Pages/PageOne')),
-      },
-    ],
-  }, {
-    auth: ['user'],
-    routes: [
-      {
-        path: '/sample/page-1',
-        component: React.lazy(() => import('./Pages/PageOne')),
-      },
-    ],
-  }, {
-    auth: ['user'],
-    routes: [
-      {
-        path: '/sample/page-1',
-        component: React.lazy(() => import('./Pages/PageOne')),
-      },
-    ],
-  }, {
+  },
+  {
     auth: ['user'],
     routes: [
       {

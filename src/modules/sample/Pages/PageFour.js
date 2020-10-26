@@ -1,7 +1,11 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
+
 import {makeStyles, fade} from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
+
+import {makeStyles} from '@material-ui/core/styles';
+
 import FilterListIcon from '@material-ui/icons/FilterList';
 import SimpleSelect from '../Pages/cards/UI/dropDown/dropDown';
 import TimeDrop from '../Pages/cards/UI/dropDown/dropdown_time';
@@ -16,7 +20,9 @@ import CardContent from '@material-ui/core/CardContent';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import Card from '@material-ui/core/Card';
 import {Grid} from '@material-ui/core';
+
 import AutorenewIcon from '@material-ui/icons/Autorenew';
+
 
 import SimplePopover from './cards/UI/popover';
 import SearchIcon from '@material-ui/icons/Search';
@@ -38,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '40px',
     paddingRight: '40px',
     paddingTop: '40px',
+
   },
   tab: {
     marginTop: 100,
@@ -88,6 +95,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
 }));
+
+  },
+  tab: {
+    marginTop: 100,
+  },
+});
+
 const PageFour = () => {
   const classes = useStyles();
   return (
@@ -95,6 +109,7 @@ const PageFour = () => {
       <Box>
         <Box component='h4' fontSize={20}>
           <Card className={classes.root1}>
+
             <Grid container spacing={4} className={classes.grid}>
               <Grid item md={3} xs={3} sm={3}>
                 <SpringModal />
@@ -126,6 +141,16 @@ const PageFour = () => {
                 <CustomizedTables />
               </Grid>
             </Grid>
+
+            <CardHeader>
+              <SimplePopover />
+            </CardHeader>
+            <CardContent>
+              <Grid container spacing={4} className={classes.grid}>
+                <CustomizedTables />
+              </Grid>
+            </CardContent>
+
           </Card>
         </Box>
       </Box>

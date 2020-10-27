@@ -1,34 +1,25 @@
 import React from 'react';
 import Box from '@material-ui/core/Box';
-
 import {makeStyles, fade} from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-
-import FilterListIcon from '@material-ui/icons/FilterList';
-import SimpleSelect from '../Pages/cards/UI/dropDown/dropDown';
-import TimeDrop from '../Pages/cards/UI/dropDown/dropdown_time';
-//import SearchBar from '../../../@crema/core/SearchBar';
-//import Badge from '../../../@crema/core/Badge/index';
-import CalcCard from './cards/calc_card';
-import CalcCard2 from './cards/calc_card2';
-import SimpleTabs from './cards/UI/ui_pagethree/tab';
-import CustomizedTables from './cards/UI/ui_pagefour/table';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import AppAnimate from '../../../@crema/core/AppAnimate';
+import Typography from '@material-ui/core/Typography';
+import AppAnimate from '../../../../../../@crema/core/AppAnimate';
 import Card from '@material-ui/core/Card';
 import {Grid} from '@material-ui/core';
+import Main from './searchbar_env.js/main';
+import Popover1 from './popover';
+import RadioButtonsGroup from './radio';
+import Button from '@material-ui/core/Button';
+import {Fonts} from '../../../../../../shared/constants/AppEnums';
+import SimplePopoverConvert from './popover_convert';
 
-import AutorenewIcon from '@material-ui/icons/Autorenew';
-
-import SimplePopover from './cards/UI/popover';
-import SearchIcon from '@material-ui/icons/Search';
-import SpringModal from './cards/UI/ui_pagefour/newsource_modal';
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: '100%',
     height: 1700,
     backgroundColor: 'rgb(246,248,249)',
+  },
+  typo: {
+    fontFamily: Fonts.BOLD,
   },
   flexcontainer: {
     display: 'flex',
@@ -44,6 +35,25 @@ const useStyles = makeStyles((theme) => ({
   },
   tab: {
     marginTop: 100,
+  },
+  button: {
+    borderRadius: theme.overrides.MuiCard.root.borderRadius,
+    width: '100%',
+    fontFamily: Fonts.BOLD,
+    backgroundColor: '#60a65a',
+
+    fontSize: 16,
+    textTransform: 'capitalize',
+    // marginLeft:160,
+    [theme.breakpoints.up('sm')]: {
+      fontSize: 18,
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: 20,
+    },
+    '&:hover, &:focus': {
+      backgroundColor: '#638f60',
+    },
   },
   search: {
     position: 'relative',
@@ -98,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
 //   },
 // });
 
-const PageFour = () => {
+const Delete = () => {
   const classes = useStyles();
   return (
     <AppAnimate animation='transition.slideUpIn' delay={200}>
@@ -106,34 +116,32 @@ const PageFour = () => {
         <Box component='h4' fontSize={20}>
           <Card className={classes.root1}>
             <Grid container spacing={4} className={classes.grid}>
-              <Grid item md={3} xs={3} sm={3}>
-                <SpringModal />
+              <Grid item md={2} xs={2} sm={3}>
+                <p>
+                  <b>Environment</b>
+                </p>
               </Grid>
-              <Grid item md={8} xs={8} sm={8}>
-                <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                    <SearchIcon />
-                  </div>
-                  <InputBase
-                    variant='outlined'
-                    placeholder='Search…'
-                    classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                    }}
-                    inputProps={{'aria-label': 'search'}}
-                  />
-                </div>
+
+              {/*Select a source from the dropdown , 28-10-2020,Sidrah */}
+
+              <Grid item md={3} xs={2} sm={2}>
+                <p>
+                  <b>
+                    <Main />
+                  </b>
+                </p>
               </Grid>
-              <Grid item md={1} xs={1} sm={1}>
-                <AutorenewIcon fontSize='large' />
-              </Grid>
-              <Grid item md={12} xs={12} sm={12} />
-              <Grid item md={12} xs={12} sm={12} />
+              <Grid item md={10} />
+
               <Grid item md={12} xs={12} sm={12} />
 
-              <Grid item md={12}>
-                <CustomizedTables />
+              <Grid item md={1} xs={3} sm={3}>
+                <Button
+                  variant='contained'
+                  color='primary'
+                  className={classes.button}>
+                  DELETE
+                </Button>
               </Grid>
             </Grid>
           </Card>
@@ -143,4 +151,4 @@ const PageFour = () => {
   );
 };
 
-export default PageFour;
+export default Delete;

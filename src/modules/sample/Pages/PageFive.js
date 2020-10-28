@@ -2,27 +2,15 @@ import React from 'react';
 import Box from '@material-ui/core/Box';
 import {makeStyles, fade} from '@material-ui/core/styles';
 import InputBase from '@material-ui/core/InputBase';
-import FilterListIcon from '@material-ui/icons/FilterList';
-import SimpleSelect from '../Pages/cards/UI/dropDown/dropDown';
-import TimeDrop from '../Pages/cards/UI/dropDown/dropdown_time';
 //import SearchBar from '../../../@crema/core/SearchBar';
 //import Badge from '../../../@crema/core/Badge/index';
-import CalcCard from './cards/calc_card';
-import CalcCard2 from './cards/calc_card2';
-import SimpleTabs from './cards/UI/ui_pagethree/tab';
-import CustomizedTables from './cards/UI/ui_pagefour/table';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
 import AppAnimate from '../../../@crema/core/AppAnimate';
 import Card from '@material-ui/core/Card';
 import {Grid} from '@material-ui/core';
+import DataTables from '../Pages/cards/UI/ui_pagefive/table';
 import Button from '@material-ui/core/Button';
-
 import AutorenewIcon from '@material-ui/icons/Autorenew';
-import AppTableContainer from 'C:/Users/sidka/darce/src/@crema/core/AppTableContainer';
-import SimplePopover from './cards/UI/popover';
 import SearchIcon from '@material-ui/icons/Search';
-import SpringModal from './cards/UI/ui_pagefour/newsource_modal';
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: '100%',
@@ -124,7 +112,7 @@ const PageFive = () => {
               <Grid item md={12} />
 
               <Grid item md={12}>
-                <AppTableContainer />
+                {/* <DataTables /> */}
               </Grid>
             </Grid>
           </Card>

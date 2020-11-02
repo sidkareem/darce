@@ -78,21 +78,25 @@ function App() {
                   color: 'black',
                   textDecoration: 'underline',
                 }}
-                onClick={(index) => {
+                onClick={() => {
                   // ES6 Syntax use the rvalue if your data is an array.
                   const dataCopy = [...data];
                   // It should not matter what you name tableProps. It made the most sense to me.
-                  //   dataCopy.splice(tableProps.row.index, 5);
-                  //   alert("deleted"+tableProps.row.index+"row");
-                  //   console.log(tableProps.row.index);
-                  dataCopy.filter(
-                    (e) => tableProps.row.index !== e.tableProps.row.index,
-                  );
-                  setData(dataCopy);
+                  let new_data = dataCopy.splice(tableProps.row.index, 1);
+                  alert('deleted' + tableProps.row.index + 'row');
+                  console.log(tableProps.row.index);
+                  // dataCopy.filter(
+                  //   (e) => tableProps.row.index !== e.tableProps.row.index,
+                  // );
+                  setData(new_data);
                 }}>
                 Delete
               </span>
             ),
+          },
+          {
+            Header: 'Edit',
+            accessor: 'show.edit',
           },
         ],
       },

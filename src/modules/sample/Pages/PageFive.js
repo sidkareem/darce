@@ -11,6 +11,7 @@ import DataTables from '../Pages/cards/UI/ui_pagefive/table';
 import Button from '@material-ui/core/Button';
 import AutorenewIcon from '@material-ui/icons/Autorenew';
 import SearchIcon from '@material-ui/icons/Search';
+import App from '../Pages/cards/UI/ui_pagefive/table/App';
 const useStyles = makeStyles((theme) => ({
   root1: {
     width: '100%',
@@ -112,7 +113,7 @@ const PageFive = () => {
               <Grid item md={12} />
 
               <Grid item md={12}>
-                {/* <DataTables /> */}
+                <App />
               </Grid>
             </Grid>
           </Card>

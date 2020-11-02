@@ -15,7 +15,7 @@ import {makeStyles} from '@material-ui/core';
 import {Fonts} from '../../../shared/constants/AppEnums';
 import clsx from 'clsx';
 
-const MyTextField = props => {
+const MyTextField = (props) => {
   const [field, meta] = useField(props);
   const errorText = meta.error && meta.touched ? meta.error : '';
   return (
@@ -39,7 +39,7 @@ const ForgetPassword = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     image: {
       display: 'inline-block',
       cursor: 'pointer',
@@ -49,8 +49,8 @@ const ForgetPassword = () => {
       maxWidth: 576,
       width: '100%',
       textAlign: 'center',
-      height:500,
-      marginTop:200,
+      height: 500,
+      marginTop: 200,
       padding: 24,
       overflow: 'hidden',
       position: 'relative',
@@ -91,7 +91,7 @@ const ForgetPassword = () => {
       fontFamily: Fonts.BOLD,
       textTransform: 'capitalize',
       fontSize: 16,
-      backgroundColor:"#60a65a",
+      backgroundColor: '#60a65a',
       paddingTop: 12,
       paddingBottom: 12,
       borderRadius: theme.overrides.MuiCard.root.borderRadius,
@@ -102,11 +102,11 @@ const ForgetPassword = () => {
         fontSize: 18,
       },
       '&:hover, &:focus': {
-        backgroundColor: "#638f60",
+        backgroundColor: '#638f60',
       },
     },
     textSecondary: {
-      color: "#60a65a",
+      color: '#60a65a',
       marginLeft: 10,
     },
     underlineNone: {
@@ -134,8 +134,6 @@ const ForgetPassword = () => {
         flexDirection='column'
         justifyContent='center'
         alignItems='center'>
-         
- 
         <Card className={classes.card}>
           <Box
             component='h2'
@@ -143,12 +141,12 @@ const ForgetPassword = () => {
             color='text.primary'
             fontFamily={Fonts.BOLD}
             fontSize={{xs: 24, sm: 30}}>
-            <IntlMessages id='common.forgetPassword' />
+            <IntlMessages id='common.forgotPassword' />
           </Box>
           <Box mb={{xs: 6, xl: 12}} fontSize={18}>
             <Typography>
-              <IntlMessages id='common.forgetPasswordTextOne' /> <br />
-              <IntlMessages id='common.forgetPasswordTextTwo' />
+              <IntlMessages id='common.forgotPasswordTextOne' /> <br />
+              <IntlMessages id='common.forgotPasswordTextTwo' />
             </Typography>
           </Box>
 
@@ -205,8 +203,6 @@ const ForgetPassword = () => {
               </Form>
             )}
           </Formik>
-
-         
         </Card>
       </Box>
     </Box>

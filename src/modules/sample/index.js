@@ -59,8 +59,13 @@ export const samplePagesConfig = [
     auth: ['user'],
     routes: [
       {
+
+        path: '/sample/page-7',
+        component: React.lazy(() => import('./Pages/PageSeven')),
+
         path: '/sample/page-',
         component: React.lazy(() => import('./Pages/PageOne')),
+
       },
     ],
   },
@@ -77,8 +82,8 @@ export const samplePagesConfig = [
     auth: ['user'],
     routes: [
       {
-        path: '/sample/page-1',
-        component: React.lazy(() => import('./Pages/PageOne')),
+        path: '/sample/Admin/Tenant',
+        component: React.lazy(() => import('./Admin/Tenant')),
       },
     ],
   },

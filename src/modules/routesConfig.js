@@ -2,15 +2,22 @@ const routesConfig = [
   {
     id: 'page-1',
     title: 'Usage Dashboard',
+
     icon: 'home',
+
+    icon:
+      " <a href='https://www.flaticon.com/authors/freepik' title='Freepik'>Freepik</a></div>",
+
     messageId: 'Usage Dashboard',
     type: 'item',
     url: '/sample/page-1',
   },
+
   {
     id: 'page-2',
     title: 'Calc Builder',
     icon: 'computer',
+
     messageId: 'Calc Builder',
     type: 'item',
     url: '/sample/page-2',
@@ -71,6 +78,7 @@ const routesConfig = [
     type: 'item',
     url: '/sample/page-9',
   },
+
   {
     id: 'page-2-1',
     title: 'Tenant',
@@ -79,6 +87,7 @@ const routesConfig = [
     type: 'item',
     url: '/sample/Admin/Tenant',
   },
+
 ];
 
 export default routesConfig;

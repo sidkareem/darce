@@ -5,7 +5,7 @@ import 'react-notifications-component/dist/theme.css';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import 'react-table/react-table.css';
+//import 'react-table/react-table.css';
 
 import './shared/styles/index.css';
 import './assets/vendors/country-flag/sprite-flags-24x24.css';

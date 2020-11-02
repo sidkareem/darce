@@ -324,7 +324,7 @@
   "common.emailAddress": "Email Address",
   "common.login": "Login",
   "common.rememberMe": "Remember Me",
-  "common.forgetPassword": "Forget Your Password?",
+  "common.forgotPassword": "Forgot Your Password?",
   "common.orLoginWith": "Or Login With",
   "common.dontHaveAccount": "Don't have account?",
   "common.signup": "Signup",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import {makeStyles} from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import FormHelperText from '@material-ui/core/FormHelperText';
@@ -26,17 +26,16 @@ export default function SimpleSelect() {
 
   return (
     <div>
-      <FormControl variant="outlined" required className={classes.formControl}>
-        <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+      <FormControl variant='outlined' required className={classes.formControl}>
+        {/* <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel> */}
         <Select
-        style={{width:400}}
-          labelId="demo-simple-select-outlined-label"
-          id="demo-simple-select-outlined"
+          style={{width: 400}}
+          labelId='demo-simple-select-outlined-label'
+          id='demo-simple-select-outlined'
           value={age}
           onChange={handleChange}
-          label="Environments"
-        >
-          <MenuItem value="">
+          label='Environments'>
+          <MenuItem value=''>
             <em>None</em>
           </MenuItem>
           <MenuItem value={10}>Darwin_Test</MenuItem>
@@ -44,7 +43,6 @@ export default function SimpleSelect() {
           <MenuItem value={30}>Darwin_Test</MenuItem>
         </Select>
       </FormControl>
-      
     </div>
   );
 }

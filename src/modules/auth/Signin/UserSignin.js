@@ -19,7 +19,7 @@ import clsx from 'clsx';
 import {Fonts} from '../../../shared/constants/AppEnums';
 import grey from '@material-ui/core/colors/grey';
 
-const MyTextField = props => {
+const MyTextField = (props) => {
   const [field, meta] = useField(props);
   const errorText = meta.error && meta.touched ? meta.error : '';
   return (
@@ -42,7 +42,7 @@ const validationSchema = yup.object({
     .required(<IntlMessages id='validation.passwordRequired' />),
 });
 
-const UserSignin1 = props => {
+const UserSignin1 = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -55,37 +55,35 @@ const UserSignin1 = props => {
 
   const {messages} = useIntl();
 
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     formRoot: {
       textAlign: 'left',
       [theme.breakpoints.up('xl')]: {
         marginBottom: 24,
-       
-        color:"red"
-     },
+
+        color: 'red',
+      },
     },
     myTextFieldRoot: {
       width: '100%',
-      fontSize:200
-     
+      fontSize: 200,
     },
     checkboxRoot: {
       marginLeft: -12,
-     color:"black"
+      color: 'black',
       //marginBottom:"50px"
     },
     pointer: {
       cursor: 'pointer',
-      color:"#60a65a",
-      fontWeight:"bold"
-
+      color: '#60a65a',
+      fontWeight: 'bold',
     },
     btnRoot: {
       borderRadius: theme.overrides.MuiCard.root.borderRadius,
       width: '100%',
       fontFamily: Fonts.BOLD,
-      backgroundColor:"#60a65a",
-      
+      backgroundColor: '#60a65a',
+
       fontSize: 16,
       textTransform: 'capitalize',
       // marginLeft:160,
@@ -96,7 +94,7 @@ const UserSignin1 = props => {
         fontSize: 20,
       },
       '&:hover, &:focus': {
-        backgroundColor: "#638f60",
+        backgroundColor: '#638f60',
       },
     },
     dividerRoot: {
@@ -107,15 +105,15 @@ const UserSignin1 = props => {
         marginBottom: 32,
       },
     },
-    signup:{
-    marginLeft:100
+    signup: {
+      marginLeft: 100,
     },
     iconButtonRoot: {
       marginLeft: 8,
       marginRight: 8,
       color: theme.palette.grey[500],
       '&:hover, &:focus': {
-        color: "#60a65a",
+        color: '#60a65a',
       },
     },
     textLg: {
@@ -125,7 +123,7 @@ const UserSignin1 = props => {
       color: theme.palette.text.primary,
     },
     colorTextPrimary: {
-      color: "#60a65a",
+      color: '#60a65a',
     },
     underlineNone: {
       textDecoration: 'none',
@@ -133,10 +131,10 @@ const UserSignin1 = props => {
     textGrey: {
       color: theme.palette.grey[500],
     },
-    input:{
-      fontSize:50,
-      color:"red"
-    }
+    input: {
+      fontSize: 50,
+      color: 'red',
+    },
   }));
   const classes = useStyles(props);
 
@@ -148,7 +146,7 @@ const UserSignin1 = props => {
         flex={1}
         display='flex'
         flexDirection='column'>
-        <Formik 
+        <Formik
           validateOnChange={true}
           initialValues={{
             email: 'crema.demo@gmail.com',
@@ -166,10 +164,10 @@ const UserSignin1 = props => {
           {({isSubmitting}) => (
             <Form className={classes.formRoot} noValidate autoComplete='off'>
               <Box mb={{xs: 5, xl: 8}}>
-                <MyTextField className=
-                {classes.input}
+                <MyTextField
+                  className={classes.input}
                   placeholder={messages['common.Userid']}
-                  label={<IntlMessages   id='common.UserId' />}
+                  label={<IntlMessages id='common.UserId' />}
                   name='email'
                   variant='outlined'
                   className={classes.myTextFieldRoot}
@@ -177,10 +175,11 @@ const UserSignin1 = props => {
               </Box>
 
               <Box mb={{xs: 5, lg: 6}}>
-                <MyTextField fontSize="200px"
+                <MyTextField
+                  fontSize='200px'
                   type='password'
                   placeholder={messages['common.password']}
-                  label={<IntlMessages id='common.password'  />}
+                  label={<IntlMessages id='common.password' />}
                   name='password'
                   variant='outlined'
                   className={classes.myTextFieldRoot}
@@ -194,20 +193,22 @@ const UserSignin1 = props => {
                 alignItems={{sm: 'center'}}
                 justifyContent={{sm: 'space-between'}}
                 fontSize={18}>
-                <Box display='flex' alignItems='center' >
-                  <Checkbox className={classes.checkboxRoot} style={{color:"green"}} />
+                <Box display='flex' alignItems='center'>
+                  <Checkbox
+                    className={classes.checkboxRoot}
+                    style={{color: 'green'}}
+                  />
                   <Box className={classes.textGrey} component='span'>
                     <IntlMessages id='common.rememberMe' />
                   </Box>
                 </Box>
                 <Box
-                
                   color='primary.main'
                   component='span'
                   ml={{sm: 4}}
                   className={classes.pointer}
                   onClick={onGoToForgetPassword}>
-                  <IntlMessages id='common.forgetPassword' />
+                  <IntlMessages id='common.forgotPassword' />
                 </Box>
               </Box>
 
@@ -224,38 +225,34 @@ const UserSignin1 = props => {
                   // onClick={onGoToDashboard}
                   disabled={isSubmitting}
                   className={classes.btnRoot}>
-                   <IntlMessages id='common.login' />
-                 
+                  <IntlMessages id='common.login' />
                 </Button>
-                </Box>
-                <Box
+              </Box>
+              <Box
                 className={classes.signup}
-                  ml={{xs: 0, sm: 4}}
-                  mt={{xs: 3, sm: 0}}
-                  color='text.secondary'
-                  fontSize={18}>
-                   
-                  <Box className={classes.textGrey} component='span' mr={2}>
-                    <IntlMessages id='common.dontHaveAccount' />
-                  </Box>
-                  <Box  component='span'>
-                    <Link
-                      to='/signup'
-                      className={clsx(
-                        classes.underlineNone,
-                        classes.colorTextPrimary,
-                      )}>
-                      <IntlMessages id='common.signup' />
-                    </Link>
-                  </Box>
+                ml={{xs: 0, sm: 4}}
+                mt={{xs: 3, sm: 0}}
+                color='text.secondary'
+                fontSize={18}>
+                <Box className={classes.textGrey} component='span' mr={2}>
+                  <IntlMessages id='common.dontHaveAccount' />
                 </Box>
-             
+                <Box component='span'>
+                  <Link
+                    to='/signup'
+                    className={clsx(
+                      classes.underlineNone,
+                      classes.colorTextPrimary,
+                    )}>
+                    <IntlMessages id='common.signup' />
+                  </Link>
+                </Box>
+              </Box>
             </Form>
           )}
         </Formik>
       </Box>
 
-      
       <InfoView />
     </Box>
   );
